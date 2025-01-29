@@ -1,0 +1,145 @@
+@use "../abstracts/variables" as a;
+
+footer {
+  background: #000000;
+  padding: 120px 0 0 0;
+}
+
+.footer-hr .flex {
+  rotate: -90deg;
+}
+
+.footer-hr h6 {
+  color: #ffffff;
+  letter-spacing: 3.72px;
+  text-transform: uppercase;
+}
+
+.footer-hr h3 {
+  margin-top: 125px;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+.footer-hr p {
+  color: #ffffff;
+  padding: 0 300px;
+  margin: 20px 0 30px 0;
+}
+
+.footer-hr hr {
+  opacity: 1.25;
+  height: 1px;
+  color: #ffffffbf;
+  width: 60px;
+  border: 1px solid;
+}
+
+footer form {
+  border-radius: 50px;
+  border: 1px solid #ffffff;
+  background: #ede7f0;
+  width: 76%;
+  margin: auto;
+}
+
+footer form input {
+  border-radius: 50px;
+  background: #ede7f0;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  color: #ffffff;
+  width: 68%;
+}
+
+footer form button {
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+footer form button:hover {
+  color: #ffffff;
+}
+
+#footer-message {
+  background: #fff;
+  color: green;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  padding: 10px 10px 10px 10px;
+  font-size: 25px;
+  font-weight: 800;
+  text-align: center;
+  font-family: a.$main-font;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+  border-radius: 10px;
+  display: none;
+  transition: display all 0.3s ease;
+}
+
+.footer-menu {
+  background: linear-gradient(0deg, #616061 0%, #1b1b1b 100%);
+  color: #ffffff;
+  padding: 50px 0;
+  margin-top: 77px;
+}
+
+.footer-menu img {
+  width: 100px;
+  filter: brightness(0) invert(1);
+}
+
+.footer-menu ul li a:hover {
+  color: #b3b1b1;
+}
+
+.footer-menu i {
+  font-size: 20px;
+  background: linear-gradient(0deg, #adaaaa 0.5%, #6d6c6c 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-right: 10px;
+}
+
+.footer-menu i:hover {
+  background: linear-gradient(0deg, #adaaaa 0.5%, #adaaaa 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer-menu h4 {
+  color: #fdfdfd;
+  margin-bottom: 26px;
+}
+
+.footer-menu a {
+  color: #ffffff;
+  padding: 0 !important;
+}
+
+.footer-menu .col-lg-4 li {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-menu p {
+  padding: 0 78px 0 0;
+}
+
+.copyright {
+  background: #020202;
+  color: #ffffff;
+  padding: 20px 0;
+}
+
+.copyright a {
+  color: #ffffff;
+}

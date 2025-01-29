@@ -1,2 +1,13 @@
 // Variables
 // Store SASS variables for easy access
+@use "fonts";
+
+// Colors
+$primary-color: #d6d6dc;
+$title-color: #f1f1f3;
+$text-color: #0a0a0f;
+$body-color: #d6d6dc;
+$box-color: #d6d6dc;
+
+// Typography
+$main-font: "Raleway", sans-serif;
