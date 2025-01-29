@@ -1,0 +1,71 @@
+@use "../abstracts/variables" as a;
+
+.blog {
+  background: #3f3f3f;
+  padding: 120px 0;
+}
+
+.blog h5 {
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.blog h2 {
+  color: #ffffff;
+}
+
+.blog p {
+  color: #d3c9c1;
+  padding: 0 296px 0 0;
+}
+
+.blog .blog-hr1 {
+  opacity: 1.25;
+  height: 1px;
+  color: #ffffff;
+  width: 60px;
+  border: 1px solid;
+}
+
+.blog .btn_hover2 {
+  padding: 15px 30px;
+  border: 1.5px solid #ffffff;
+}
+
+.blog .row a {
+  border: 1.5px solid #ffffff;
+}
+
+.blog-card {
+  flex: 0 0 33.33%;
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+
+.blog-card img {
+  width: 100%;
+  transition: all 0.4s ease;
+}
+
+.blog-card:hover img {
+  transform: scale(1.05);
+  opacity: 0.8;
+  transition: all 0.4s ease;
+}
+
+.blog-card h4 {
+  color: #d3c9c1;
+  margin: 18px 0;
+  padding: 0 30px 0 0;
+}
+
+.blog-card a {
+  padding: 0 0 11px 0 !important;
+  border-bottom: 2px solid #fafafa;
+  letter-spacing: 2px;
+  background: linear-gradient(66.75deg, #7c7979 0.87%, #f0e4d8 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

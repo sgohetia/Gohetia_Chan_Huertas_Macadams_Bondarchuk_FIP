@@ -1,0 +1,141 @@
+@use "../abstracts/variables" as a;
+
+.about {
+  background: #b6b5b6;
+  padding: 100px 0;
+}
+
+.about-data {
+  display: flex;
+  margin-top: calc(-1 * var(--bs-gutter-y));
+  margin-right: calc(-0.5 * var(--bs-gutter-x));
+  margin-left: calc(-0.5 * var(--bs-gutter-x));
+}
+
+.about hr {
+  opacity: 1.25;
+  height: 1px;
+  color: #ffffff;
+  width: 60px;
+  border: 1px solid;
+}
+
+.w-50 {
+  flex: 0 0 auto;
+  width: 50%;
+}
+
+.about-title {
+  gap: 1rem;
+}
+
+.about-data h2 {
+  margin: 20px 0;
+  color: #ffffff;
+}
+
+.about h5 {
+  color: #ffffff;
+  font-weight: 400;
+  font-family: "Barlow", sans-serif;
+}
+
+.about p {
+  color: #ffffff;
+}
+
+.about i {
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  padding: 3px;
+  font-size: 20px;
+  background: linear-gradient(66.75deg, #5f5f5f 0.87%, #969594 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about-data a {
+  padding: 16px 38px 16px 38px !important;
+}
+
+.mt-15 {
+  margin-top: 1.5rem !important;
+}
+
+.mt-30 {
+  margin-top: 3rem !important;
+}
+
+.about-imgs {
+  position: relative;
+  //   background-image: url("../images/about-bg.png");
+  background-color: #b6b5b6;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.about-imgs figure {
+  background: linear-gradient(42deg, #afafaf 0.01%, #1f1e1f 100%);
+  width: fit-content;
+  clip-path: circle(45% at 50% 50%);
+  transition: all 0.8s ease;
+}
+
+.about-imgs figure:hover {
+  transform: scale(1.05);
+  transition: all 0.8s ease;
+}
+
+.about-imgs img {
+  width: 85%;
+  display: block;
+  margin: auto;
+  clip-path: circle(48% at 50% 50%);
+}
+
+.ab-count {
+  flex-direction: column;
+  text-align: center;
+  background: linear-gradient(180deg, #5f5f5f 0%, #969594 100%);
+  color: #ffffff;
+  position: absolute;
+  bottom: -18px;
+  left: 118px;
+  z-index: 11;
+  border-radius: 50%;
+  width: 175px;
+  height: 175px;
+}
+
+.ab-count h2 {
+  margin: 0;
+}
+
+.about-hr {
+  color: #ffffff;
+  position: absolute;
+  right: -50px;
+  bottom: 25px;
+  rotate: -90deg;
+}
+
+.about-hr hr {
+  opacity: 1.25;
+  height: 1px;
+  color: #ffffff;
+  width: 60px;
+  border: 1px solid;
+}
+
+.ab-count p {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.about-hr h6 {
+  letter-spacing: 3.72px;
+  text-transform: uppercase;
+}
