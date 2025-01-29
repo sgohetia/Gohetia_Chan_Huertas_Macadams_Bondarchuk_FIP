@@ -16,13 +16,10 @@
   const collapseButton = document.querySelector(".plus_collapse");
   const collapseContent = document.querySelector("#pages");
 
-  // Add event listener to the collapse button to toggle visibility
   if (collapseButton && collapseContent) {
     collapseButton.addEventListener("click", () => {
-      // Toggle the 'show' class on the content element
       collapseContent.classList.toggle("show");
 
-      // Update the aria-expanded attribute based on the visibility of the content
       const isExpanded = collapseContent.classList.contains("show");
       collapseButton.setAttribute("aria-expanded", isExpanded);
     });
@@ -32,7 +29,6 @@
   document.querySelector("#closeNavBtn").addEventListener("click", closeNav);
 
   //Toggle Search bar
-
   const toggleSearchBar = (open) => {
     const searchBar = document.querySelector("#search-bar");
     if (!searchBar) {
