@@ -5,14 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Brothers in Arms</title>
     <link
+      rel="shortcut icon"
+      href="images/brothers-in-arms-logo.svg"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
     <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="https://use.typekit.net/pvr0ajz.css" />
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"
@@ -25,6 +41,11 @@
       defer
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"
     ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+    ></script>
+
     <script defer src="js/main.js"></script>
   </head>
 
@@ -76,7 +97,7 @@
           </nav>
           <aside id="mySidepanel" class="sidepanel">
             <div class="sidebar flex">
-              <a href=""
+              <a href="index.html"
                 ><img src="images/brothers-in-arms-logo.svg" alt="logo"
               /></a>
               <button class="closebtn btn_hover1" id="closeNavBtn">
@@ -130,8 +151,10 @@
               <button class="close_right_sidebar fa-solid fa-xmark"></button>
             </div>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Brothers in Arms is committed to helping veterans rebuild their
+              lives through mental health support, financial aid, and community
+              programs. Your donation ensures no hero is left behind. Stand with
+              us today.
             </p>
             <a href="#" class="btn_hover1">About Us</a>
             <hr />
@@ -139,11 +162,7 @@
             <ul class="flex">
               <li>
                 <a href="#"> <i class="fa-solid fa-phone"></i></a>
-                <a href="#" class="text-lowercase">brothersinarms@gmail.com</a>
-              </li>
-              <li>
-                <a href="#"> <i class="fa-regular fa-envelope"></i></a>
-                <a href="#">+123-456-7890</a>
+                <a href="#" class="text-lowercase">+123-456-7890</a>
               </li>
               <li>
                 <a href="#"> <i class="fa-sharp fa-regular fa-clock"></i></a>
@@ -169,11 +188,11 @@
                 <hr class="d-md-block d-sm-none d-none" />
               </div>
               <div class="center-data">
-                <h1>BROTHER'S IN ARMS</h1>
-                <h3>INTRODUCTION</h3>
+                <h1>Brothers in Arms</h1>
+                <h3>Support Our Heroes. Make an Impact.</h3>
                 <div class="center-btn flex">
                   <a href="#" class="btn_hover1">Donate</a>
-                  <a href="about.html" class="btn_hover2">Learn More</a>
+                  <a href="about.html" class="btn_hover2">Memorial</a>
                 </div>
               </div>
             </div>
@@ -188,12 +207,12 @@
               <div>
                 <figure>
                   <img
-                    src="https://placehold.co/400"
+                    src="images/feature2.png"
                     class="feature-img1"
                     alt="feature"
                   />
                 </figure>
-                <h4>INFORMATION 1</h4>
+                <h4>ANNOUNCEMENT</h4>
                 <p>
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry's
@@ -204,9 +223,9 @@
             <div class="header-card" data-aos="fade-down">
               <div>
                 <figure>
-                  <img src="https://placehold.co/400" alt="feature" />
+                  <img src="images/feature2.png" alt="feature" />
                 </figure>
-                <h4>INFORMATION 2</h4>
+                <h4>ANNOUNCEMENT</h4>
                 <p>
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry's
@@ -217,9 +236,9 @@
             <div class="header-card" data-aos="fade-up">
               <div>
                 <figure>
-                  <img src="https://placehold.co/400" alt="feature" />
+                  <img src="images/feature2.png" alt="feature" />
                 </figure>
-                <h4>INFORMATION 3</h4>
+                <h4>ANNOUNCEMENT</h4>
                 <p>
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry's
@@ -230,9 +249,9 @@
             <div class="header-card" data-aos="fade-down">
               <div>
                 <figure>
-                  <img src="https://placehold.co/400" alt="feature" />
+                  <img src="images/feature2.png" alt="feature" />
                 </figure>
-                <h4>INFORMATION 4</h4>
+                <h4>ANNOUNCEMENT</h4>
                 <p>
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry's
@@ -248,29 +267,31 @@
         <div class="container">
           <div class="flex flex-col gap-2">
             <hr class="hr1" />
-            <h3 data-aos="zoom-in" class="mb-15">OUR PARTNERS AND SPONSORS</h3>
+            <h3 data-aos="zoom-in" class="mb-15">OUR SPONSORS</h3>
           </div>
-          <div class="ourpartners-slider sliderlogo" data-aos="zoom-in">
-            <figure>
-              <img src="https://placehold.co/100" alt="logoipsum" />
-            </figure>
-            <figure>
-              <img src="https://placehold.co/100" alt="logoipsum" />
-            </figure>
-            <figure>
-              <img src="https://placehold.co/100" alt="logoipsum" />
-            </figure>
-            <figure>
-              <img src="https://placehold.co/100" alt="logoipsum" />
-            </figure>
-            <figure>
-              <img src="https://placehold.co/100" alt="logoipsum" />
-            </figure>
-            <figure>
-              <img src="https://placehold.co/100" alt="logoipsum" />
-            </figure>
+          <div class="swiper ourpartners-slider sliderlogo" data-aos="zoom-in">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="images/TDECU.svg" alt="Sponsor1" />
+              </div>
+              <div class="swiper-slide">
+                <img src="images/chevron.png" alt="Sponsor2" />
+              </div>
+              <div class="swiper-slide">
+                <img src="images/heb.png" alt="Sponsor3" />
+              </div>
+              <div class="swiper-slide">
+                <img src="images/postoak.png" alt="Sponsor4" />
+              </div>
+              <div class="swiper-slide">
+                <img src="images/woodforestbank.png" alt="Sponsor5" />
+              </div>
+              <div class="swiper-slide">
+                <img src="images/amex.png" alt="Sponsor6" />
+              </div>
+            </div>
+            <hr class="hr2" />
           </div>
-          <hr class="hr2" />
         </div>
       </section>
 
@@ -284,16 +305,19 @@
               </div>
               <h2>THE BROTHER'S IN ARMS</h2>
               <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged.
+                Brothers in Arms is a dedicated organization committed to
+                supporting veterans and their families. We provide essential
+                resources, including mental health services, financial
+                assistance, and community programs, to help those who have
+                served transition to civilian life with dignity and stability.
+                Our mission is to ensure that no hero is left behind, fostering
+                a strong network of support and appreciation for their
+                sacrifices. Through advocacy and action, we stand by those who
+                stood for us.
               </p>
               <div class="flex gap-2 mt-30">
-                <a href="#" class="btn_hover1">Memorial</a>
-                <a href="#" class="btn_hover2">Gallery</a>
+                <a href="#" class="btn_hover1">History</a>
+                <a href="#" class="btn_hover2">Awards</a>
               </div>
             </div>
             <div class="about-imgs flex flex-center w-50" data-aos="fade-down">
@@ -314,291 +338,6 @@
                 <h6>Who we are</h6>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="history">
-        <div class="history-1">
-          <div class="container">
-            <div class="portfo-center" data-aos="fade-up">
-              <div class="w-50">
-                <div class="flex gap-1">
-                  <hr class="gallary-hr1" />
-                  <h5>HISTORY</h5>
-                </div>
-                <h2 class="mt-15">THE BROTHER'S IN ARMS HISTORY.</h2>
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever.
-                </p>
-              </div>
-              <div class="flex flex-end w-100">
-                <a href="#" class="btn_hover2">Read More</a>
-              </div>
-              <hr class="mt-30" />
-            </div>
-          </div>
-        </div>
-        <div class="gallary">
-          <div class="ga-bg"></div>
-          <!-- overly -->
-          <span> </span>
-          <div class="container" data-aos="fade-up">
-            <!-- Tab links -->
-            <div class="tab mb-15">
-              <button class="tablinks active" onclick="open_img(event, 'all')">
-                ALL
-              </button>
-              <button class="tablinks" onclick="open_img(event, 'history1')">
-                HISTORY 1
-              </button>
-              <button class="tablinks" onclick="open_img(event, 'history2')">
-                HISTORY 2
-              </button>
-              <button class="tablinks" onclick="open_img(event, 'history3')">
-                HISTORY 3
-              </button>
-              <button class="tablinks" onclick="open_img(event, 'history4')">
-                HISTORY 4
-              </button>
-              <button class="tablinks" onclick="open_img(event, 'history5')">
-                HISTORY 5
-              </button>
-              <button class="tablinks" onclick="open_img(event, 'history6')">
-                HISTORY 6
-              </button>
-            </div>
-
-            <div id="all" class="tabcontent" style="display: block">
-              <div class="flex flex-center">
-                <div class="flex w-100">
-                  <div class="w-33">
-                    <figure>
-                      <img src="https://placehold.co/600" alt="img" />
-                    </figure>
-                  </div>
-                  <div class="w-33">
-                    <figure>
-                      <img src="https://placehold.co/600" alt="img" />
-                    </figure>
-                  </div>
-                  <div class="w-33">
-                    <figure>
-                      <img src="https://placehold.co/600" alt="img" />
-                    </figure>
-                  </div>
-                  <div class="w-66">
-                    <figure>
-                      <img src="https://placehold.co/600" alt="img" />
-                    </figure>
-                  </div>
-                  <div class="w-33">
-                    <figure>
-                      <img src="https://placehold.co/600" alt="img" />
-                    </figure>
-                  </div>
-                  <div class="w-33">
-                    <figure>
-                      <img src="https://placehold.co/600" alt="sm_img" />
-                    </figure>
-                    <figure>
-                      <img src="https://placehold.co/600" alt="sm_img" />
-                    </figure>
-                  </div>
-                  <div class="w-66">
-                    <figure>
-                      <img src="https://placehold.co/600" alt="img" />
-                    </figure>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="history1" class="tabcontent">
-              <div class="flex flex-center">
-                <div class="flex w-100">
-                  <div class="w-33">
-                    <figure>
-                      <img src="https://placehold.co/600" alt="img" />
-                    </figure>
-                  </div>
-                  <div class="w-33">
-                    <figure>
-                      <img src="https://placehold.co/600" alt="img" />
-                    </figure>
-                  </div>
-                  <div class="w-33">
-                    <figure>
-                      <img src="https://placehold.co/600" alt="img" />
-                    </figure>
-                  </div>
-                  <div class="w-33">
-                    <figure>
-                      <img src="https://placehold.co/600" alt="img" />
-                    </figure>
-                  </div>
-                  <div class="w-33">
-                    <figure>
-                      <img src="https://placehold.co/600" alt="img" />
-                    </figure>
-                  </div>
-                  <div class="w-33">
-                    <figure>
-                      <img src="https://placehold.co/600" alt="img" />
-                    </figure>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="history2" class="tabcontent">
-              <div class="flex flex-center">
-                <div class="flex w-100">
-                  <div class="w-33">
-                    <figure>
-                      <img src="https://placehold.co/600" alt="img" />
-                    </figure>
-                  </div>
-                  <div class="w-33">
-                    <figure>
-                      <img src="https://placehold.co/600" alt="img" />
-                    </figure>
-                  </div>
-                  <div class="w-33">
-                    <figure>
-                      <img src="https://placehold.co/600" alt="img" />
-                    </figure>
-                  </div>
-                  <div class="w-33">
-                    <figure>
-                      <img src="https://placehold.co/600" alt="img" />
-                    </figure>
-                  </div>
-                  <div class="w-33">
-                    <figure>
-                      <img src="https://placehold.co/600" alt="img" />
-                    </figure>
-                  </div>
-                  <div class="w-33">
-                    <figure>
-                      <img src="https://placehold.co/600" alt="img" />
-                    </figure>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="history3" class="tabcontent">
-              <div class="flex flex-center">
-                <div class="flex w-100">
-                  <div class="w-33">
-                    <figure>
-                      <img src="https://placehold.co/600" alt="img" />
-                    </figure>
-                  </div>
-                  <div class="w-66">
-                    <figure>
-                      <img src="https://placehold.co/600" alt="img" />
-                    </figure>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="history4" class="tabcontent">
-              <div class="flex flex-center">
-                <div class="flex w-100">
-                  <div class="w-33">
-                    <figure>
-                      <img src="https://placehold.co/600" alt="img" />
-                    </figure>
-                  </div>
-                  <div class="w-66">
-                    <figure>
-                      <img src="https://placehold.co/600" alt="img" />
-                    </figure>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="history5" class="tabcontent">
-              <div class="flex flex-center">
-                <div class="flex w-100">
-                  <div class="w-33">
-                    <figure>
-                      <img src="https://placehold.co/600" alt="img" />
-                    </figure>
-                  </div>
-                  <div class="w-66">
-                    <figure>
-                      <img src="https://placehold.co/600" alt="img" />
-                    </figure>
-                  </div>
-                  <div class="w-66">
-                    <figure>
-                      <img src="https://placehold.co/600" alt="img" />
-                    </figure>
-                  </div>
-                  <div class="w-33">
-                    <figure>
-                      <img src="https://placehold.co/600" alt="img" />
-                    </figure>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="history6" class="tabcontent">
-              <div class="flex flex-center">
-                <div class="flex w-100">
-                  <div class="w-33">
-                    <figure>
-                      <img src="https://placehold.co/600" alt="img" />
-                    </figure>
-                  </div>
-                  <div class="w-33">
-                    <figure>
-                      <img src="https://placehold.co/600" alt="img" />
-                    </figure>
-                  </div>
-                  <div class="w-33">
-                    <figure>
-                      <img src="https://placehold.co/600" alt="img" />
-                    </figure>
-                  </div>
-                  <div class="w-66">
-                    <figure>
-                      <img src="https://placehold.co/600" alt="img" />
-                    </figure>
-                  </div>
-                  <div class="w-33">
-                    <figure>
-                      <img src="https://placehold.co/600" alt="img" />
-                    </figure>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="gallary-hr flex gap-1 flex-end mt-15">
-              <h6>HISTORY IMAGES</h6>
-              <hr />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="pricing p-relative">
-        <span> </span>
-        <div class="pricing-hr flex gap-1">
-          <hr />
-          <h6>Sharing is Blessings</h6>
-        </div>
-        <div class="container">
-          <div class="text-center" data-aos="fade-down">
-            <h5>DONATION</h5>
-            <h2 class="mt-1">Pricing Plans</h2>
-            <p class="mt-1 mb-15">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever.
-            </p>
           </div>
         </div>
       </section>
@@ -757,8 +496,10 @@
       </footer>
     </div>
 
-    <button id="backToTopBtn" class="btn_hover2">
-      <i class="fa-solid fa-arrow-turn-up"></i>
-    </button>
+    <!--========== SCROLL UP ==========-->
+
+    <a href="#" class="scrollup" id="scroll-up">
+      <i class="bx bx-up-arrow-alt scrollup__icon"></i>
+    </a>
   </body>
 </html>
