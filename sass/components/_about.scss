@@ -1,7 +1,7 @@
 @use "../abstracts/variables" as a;
 
 .about {
-  background: #b6b5b6;
+  background: #3d0f41;
   padding: 100px 0;
 }
 
@@ -69,15 +69,14 @@
 
 .about-imgs {
   position: relative;
-  //   background-image: url("../images/about-bg.png");
-  background-color: #b6b5b6;
+  background-image: url("../images/about-bg.png");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .about-imgs figure {
-  background: linear-gradient(42deg, #afafaf 0.01%, #1f1e1f 100%);
+  background: linear-gradient(42deg, #7436bb 0.01%, #b520a3 100%);
   width: fit-content;
   clip-path: circle(45% at 50% 50%);
   transition: all 0.8s ease;
@@ -98,7 +97,7 @@
 .ab-count {
   flex-direction: column;
   text-align: center;
-  background: linear-gradient(180deg, #5f5f5f 0%, #969594 100%);
+  background: linear-gradient(180deg, #ff7527 0%, #fabf28 100%);
   color: #ffffff;
   position: absolute;
   bottom: -18px;

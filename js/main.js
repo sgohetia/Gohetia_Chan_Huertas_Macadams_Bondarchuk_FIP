@@ -68,21 +68,43 @@
     .querySelector(".close_right_sidebar")
     .addEventListener("click", closeRightSide);
 
-  // button back to top
-  const backToTopBtn = document.querySelector("#backToTopBtn");
+  // --- This is to show the scroll up button
+  function scrollUp() {
+    const scrollUp = document.querySelector("#scroll-up");
 
-  window.addEventListener("scroll", function () {
-    if (window.scrollY > 20) {
-      backToTopBtn.style.display = "block";
-    } else {
-      backToTopBtn.style.display = "none";
-    }
+    if (this.scrollY >= 350) scrollUp.classList.add("show-scroll");
+    else scrollUp.classList.remove("show-scroll");
+  }
+  window.addEventListener("scroll", scrollUp);
+
+  // Sponsor logo slider
+  new Swiper(".ourpartners-slider", {
+    loop: true,
+    slidesPerView: 3,
+    spaceBetween: 20,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      640: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 },
+      1440: { slidesPerView: 4 },
+    },
   });
 
-  backToTopBtn.addEventListener("click", function () {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+  // Announcment animation
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.from(".header-card", {
+    opacity: 0,
+    y: 100,
+    duration: 1,
+    stagger: 0.3,
+    scrollTrigger: {
+      trigger: ".header-card",
+      start: "top 80%",
+      toggleActions: "play none none reverse",
+    },
   });
 })();
