@@ -1,10 +1,5 @@
 @use "../abstracts/variables" as a;
 
-.about {
-  background: #f2f4f3;
-  padding: 100px 0;
-}
-
 .about-data {
   display: flex;
   margin-top: calc(-1 * var(--bs-gutter-y));
@@ -18,11 +13,6 @@
   color: #221f1d;
   width: 60px;
   border: 1px solid;
-}
-
-.w-50 {
-  flex: 0 0 auto;
-  width: 50%;
 }
 
 .about-title {
@@ -54,10 +44,6 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-.about-data a {
-  padding: 16px 38px 16px 38px !important;
 }
 
 .mt-15 {
@@ -93,19 +79,6 @@
   display: block;
   margin: auto;
   clip-path: circle(48% at 50% 50%);
-}
-
-.ab-count {
-  flex-direction: column;
-  text-align: center;
-  background: linear-gradient(180deg, #ff7527 0%, #fabf28 100%);
-  position: absolute;
-  bottom: -18px;
-  left: 118px;
-  z-index: 11;
-  border-radius: 50%;
-  width: 175px;
-  height: 175px;
 }
 
 .ab-count h2 {

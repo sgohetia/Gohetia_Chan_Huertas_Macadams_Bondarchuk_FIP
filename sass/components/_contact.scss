@@ -89,22 +89,6 @@ textarea {
 .cntct-btn:hover {
   background: #e22e2b;
 }
-@media (max-width: 768px) {
-  .wrapper {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .image-container {
-    order: -1;
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  .container {
-    width: 100%;
-    max-width: 400px;
-  }
-}
 
 select {
   width: 100%;

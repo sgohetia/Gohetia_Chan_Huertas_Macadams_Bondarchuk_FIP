@@ -169,8 +169,8 @@ nav li a.active,
 }
 
 .navbar-toggler {
-  border: 1px solid #ffffff;
-  background: linear-gradient(42deg, #8d8d8d 0.01%, #131313 100%);
+  border: 1px solid #221f1d;
+  background: #fff;
   padding: 10px 20px;
   border-radius: 6px;
   cursor: pointer;
@@ -205,7 +205,7 @@ nav li a.active,
 /* Sidebar */
 
 aside {
-  background-color: #383738;
+  background-color: #fff;
   z-index: 10;
 }
 
@@ -241,7 +241,7 @@ aside {
 .sidebar button {
   width: 44px;
   height: 44px;
-  background: linear-gradient(42deg, #8d8d8d 0.01%, #131313 100%);
+  background: #fff;
   padding: 10px 12px 10px 12px;
   margin-bottom: -15px;
   border-radius: 0.25em;
@@ -511,14 +511,6 @@ aside .pages {
   margin-top: 30px;
 }
 
-.hero {
-  // background-image: url("../images/hero-img.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 172px 0 279px 0;
-}
-
 .hero .container {
   position: relative;
 }
@@ -527,14 +519,6 @@ aside .pages {
   color: #221f1d;
   letter-spacing: 3.75px;
   text-transform: uppercase;
-}
-
-.hero-social-icon {
-  position: absolute;
-  left: 0;
-  top: 0;
-  flex-direction: column !important;
-  justify-content: flex-start !important;
 }
 
 .hero-social-icon a {
@@ -556,15 +540,6 @@ aside .pages {
   transform: scale(1.2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-.hero-social-icon hr {
-  display: block;
-  margin-top: 68px;
-  opacity: 1;
-  color: #ffffff;
-  width: 110px;
-  rotate: 90deg;
 }
 
 .center-data {
@@ -668,15 +643,6 @@ aside .pages {
   margin-right: calc(-0.5 * var(--bs-gutter-x));
 }
 
-.header-card {
-  margin-top: -145px;
-  display: flex;
-  flex: 0 0 auto;
-  width: 25%;
-  padding-right: calc(var(--bs-gutter-x) * 0.5);
-  padding-left: calc(var(--bs-gutter-x) * 0.5);
-}
-
 .header-card div {
   border-radius: 20px;
   background: #fff;
@@ -708,43 +674,10 @@ aside .pages {
 
 /* Our Partner Section Styles */
 
-.ourpartners {
-  background-color: #221f1d;
-  padding: 150px 0;
-  margin-top: -1px;
-}
-
-.ourpartners-slider {
-  margin-top: 24px;
-}
-
 .ourpartners h3 {
   letter-spacing: 1.25px;
   color: #ffffff;
   text-transform: uppercase;
-}
-
-.ourpartners img {
-  width: 170px;
-  margin: 0 auto;
-}
-
-.ourpartners .hr1 {
-  opacity: 1;
-  height: 2px;
-  rotate: 90deg;
-  width: 60px;
-  margin: 0 auto 50px auto;
-  background: rgba(255, 255, 255, 0.75);
-}
-
-.ourpartners .hr2 {
-  opacity: 1;
-  height: 2px;
-  rotate: 90deg;
-  width: 60px;
-  margin: 70px auto 0 auto;
-  background: rgba(255, 255, 255, 0.75);
 }
 
 //--Scrollup
