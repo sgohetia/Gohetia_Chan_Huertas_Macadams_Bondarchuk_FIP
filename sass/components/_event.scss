@@ -1,0 +1,78 @@
+@use "../abstracts/variables" as a;
+
+.event {
+  background-image: url("../images/faq-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 120px 0;
+  z-index: 1;
+}
+
+// #event {
+//   background: #150725;
+//   padding: 120px 0;
+// }
+
+.event span {
+  background-color: #000000;
+  opacity: 0.6;
+  width: 100% !important;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.event .text-center h2 {
+  color: #ffffff;
+  padding: 0 55px 0 0;
+  text-align: left;
+}
+
+.event h5 {
+  color: #ffffff;
+}
+
+.event .text-center p {
+  color: #ffffff;
+  padding: 0 123px 0 0;
+  text-align: left;
+  font-size: 20px;
+}
+
+.event .event-hr1 {
+  opacity: 1.25;
+  height: 1px;
+  color: #ffffff;
+  width: 60px;
+  border: 1px solid;
+}
+
+.accordion-button {
+  position: relative;
+  width: 100%;
+  text-align: left;
+  outline: none;
+  border: none;
+  color: #231f20;
+  font-weight: 700 !important;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+}
+
+.accordion-button img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.accordion-collapse {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.accordion-collapse p {
+  color: #231f20;
+  padding: 15px;
+  background-color: #fff;
+}

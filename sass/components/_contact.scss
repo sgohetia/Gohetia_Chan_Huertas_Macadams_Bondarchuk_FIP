@@ -1,0 +1,139 @@
+@use "../abstracts/variables" as a;
+
+body {
+  font-family: a.$secondary-font;
+}
+.contact-sec {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Adjust as needed */
+  // text-align: center;
+}
+.wrapper-contact {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  max-width: 500px;
+  width: 100%;
+  justify-content: center; /* Ensures child elements are centered */
+}
+
+.container-contact {
+  background: white;
+  padding-top: 20px;
+  padding-left: 40px;
+  padding-right: 60px;
+  padding-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  flex: 1;
+}
+.image-container {
+  width: 300px;
+  text-align: center;
+  flex: 1;
+}
+.image-container img {
+  width: 100%;
+  border-radius: 10px;
+}
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.tab {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+.tab.active {
+  border-bottom: 2px solid #ffba39;
+  color: #e22e2b;
+  font-weight: bold;
+  font-size: 20px;
+}
+.form-container {
+  display: none;
+}
+.form-container.active {
+  display: block;
+}
+.form-group {
+  margin-bottom: 15px;
+}
+label {
+  display: block;
+  font-size: 17px;
+  margin-bottom: 5px;
+}
+input,
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.cntct-btn {
+  width: 100%;
+  padding: 10px;
+  background: #ffba39;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+.cntct-btn:hover {
+  background: #e22e2b;
+}
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .image-container {
+    order: -1;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .container {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: white;
+  font-size: 14px;
+  appearance: none;
+  cursor: pointer;
+}
+
+.form-group.dropdown {
+  position: relative;
+}
+
+.form-group.dropdown::after {
+  content: "▼";
+  position: absolute;
+  top: 70%;
+  right: 10px;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: #666;
+  pointer-events: none;
+}
+
+select:focus {
+  border-color: #333;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}

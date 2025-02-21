@@ -61,9 +61,12 @@
   const openRightSide = () => toggleRightSide(true);
   const closeRightSide = () => toggleRightSide(false);
 
+  // document
+  //   .querySelector("#toggleRightSideBtn, #toggleRightSideBtn2")
+  //   .addEventListener("click", openRightSide);
   document
-    .querySelector("#toggleRightSideBtn")
-    .addEventListener("click", openRightSide);
+    .querySelectorAll("#toggleRightSideBtn, #toggleRightSideBtn2")
+    .forEach((btn) => btn.addEventListener("click", openRightSide));
   document
     .querySelector(".close_right_sidebar")
     .addEventListener("click", closeRightSide);
@@ -107,4 +110,199 @@
       toggleActions: "play none none reverse",
     },
   });
+
+  let progressBar = document.getElementById("progress-bar");
+  let progress = 66;
+  let currentProgress = 0;
+
+  let interval = setInterval(() => {
+    if (currentProgress >= progress) {
+      clearInterval(interval);
+    } else {
+      currentProgress++;
+      progressBar.style.width = currentProgress + "%";
+      progressBar.textContent = currentProgress + "%";
+    }
+  }, 20);
+
+  // Event
+  let accordionButtons = document.querySelectorAll(".accordion-button");
+  let acoimg = document.querySelectorAll(".accordion-button img");
+
+  accordionButtons.forEach(function (button, index) {
+    button.addEventListener("click", function () {
+      let collapse = this.parentElement.nextElementSibling;
+
+      // Close all other accordion items
+      accordionButtons.forEach(function (otherButton, otherIndex) {
+        if (otherButton !== button) {
+          var otherCollapse = otherButton.parentElement.nextElementSibling;
+          otherCollapse.style.maxHeight = null;
+          // Reset the image source and rotation for other accordion items
+          acoimg[otherIndex].src = "images/plus.png";
+          acoimg[otherIndex].style.transform = "rotate(0deg)";
+          otherButton.style.backgroundColor = "#fff";
+        }
+      });
+
+      // Toggle the clicked accordion item
+      if (collapse.style.maxHeight) {
+        collapse.style.maxHeight = null;
+        // Reset the image source, rotation, and background color when collapsing
+        acoimg[index].src = "images/plus.png";
+        acoimg[index].style.transform = "rotate(90deg)";
+        button.style.backgroundColor = "";
+      } else {
+        collapse.style.maxHeight = collapse.scrollHeight + "px";
+        // Change the image source, set rotation, and background color when expanding
+        acoimg[index].src = "images/menus.png";
+        acoimg[index].style.transform = "rotate(180deg)";
+        button.style.backgroundColor = "#ffba39";
+      }
+    });
+  });
+
+  //contact form
+  const tabs = document.querySelectorAll(".tab");
+  const forms = document.querySelectorAll(".form-container");
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", function () {
+      tabs.forEach((t) => t.classList.remove("active"));
+      forms.forEach((f) => f.classList.remove("active"));
+
+      this.classList.add("active");
+      document
+        .querySelector(`#${this.getAttribute("data-target")}`)
+        .classList.add("active");
+    });
+  });
+
+  //Scroll slide history
+
+  const horizontalSections = gsap.utils.toArray("section.horizontal");
+
+  horizontalSections.forEach(function (sec, i) {
+    var thisPinWrap = sec.querySelector(".pin-wrap");
+    var thisAnimWrap = thisPinWrap.querySelector(".animation-wrap");
+
+    var getToValue = () => -(thisAnimWrap.scrollWidth - window.innerWidth);
+
+    gsap.fromTo(
+      thisAnimWrap,
+      {
+        x: () =>
+          thisAnimWrap.classList.contains("to-right") ? 0 : getToValue(),
+      },
+      {
+        x: () =>
+          thisAnimWrap.classList.contains("to-right") ? getToValue() : 0,
+        ease: "none",
+        scrollTrigger: {
+          trigger: sec,
+          start: "top top",
+          end: () => "+=" + (thisAnimWrap.scrollWidth - window.innerWidth),
+          pin: thisPinWrap,
+          invalidateOnRefresh: true,
+          scrub: true,
+          //markers: true, // Uncomment this to debug
+        },
+      }
+    );
+  });
+
+  //Awards Slider
+
+  let items = document.querySelectorAll(".slider .list .item");
+  let next = document.querySelector("#next");
+  let prev = document.querySelector("#prev");
+  let thumbnails = document.querySelectorAll(".thumbnail .item");
+
+  // config param
+  let countItem = items.length;
+  let itemActive = 0;
+  // event next click
+  next.onclick = function () {
+    itemActive = itemActive + 1;
+    if (itemActive >= countItem) {
+      itemActive = 0;
+    }
+    showSlider();
+  };
+  //event prev click
+  prev.onclick = function () {
+    itemActive = itemActive - 1;
+    if (itemActive < 0) {
+      itemActive = countItem - 1;
+    }
+    showSlider();
+  };
+  // auto run slider
+  let refreshInterval = setInterval(() => {
+    next.click();
+  }, 5000);
+  function showSlider() {
+    // remove item active old
+    let itemActiveOld = document.querySelector(".slider .list .item.active");
+    let thumbnailActiveOld = document.querySelector(".thumbnail .item.active");
+    itemActiveOld.classList.remove("active");
+    thumbnailActiveOld.classList.remove("active");
+
+    // active new item
+    items[itemActive].classList.add("active");
+    thumbnails[itemActive].classList.add("active");
+    setPositionThumbnail();
+
+    // clear auto time run slider
+    clearInterval(refreshInterval);
+    refreshInterval = setInterval(() => {
+      next.click();
+    }, 5000);
+  }
+  function setPositionThumbnail() {
+    let thumbnailActive = document.querySelector(".thumbnail .item.active");
+    let rect = thumbnailActive.getBoundingClientRect();
+    if (rect.left < 0 || rect.right > window.innerWidth) {
+      thumbnailActive.scrollIntoView({
+        behavior: "smooth",
+        inline: "nearest",
+      });
+    }
+  }
+
+  // click thumbnail
+  thumbnails.forEach((thumbnail, index) => {
+    thumbnail.addEventListener("click", () => {
+      itemActive = index;
+      showSlider();
+    });
+  });
+
+  //Gallery
+  let list = document.querySelectorAll(".list");
+  let itemBox = document.querySelectorAll(".itemBox");
+
+  for (let i = 0; i < list.length; i++) {
+    list[i].addEventListener("click", function () {
+      for (let j = 0; j < list.length; j++) {
+        list[j].classList.remove("active");
+      }
+      this.classList.add("active");
+
+      let dataFilter = this.getAttribute("data-filter");
+
+      for (let k = 0; k < itemBox.length; k++) {
+        itemBox[k].classList.remove("active");
+        itemBox[k].classList.add("hide");
+
+        if (
+          itemBox[k].getAttribute("data-item") == dataFilter ||
+          dataFilter == "all"
+        ) {
+          itemBox[k].classList.remove("hide");
+          itemBox[k].classList.add("active");
+        }
+      }
+    });
+  }
 })();

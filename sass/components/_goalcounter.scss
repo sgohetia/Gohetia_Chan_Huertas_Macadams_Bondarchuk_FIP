@@ -1,0 +1,49 @@
+@use "../abstracts/variables" as a;
+
+body {
+  font-family: a.$secondary-font;
+}
+
+.progress-container {
+  width: 300px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+  text-align: center;
+  padding: 1px 0;
+}
+.progress-bar {
+  width: 0;
+  height: 30px;
+  // background: #02d114;
+  background: rgb(255, 186, 57);
+  background: linear-gradient(
+    103deg,
+    rgba(255, 186, 57, 1) 2%,
+    rgba(2, 209, 20, 1) 86%
+  );
+  text-align: center;
+  line-height: 30px;
+  font-weight: bold;
+  position: relative;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.progress-container::before {
+  content: "Progress";
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: bold;
+}
+.progress-container::after {
+  content: "100%";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: bold;
+}
