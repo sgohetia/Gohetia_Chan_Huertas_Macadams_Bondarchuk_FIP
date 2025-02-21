@@ -193,27 +193,29 @@
               <div class="tab active" data-target="general">General</div>
               <div class="tab" data-target="volunteer">Volunteer</div>
             </div>
+
+            <!-- General Form -->
             <div class="form-container active" id="general">
-              <form>
+              <form id="generalForm">
                 <div class="form-group">
                   <label for="fname">Fist Name</label>
-                  <input type="text" id="fname" required />
+                  <input type="text" name="fname" id="fname" required />
                 </div>
                 <div class="form-group">
                   <label for="lname">Last Name</label>
-                  <input type="text" id="lname" required />
+                  <input type="text" name="lname" id="lname" required />
                 </div>
                 <div class="form-group">
                   <label for="company">Company</label>
-                  <input type="text" id="company" required />
+                  <input type="text" name="company" id="company" required />
                 </div>
                 <div class="form-group">
                   <label for="email">Email</label>
-                  <input type="email" id="email" required />
+                  <input type="email" name="email" id="email" required />
                 </div>
                 <div class="form-group dropdown">
                   <label for="type">Type</label>
-                  <select id="type" required>
+                  <select id="type" name="type" required>
                     <option value="" disabled selected>Select Type</option>
                     <option value="Inquiry">Inquiry</option>
                     <option value="Feedback">Feedback</option>
@@ -222,13 +224,22 @@
                 </div>
                 <div class="form-group">
                   <label for="message">Message</label>
-                  <textarea id="message" rows="3" required></textarea>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="3"
+                    required
+                  ></textarea>
                 </div>
                 <button type="submit" class="cntct-btn">Submit</button>
+                <section id="feedback">
+                  <p>*Please fill out all required sections</p>
+                </section>
               </form>
             </div>
+            <!-- Volunteer Form -->
             <div class="form-container" id="volunteer">
-              <form>
+              <form id="volunteerForm">
                 <div class="form-group">
                   <label for="vfname">First Name</label>
                   <input type="text" id="vfname" required />
@@ -245,8 +256,9 @@
                   <label for="type">Gender</label>
                   <select id="gender" required>
                     <option value="" disabled selected>Select Gender</option>
-                    <option value="Inquiry">Male</option>
-                    <option value="Feedback">Female</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Not to answer">Not to answer</option>
                   </select>
                 </div>
                 <div class="form-group">
@@ -262,6 +274,9 @@
                   <textarea id="vmessage" rows="3" required></textarea>
                 </div>
                 <button type="submit" class="cntct-btn">Apply</button>
+                <section id="vfeedback">
+                  <p>*Please fill out all required sections</p>
+                </section>
               </form>
             </div>
           </div>
