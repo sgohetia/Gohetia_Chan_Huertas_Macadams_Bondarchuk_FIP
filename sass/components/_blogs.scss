@@ -1,7 +1,7 @@
 @use "../abstracts/variables" as a;
 
 .blog {
-  background: #3f3f3f;
+  background: #ee7c22;
   padding: 120px 0;
 }
 
@@ -16,8 +16,9 @@
 }
 
 .blog p {
-  color: #d3c9c1;
+  color: #ffffff;
   padding: 0 296px 0 0;
+  font-size: 20px;
 }
 
 .blog .blog-hr1 {
@@ -55,16 +56,16 @@
 }
 
 .blog-card h4 {
-  color: #d3c9c1;
+  color: #ffffff;
   margin: 18px 0;
   padding: 0 30px 0 0;
 }
 
 .blog-card a {
   padding: 0 0 11px 0 !important;
-  border-bottom: 2px solid #fafafa;
+  border-bottom: 2px solid #ffffff;
   letter-spacing: 2px;
-  background: linear-gradient(66.75deg, #7c7979 0.87%, #f0e4d8 100%);
+  background: #ffffff;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

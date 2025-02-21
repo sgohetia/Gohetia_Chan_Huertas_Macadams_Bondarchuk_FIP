@@ -1,7 +1,7 @@
 @use "../abstracts/variables" as a;
 
 .about {
-  background: #3d0f41;
+  background: #f2f4f3;
   padding: 100px 0;
 }
 
@@ -15,7 +15,7 @@
 .about hr {
   opacity: 1.25;
   height: 1px;
-  color: #ffffff;
+  color: #221f1d;
   width: 60px;
   border: 1px solid;
 }
@@ -31,21 +31,22 @@
 
 .about-data h2 {
   margin: 20px 0;
-  color: #ffffff;
+  color: #221f1d;
 }
 
 .about h5 {
-  color: #ffffff;
+  color: #221f1d;
   font-weight: 400;
   font-family: "Barlow", sans-serif;
 }
 
 .about p {
-  color: #ffffff;
+  color: #221f1d;
+  font-size: 20px;
 }
 
 .about i {
-  border: 2px solid #ffffff;
+  border: 2px solid #221f1d;
   border-radius: 50%;
   padding: 3px;
   font-size: 20px;
@@ -76,7 +77,7 @@
 }
 
 .about-imgs figure {
-  background: linear-gradient(42deg, #7436bb 0.01%, #b520a3 100%);
+  background: linear-gradient(66.75deg, #ff7527 0.87%, #fabf28 100%);
   width: fit-content;
   clip-path: circle(45% at 50% 50%);
   transition: all 0.8s ease;
@@ -98,7 +99,6 @@
   flex-direction: column;
   text-align: center;
   background: linear-gradient(180deg, #ff7527 0%, #fabf28 100%);
-  color: #ffffff;
   position: absolute;
   bottom: -18px;
   left: 118px;
@@ -110,10 +110,11 @@
 
 .ab-count h2 {
   margin: 0;
+  color: #ffffff;
 }
 
 .about-hr {
-  color: #ffffff;
+  color: #221f1d;
   position: absolute;
   right: -50px;
   bottom: 25px;
@@ -123,7 +124,7 @@
 .about-hr hr {
   opacity: 1.25;
   height: 1px;
-  color: #ffffff;
+  color: #221f1d;
   width: 60px;
   border: 1px solid;
 }
@@ -132,6 +133,7 @@
   letter-spacing: 1px;
   text-transform: uppercase;
   font-weight: 600;
+  color: #ffffff;
 }
 
 .about-hr h6 {
