@@ -1,10 +1,5 @@
 @use "../abstracts/variables" as a;
 
-.blog {
-  background: #ee7c22;
-  padding: 120px 0;
-}
-
 .blog h5 {
   color: #ffffff;
   letter-spacing: 1px;
@@ -13,12 +8,6 @@
 
 .blog h2 {
   color: #ffffff;
-}
-
-.blog p {
-  color: #ffffff;
-  padding: 0 296px 0 0;
-  font-size: 20px;
 }
 
 .blog .blog-hr1 {

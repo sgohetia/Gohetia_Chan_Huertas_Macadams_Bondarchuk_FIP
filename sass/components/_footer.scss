@@ -1,9 +1,5 @@
 @use "../abstracts/variables" as a;
 
-.w-33 {
-  width: 33.33333333%;
-}
-
 .w-66 {
   width: 66.66666667%;
 }
@@ -27,13 +23,6 @@ footer {
   margin-top: 125px;
   color: #221f1d;
   letter-spacing: 1px;
-}
-
-.footer-hr p {
-  color: #221f1d;
-  padding: 0 300px;
-  margin: 20px 0 30px 0;
-  font-size: 20px;
 }
 
 .footer-hr hr {
@@ -137,10 +126,6 @@ footer form button:hover {
 .footer-menu .col-lg-4 li {
   display: flex;
   gap: 20px;
-}
-
-.footer-menu p {
-  padding: 0 78px 0 0;
 }
 
 .copyright {

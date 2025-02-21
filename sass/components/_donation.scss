@@ -1,74 +1,11 @@
 @use "../abstracts/variables" as a;
 
-.donation {
-  //   background-image: url("../images/work-bg.jpg");
-  background: #221f1d;
-  background-size: cover;
-  background-position: center center;
-  padding: 120px 0;
-  margin-top: -2px;
-}
-
 .donation h5 {
   letter-spacing: 1px;
 }
 .donation p {
   padding-top: 20px;
   font-size: 20px;
-}
-
-.donation-para {
-  color: #ffffff;
-  padding: 0 290px;
-}
-
-.donation-line {
-  background-image: url("../images/work-line.png");
-  background-size: 100% 100%;
-  background-position: center;
-  min-height: 242px;
-  background-repeat: no-repeat;
-  margin: 146px 25px 146px 25px;
-}
-
-.donation-line div {
-  position: absolute;
-  border-radius: 50%;
-  background: linear-gradient(11deg, #e22e2b 0.01%, #ffba39 100%);
-  color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 10px;
-  padding: 18px 0 32px 34px;
-}
-
-.donation-line div:first-child {
-  top: -66px;
-  left: -30px;
-  width: 196px;
-  min-height: 196px;
-}
-
-.donation-line div:nth-child(2) {
-  bottom: -70px;
-  left: 260px;
-  width: 180px;
-  min-height: 180px;
-}
-
-.donation-line div:nth-child(3) {
-  right: 260px;
-  top: -66px;
-  width: 196px;
-  min-height: 196px;
-}
-
-.donation-line div:last-child {
-  right: -49px;
-  bottom: -70px;
-  width: 180px;
-  min-height: 180px;
 }
 
 .donation a {
