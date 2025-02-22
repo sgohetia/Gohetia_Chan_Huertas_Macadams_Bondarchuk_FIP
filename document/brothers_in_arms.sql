@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Feb 13, 2025 at 10:51 PM
+-- Generation Time: Feb 22, 2025 at 04:30 AM
 -- Server version: 8.0.40
 -- PHP Version: 8.3.14
 
@@ -31,12 +31,20 @@ CREATE TABLE `contact_general_sponsor` (
   `id` int UNSIGNED NOT NULL,
   `first_name` varchar(255) NOT NULL COMMENT 'madatory',
   `last_name` varchar(255) NOT NULL COMMENT 'madatory',
-  `company` varchar(255) NOT NULL,
+  `company` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `email` varchar(600) NOT NULL COMMENT 'madatory',
-  `message` text NOT NULL COMMENT 'madatory',
-  `date_time` datetime NOT NULL COMMENT 'hidden',
-  `type` varchar(255) NOT NULL COMMENT 'general or sponsor'
+  `type` varchar(500) NOT NULL,
+  `message` varchar(10000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'madatory',
+  `date_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'hidden'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `contact_general_sponsor`
+--
+
+INSERT INTO `contact_general_sponsor` (`id`, `first_name`, `last_name`, `company`, `email`, `type`, `message`, `date_time`) VALUES
+(1, 'test', 'test', 'test', 'a@a.com', 'Feedback', 'test', '2025-02-21 23:27:50'),
+(2, 'test', 'test', 'test', 'a@a.com', 'Feedback', 'test', '2025-02-21 23:28:58');
 
 -- --------------------------------------------------------
 
@@ -241,7 +249,7 @@ ALTER TABLE `subscription`
 -- AUTO_INCREMENT for table `contact_general_sponsor`
 --
 ALTER TABLE `contact_general_sponsor`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `contact_volunteer`

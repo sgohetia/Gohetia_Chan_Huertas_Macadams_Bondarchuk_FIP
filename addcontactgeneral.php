@@ -3,57 +3,78 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 require_once ('includes/connect.php');
 
+
 $errors = array();
 
 // Validate and clean these values
-$fname = isset($_POST['fname']) ? trim($_POST['fname']) : null;
-$lname = isset($_POST['lname']) ? trim($_POST['lname']) : null;
-$company = isset($_POST['company']) ? trim($_POST['company']) : null;
-$email = isset($_POST['email']) ? trim($_POST['email']) : null;
-$type = isset($_POST['type']) ? trim($_POST['type']) : null;
-$message = isset($_POST['message']) ? trim($_POST['message']) : null;
+$first_name = $_POST['first_name'];
+$last_name = $_POST['last_name'];
+$company = $_POST['company'];
+$email = $_POST['email'];
+$type = $_POST['type'];
+$message = $_POST['message'];
+
+// Validate and clean these values
+$first_name= trim($first_name);
+$last_name = trim($last_name);
+$company = trim($company);
+$email = trim($email);
+$type = trim($type);
+$message = trim($message);
 
 // Validation checks
-if (empty($fname)) {
+if ($first_name == NULL) {
     $errors[] = "First name field is empty.";
 }
-if (empty($lname)) {
+if ($last_name == NULL) {
     $errors[] = "Last name field is empty.";
 }
-if (empty($company)) {
+if ($company == NULL) {
     $errors[] = "Company field is empty.";
 }
-if (empty($email)) {
+if ($email == NULL) {
     $errors[] = "Email field is empty.";
-} elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $errors[] = "\"$email\" is not a valid email address.";
 }
-if (empty($message)) {
+
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $errors[] = "\"" . $email . "\" is not a valid email address.";
+}
+
+if ($type == NULL) {
+    $errors[] = "Type field is empty.";
+}
+
+if ($message == NULL) {
     $errors[] = "Message field is empty.";
 }
 
-if (!empty($errors)) {
-    echo json_encode(["errors" => $errors]);
-    exit;
-}
+
+$errcount = count($errors);
+
+if ($errcount > 0) {
+    $errmsg = array();
+    for ($i = 0; $i < $errcount; $i++) {
+        $errmsg[] = $errors[$i];
+    }
+    echo json_encode(array("errors" => $errmsg));
+}else{
 
 // Insert values into the database
-$query = "INSERT INTO contact_general_sponsor (first_name, last_name, company, email, message, type) 
-          VALUES (:fname, :lname, :company, :email, :message, :type)";
+$query = "INSERT INTO contact_general_sponsor (first_name, last_name, company, email, type, message) VALUES (:first_name, :last_name, :company, :email, :type, :message )";
 $stmt = $connect->prepare($query);
-$stmt->bindParam(':fname', $fname);
-$stmt->bindParam(':lname', $lname);
+$stmt->bindParam(':first_name', $first_name);
+$stmt->bindParam(':last_name', $last_name);
 $stmt->bindParam(':company', $company);
 $stmt->bindParam(':email', $email);
-$stmt->bindParam(':message', $message);
 $stmt->bindParam(':type', $type);
+$stmt->bindParam(':message', $message);
 $stmt->execute();
 
 // Format and send an email
 $to = 'xxx@abc.com'; // Client email
 $subject = 'Message from your Website!';
 $email_message = "You have received a new general and sponsor form submission:\n\n";
-$email_message .= "Name: $fname $lname\n";
+$email_message .= "Name: $first_name $last_name\n";
 $email_message .= "Email: $email\n";
 $email_message .= "Company: $company\n";
 $email_message .= "Type: $type\n\n";
@@ -67,5 +88,6 @@ $ack_message = "Thank you for submitting your contact form. We will get back to 
 mail($email, $ack_subject, $ack_message);
 
 // Return success response
-echo json_encode(["message" => "Form submitted. Thank you for your interest!"]);
+echo json_encode(array("message" => "Form submitted. Thank you for your interest!"));
+}
 ?>
