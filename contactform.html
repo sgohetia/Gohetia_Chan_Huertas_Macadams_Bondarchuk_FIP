@@ -46,7 +46,7 @@
       src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
     ></script>
 
-    <script defer src="js/main.js"></script>
+    <script defer type="module" src="js/contact.js"></script>
   </head>
 
   <body>
@@ -198,24 +198,24 @@
             <div class="form-container active" id="general">
               <form id="generalForm">
                 <div class="form-group">
-                  <label for="fname">Fist Name</label>
-                  <input type="text" name="fname" id="fname" required />
+                  <label for="first_name">First Name</label>
+                  <input type="text" name="first_name" id="first_name" />
                 </div>
                 <div class="form-group">
-                  <label for="lname">Last Name</label>
-                  <input type="text" name="lname" id="lname" required />
+                  <label for="last_name">Last Name</label>
+                  <input type="text" name="last_name" id="last_name" />
                 </div>
                 <div class="form-group">
                   <label for="company">Company</label>
-                  <input type="text" name="company" id="company" required />
+                  <input type="text" name="company" id="company" />
                 </div>
                 <div class="form-group">
                   <label for="email">Email</label>
-                  <input type="email" name="email" id="email" required />
+                  <input type="email" name="email" id="email" />
                 </div>
                 <div class="form-group dropdown">
                   <label for="type">Type</label>
-                  <select id="type" name="type" required>
+                  <select id="type" name="type">
                     <option value="" disabled selected>Select Type</option>
                     <option value="Inquiry">Inquiry</option>
                     <option value="Feedback">Feedback</option>
@@ -224,12 +224,7 @@
                 </div>
                 <div class="form-group">
                   <label for="message">Message</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows="3"
-                    required
-                  ></textarea>
+                  <textarea id="message" name="message" rows="3"></textarea>
                 </div>
                 <button type="submit" class="cntct-btn">Submit</button>
                 <section id="feedback">
