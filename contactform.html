@@ -237,19 +237,19 @@
               <form id="volunteerForm">
                 <div class="form-group">
                   <label for="vfname">First Name</label>
-                  <input type="text" id="vfname" required />
+                  <input type="text" id="vfname" name="vfname" />
                 </div>
                 <div class="form-group">
                   <label for="vlname">Last Name</label>
-                  <input type="text" id="vlname" required />
+                  <input type="text" id="vlname" name="vlname" />
                 </div>
                 <div class="form-group">
-                  <label for="vphone">Phone Number</label>
-                  <input type="tel" id="vphone" required />
+                  <label for="vemail">Email</label>
+                  <input type="tel" id="vemail" name="vemail" />
                 </div>
                 <div class="form-group dropdown">
                   <label for="type">Gender</label>
-                  <select id="gender" required>
+                  <select id="gender" name="gender">
                     <option value="" disabled selected>Select Gender</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
@@ -258,15 +258,15 @@
                 </div>
                 <div class="form-group">
                   <label for="vage">Age</label>
-                  <input type="tel" id="vage" required />
+                  <input type="tel" id="vage" name="vage" />
                 </div>
                 <div class="form-group">
                   <label for="vskills">Skills / Experience</label>
-                  <textarea id="vskills" rows="3" required></textarea>
+                  <textarea id="vskills" rows="3" name="vskills"></textarea>
                 </div>
                 <div class="form-group">
                   <label for="message">Message</label>
-                  <textarea id="vmessage" rows="3" required></textarea>
+                  <textarea id="vmessage" rows="3" name="message"></textarea>
                 </div>
                 <button type="submit" class="cntct-btn">Apply</button>
                 <section id="vfeedback">
