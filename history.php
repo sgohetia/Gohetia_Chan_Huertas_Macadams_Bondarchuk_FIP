@@ -68,14 +68,14 @@
         <header>
           <nav class="container navbar">
             <div class="container-nav flex">
-              <a class="navbar-logo" href="index.html"
+              <a class="navbar-logo" href="index.php"
                 ><img src="images/brothers-in-arms-logo.svg" alt="logo"
               /></a>
               <button class="navbar-toggler" id="openNavBtn" type="button">
                 <span class="fa-solid fa-bars"></span>
               </button>
               <ul class="navbar-nav flex">
-                <li><a class="nav-link" href="index.html">Home</a></li>
+                <li><a class="nav-link" href="index.php">Home</a></li>
                 <li><a class="nav-link" href="#">About Us</a></li>
                 <li>
                   <a class="nav-link" href="contactform.html">Contact Us</a>
@@ -118,7 +118,7 @@
           </nav>
           <aside id="mySidepanel" class="sidepanel">
             <div class="sidebar flex">
-              <a href="index.html"
+              <a href="index.php"
                 ><img src="images/brothers-in-arms-logo.svg" alt="logo"
               /></a>
               <button class="closebtn btn_hover1" id="closeNavBtn">
@@ -127,7 +127,7 @@
             </div>
             <div>
               <ul>
-                <li><a class="nav-link active" href="index.html">Home</a></li>
+                <li><a class="nav-link active" href="index.php">Home</a></li>
                 <li><a class="nav-link" href="about.html">About Us</a></li>
                 <li><a class="nav-link" href="contact.html">Contact Us</a></li>
                 <li class="pages"><a href="#">More</a></li>
@@ -165,7 +165,7 @@
           <!-- Right Sidebar -->
           <section class="header-right-sidebar" id="right_side">
             <div class="flex flex-sb">
-              <a href="index.html"
+              <a href="index.php"
                 ><img src="images/brothers-in-arms-logo.svg" alt="logo"
               /></a>
               <button class="close_right_sidebar fa-solid fa-xmark"></button>
@@ -364,7 +364,7 @@
           <div class="container">
             <div class="flex flex-start footer-center">
               <div class="w-33 flex flex-col gap-2 flex-start">
-                <a href="index.html"
+                <a href="index.php"
                   ><img
                     src="images/brothers-in-arms-logo.svg"
                     alt="footer-logo"
@@ -383,7 +383,7 @@
               <div class="w-16 mt-1">
                 <h4>Quick Links</h4>
                 <ul class="flex flex-col gap-2 flex-start">
-                  <li><a href="index.html">Home</a></li>
+                  <li><a href="index.php">Home</a></li>
                   <li><a href="#">About Us</a></li>
                   <li><a href="#">Donation</a></li>
                   <li><a href="#">Blogs</a></li>
@@ -418,7 +418,7 @@
           <div class="container">
             <h6>
               Copyright © 2025 By
-              <a href="index.html" class="p-0"> The Brother's in Arms. </a>
+              <a href="index.php" class="p-0"> The Brother's in Arms. </a>
               All Rights Reserved.
             </h6>
           </div>

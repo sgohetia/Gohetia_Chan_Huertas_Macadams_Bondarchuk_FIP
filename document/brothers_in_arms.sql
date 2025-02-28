@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Feb 28, 2025 at 04:30 PM
+-- Generation Time: Feb 28, 2025 at 06:05 PM
 -- Server version: 8.0.40
 -- PHP Version: 8.3.14
 
@@ -106,7 +106,7 @@ INSERT INTO `donors` (`id`, `name`, `campaign`, `amount`) VALUES
 CREATE TABLE `event` (
   `id` int UNSIGNED NOT NULL,
   `event_name` varchar(255) NOT NULL,
-  `date_time` datetime NOT NULL,
+  `date_time` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -115,7 +115,10 @@ CREATE TABLE `event` (
 --
 
 INSERT INTO `event` (`id`, `event_name`, `date_time`, `description`) VALUES
-(1, 'Color Run: Brother in Arms', '2025-02-13 22:35:31', 'The Color Run: Brother in Arms is a vibrant, family-friendly event that celebrates unity, camaraderie, and resilience. This 5K fun run is designed to honor and support our veterans, active-duty military, first responders, and their families. Participants will run, walk, or jog through a course where they will be showered with bursts of color at designated checkpoints, symbolizing the strength, diversity, and spirit of our brothers and sisters in arms.\r\n\r\nBeyond the run, the event features live music, food vendors, and community activities, creating a festival atmosphere where participants can connect, reflect, and show appreciation for those who serve. A portion of the proceeds will go towards organizations supporting mental health, rehabilitation, and reintegration programs for veterans and first responders.\r\n\r\nWhether you\'re running in honor of a loved one, to show support, or just for fun, the Color Run: Brother in Arms is more than just a race—it\'s a movement of gratitude, unity, and celebration. Join us for an unforgettable experience!');
+(1, 'Color Run: Brother in Arms', '(3/5/2025)', 'The Color Run: Brother in Arms is a vibrant, family-friendly event that celebrates unity, camaraderie, and resilience. This 5K fun run is designed to honor and support our veterans, active-duty military, first responders, and their families. Participants will run, walk, or jog through a course where they will be showered with bursts of color at designated checkpoints, symbolizing the strength, diversity, and spirit of our brothers and sisters in arms.\r\n\r\nBeyond the run, the event features live music, food vendors, and community activities, creating a festival atmosphere where participants can connect, reflect, and show appreciation for those who serve. A portion of the proceeds will go towards organizations supporting mental health, rehabilitation, and reintegration programs for veterans and first responders.\r\n\r\nWhether you\'re running in honor of a loved one, to show support, or just for fun, the Color Run: Brother in Arms is more than just a race—it\'s a movement of gratitude, unity, and celebration. Join us for an unforgettable experience!'),
+(2, 'Live Benefit Concert and Auction', '(3/25/2025)', 'Music meets purpose! Enjoy a night of live performances\r\n                      from talented artists while supporting Brothers in Arms.\r\n                      Our Benefit Concert and Auction brings the community\r\n                      together for a great cause, with exclusive items up for\r\n                      bidding. Tune in, donate, and make a difference through\r\n                      the power of music.'),
+(3, 'Storytelling and Awareness Night', '(3/20/2025)', 'Real stories. Real impact. Our Storytelling and Awareness\r\n                      Night shines a light on the experiences of veterans, first\r\n                      responders, and community members. Through powerful talks\r\n                      and discussions, we foster understanding, resilience, and\r\n                      support. Join us in honoring their journeys and learning\r\n                      how we can stand together.'),
+(4, 'Charity Gaming Tournament', '(3/12/2025)', 'Compete for a cause! Join our Charity Gaming Tournament,\r\n                      where gamers battle it out in a friendly competition while\r\n                      supporting Brothers in Arms. Entry fees and live-stream\r\n                      donations go directly toward helping those in need. Play,\r\n                      stream, and make an impact—every game counts!');
 
 -- --------------------------------------------------------
 
@@ -298,7 +301,7 @@ ALTER TABLE `donors`
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `event_gallery`
