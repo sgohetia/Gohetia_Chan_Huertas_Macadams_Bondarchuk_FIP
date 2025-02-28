@@ -1,5 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+    //connect to the running datbase server and the sepcific database
+    
+   require_once ('includes/connect.php');
+
+    // create a  query to run in SQL
+
+    $stmt = $connect->prepare("SELECT gallery.id AS galleryitem, fname ,fname_alt,type FROM gallery");
+    $stmt->execute();
+    //$results = mysqli_query($connect,$query);
+
+
+    ?>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -84,7 +97,7 @@
                   >
                     <li><a class="dropdown-item" href="#">Memorial</a></li>
                     <li>
-                      <a class="dropdown-item active" href="history.php"
+                      <a class="dropdown-item active" href="history.html"
                         >History</a
                       >
                     </li>
@@ -333,70 +346,17 @@
           <li class="list" data-filter="date3">Date3</li>
         </ul>
         <div class="product">
-          <div class="itemBox" data-item="ww1">
-            <img src="https://placehold.co/600x400" alt="" />
-          </div>
-          <div class="itemBox" data-item="ww2">
-            <img src="https://placehold.co/600x400" alt="" />
-          </div>
-          <div class="itemBox" data-item="date1">
-            <img src="https://placehold.co/600x400" alt="" />
-          </div>
-          <div class="itemBox" data-item="date2">
-            <img src="https://placehold.co/600x400" alt="" />
-          </div>
-          <div class="itemBox" data-item="ww1">
-            <img src="https://placehold.co/600x400" alt="" />
-          </div>
+        <?php 
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+            echo '<div class="itemBox" data-item="'.$row['type'].'">
+            <img src="'.$row['fname'].'" alt="'.$row['fname_alt'].'" />
+            </div>';
+        }
+            $stmt = null;
+        
+            ?>
 
-          <div class="itemBox" data-item="ww1">
-            <img src="https://placehold.co/600x400" alt="" />
-          </div>
-          <div class="itemBox" data-item="ww2">
-            <img src="https://placehold.co/600x400" alt="" />
-          </div>
-          <div class="itemBox" data-item="date1">
-            <img src="https://placehold.co/600x400" alt="" />
-          </div>
-          <div class="itemBox" data-item="date2">
-            <img src="https://placehold.co/600x400" alt="" />
-          </div>
-          <div class="itemBox" data-item="date3">
-            <img src="https://placehold.co/600x400" alt="" />
-          </div>
-
-          <div class="itemBox" data-item="ww1">
-            <img src="https://placehold.co/600x400" alt="" />
-          </div>
-          <div class="itemBox" data-item="ww2">
-            <img src="https://placehold.co/600x400" alt="" />
-          </div>
-          <div class="itemBox" data-item="date1">
-            <img src="https://placehold.co/600x400" alt="" />
-          </div>
-          <div class="itemBox" data-item="date2">
-            <img src="https://placehold.co/600x400" alt="" />
-          </div>
-          <div class="itemBox" data-item="date3">
-            <img src="https://placehold.co/600x400" alt="" />
-          </div>
-
-          <div class="itemBox" data-item="ww1">
-            <img src="https://placehold.co/600x400" alt="" />
-          </div>
-          <div class="itemBox" data-item="ww2">
-            <img src="https://placehold.co/600x400" alt="" />
-          </div>
-          <div class="itemBox" data-item="dat2">
-            <img src="https://placehold.co/600x400" alt="" />
-          </div>
-          <div class="itemBox" data-item="date3">
-            <img src="https://placehold.co/600x400" alt="" />
-          </div>
-
-          <div class="itemBox" data-item="ww1">
-            <img src="https://placehold.co/600x400" alt="" />
-          </div>
+          
         </div>
       </section>
       <footer>
@@ -431,7 +391,7 @@
               </div>
               <div class="w-16 mt-45 flex-end">
                 <ul class="flex flex-col gap-2 flex-start">
-                  <li><a href="history.php">History</a></li>
+                  <li><a href="history.html">History</a></li>
                   <li><a href="contactform.html">Contact Us</a></li>
                   <li><a href="#">Privacy policy</a></li>
                 </ul>
