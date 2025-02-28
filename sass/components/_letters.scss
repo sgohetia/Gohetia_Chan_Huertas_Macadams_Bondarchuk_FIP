@@ -1,0 +1,88 @@
+.bg-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  // background-image: url("../images/hero_bg.png");
+  background-color: #221f1d;
+  background-position: center center;
+  background-size: cover;
+  z-index: -1;
+}
+
+.letter {
+  background-image: url("../images/hero_bg.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 120px 0;
+  z-index: 1;
+}
+.letters-p {
+  filter: drop-shadow(0 0 10px #2e2616);
+}
+.letter span {
+  background-color: #000000;
+  opacity: 0.6;
+  width: 100% !important;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.letter h5 {
+  color: #ffffff;
+}
+
+.letter .letter-hr1 {
+  opacity: 1.25;
+  height: 1px;
+  color: #ffffff;
+  width: 60px;
+  border: 1px solid;
+}
+
+.accordion-button {
+  position: relative;
+  width: 100%;
+  text-align: left;
+  outline: none;
+  border: none;
+  color: #231f20;
+  font-weight: 700 !important;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+}
+// .accordion-button:hover {
+//   background-color: #ecdfcb;
+// }
+.accordion-button img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.accordion-collapse {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.accordion-collapse p {
+  color: #231f20;
+  padding: 15px;
+  // background-color: #fff;
+}
+.letter-accord p {
+  background-color: #ecdfcb;
+}
+.accordion2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 20px;
+}
+@media (max-width: 768px) {
+  .accordion2 {
+    grid-template-columns: 1fr; /* Single column on smaller screens */
+  }
+}

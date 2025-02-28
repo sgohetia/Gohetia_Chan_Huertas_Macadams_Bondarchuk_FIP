@@ -6,7 +6,7 @@
     <title>Brothers in Arms</title>
     <link
       rel="shortcut icon"
-      href="images/brothers-in-arms-logo.svg"
+      href="images/brothers-in-arms-logo.png"
       type="image/x-icon"
     />
     <link
@@ -55,9 +55,20 @@
         <header>
           <nav class="container navbar">
             <div class="container-nav flex">
-              <a class="navbar-logo" href="index.html"
-                ><img src="images/brothers-in-arms-logo.svg" alt="logo"
-              /></a>
+              <a class="navbar-logo" href="index.html">
+                <!-- <img src="images/brothers-in-arms-logo.svg" alt="logo"
+              /> -->
+                <img
+                  class="logo-desktop"
+                  src="images/brothers-in-arms-logo.svg"
+                  alt="Desktop Logo"
+                />
+                <img
+                  class="logo-mobile"
+                  src="images/logo_v1.png"
+                  alt="Mobile Logo"
+                />
+              </a>
               <button class="navbar-toggler" id="openNavBtn" type="button">
                 <span class="fa-solid fa-bars"></span>
               </button>
@@ -185,26 +196,28 @@
         <section class="hero">
           <div class="container" data-aos="zoom-in">
             <div>
-              <div class="hero-social-icon flex">
+              <!-- <div class="hero-social-icon flex">
                 <a href="#"><i class="fa-brands fa-facebook"></i></a>
                 <a href="#"><i class="fa-brands fa-instagram"></i></a>
                 <hr class="d-md-block d-sm-none d-none" />
-              </div>
+              </div> -->
               <div class="center-data">
-                <h1>Brothers in Arms</h1>
-                <h3>
+                <h1>
+                  Support Our <span class="span-heroes">Heroes</span> <br />Make
+                  an
+                  <span class="span-impact">Impact</span>
+                </h1>
+                <!-- <h3>
                   Support Our <span class="span-heroes">Heroes</span>. Make an
                   <span class="span-impact">Impact</span>.
-                </h3>
+                </h3> -->
                 <div class="counter-container">
                   <div class="progress-container">
                     <div class="progress-bar" id="progress-bar">0%</div>
                   </div>
                 </div>
                 <div class="center-btn flex">
-                  <a href="#" class="btn_hover1" id="toggleRightSideBtn2"
-                    >Donate</a
-                  >
+                  <a href="#donate" class="btn_hover1">Donate</a>
                   <a href="#" class="btn_hover2">Memorial</a>
                 </div>
               </div>
@@ -244,7 +257,8 @@
                 <p>
                   Brothers in Arms is launching a special fundraising campaign
                   to provide essential aid to those who need it most. Every
-                  donation, big or small, brings us closer to our goal.
+                  donation, help, support, big or small, brings us closer to our
+                  goal.
                 </p>
               </div>
             </div>
@@ -334,7 +348,9 @@
               </p>
               <div class="flex gap-2 mt-30">
                 <a href="history.html" class="btn_hover1">History</a>
-                <a href="#" class="btn_hover2ab">Soldiers Letters</a>
+                <a href="soldiers-letter.html" class="btn_hover2ab"
+                  >Soldiers Letters</a
+                >
               </div>
             </div>
             <div class="about-imgs flex flex-center w-50" data-aos="fade-down">

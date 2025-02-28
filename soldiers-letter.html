@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soldiers Letter</title>
+    <link
+      rel="shortcut icon"
+      href="images/brothers-in-arms-logo.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <link rel="stylesheet" href="css/main.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+    ></script>
+
+    <script defer src="js/main.js"></script>
+    <script defer type="module" src="js/letters.js"></script>
+  </head>
+
+  <body>
+    <div class="site-wrapper">
+      <div class="header-index2">
+        <header>
+          <nav class="container navbar">
+            <div class="container-nav flex">
+              <a class="navbar-logo" href="index.html"
+                ><img src="images/brothers-in-arms-logo.svg" alt="logo"
+              /></a>
+              <button class="navbar-toggler" id="openNavBtn" type="button">
+                <span class="fa-solid fa-bars"></span>
+              </button>
+              <ul class="navbar-nav flex">
+                <li><a class="nav-link" href="index.html">Home</a></li>
+                <li>
+                  <a class="nav-link" href="index.html#about">About Us</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="contactform.html">Contact Us</a>
+                </li>
+                <li class="dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="navbarScrollingDropdown"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    More
+                  </a>
+                  <ul
+                    class="dropdown-menu"
+                    aria-labelledby="navbarScrollingDropdown"
+                  >
+                    <li>
+                      <a class="dropdown-item" href="index.html#donate"
+                        >Donate</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="history.html">History</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="index.html#event">Event</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="index.html#blog">Blog</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+
+            <div class="flex nav-right">
+              <i id="openSearchBarBtn" class="fa-solid fa-magnifying-glass"></i>
+              <i
+                id="toggleRightSideBtn"
+                class="fa-solid fa-hand-holding-dollar"
+              ></i>
+            </div>
+          </nav>
+          <aside id="mySidepanel" class="sidepanel">
+            <div class="sidebar flex">
+              <a href="index.html"
+                ><img src="images/brothers-in-arms-logo.svg" alt="logo"
+              /></a>
+              <button class="closebtn btn_hover1" id="closeNavBtn">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+            <div>
+              <ul>
+                <li><a class="nav-link" href="index.html">Home</a></li>
+                <li>
+                  <a class="nav-link" href="index.html#about">About Us</a>
+                </li>
+                <li><a class="nav-link" href="contact.html">Contact Us</a></li>
+                <li class="pages"><a href="#">More</a></li>
+                <li class="collapse_btn">
+                  <a
+                    class="nav-link plus_collapse"
+                    href="javascript:void(0);"
+                    aria-expanded="false"
+                    aria-controls="pages"
+                  >
+                    <i class="fa-solid fa-plus"></i>
+                  </a>
+                  <div class="collapse" id="pages">
+                    <ul>
+                      <li>
+                        <a class="nav-link" href="index.html#donate">Donate</a>
+                      </li>
+                      <li>
+                        <a class="nav-link" href="history.html">History</a>
+                      </li>
+                      <li>
+                        <a class="nav-link" href="index.html#blog">Blog</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </aside>
+          <div id="search-bar">
+            <div class="btn_hover1" id="closeSearchBarBtn">
+              <i class="fa-solid fa-xmark"></i>
+            </div>
+            <form method="search" action="#">
+              <input type="search" required placeholder="Search..." />
+              <button type="submit" class="btn_hover1">Search</button>
+            </form>
+          </div>
+
+          <!-- Right Sidebar -->
+          <section class="header-right-sidebar" id="right_side">
+            <div class="flex flex-sb">
+              <a href="index.html"
+                ><img src="images/brothers-in-arms-logo.svg" alt="logo"
+              /></a>
+              <button class="close_right_sidebar fa-solid fa-xmark"></button>
+            </div>
+            <p>
+              Brothers in Arms is committed to helping veterans rebuild their
+              lives through mental health support, financial aid, and community
+              programs. Your donation ensures no hero is left behind. Stand with
+              us today.
+            </p>
+            <a href="#" class="btn_hover1">Donate</a>
+            <hr />
+            <h4>Contact details:</h4>
+            <ul class="flex">
+              <li>
+                <a href="#"> <i class="fa-solid fa-phone"></i></a>
+                <a href="#" class="text-lowercase">+123-456-7890</a>
+              </li>
+              <li>
+                <a href="#"> <i class="fa-sharp fa-regular fa-clock"></i></a>
+                <a href="#">8AM - 11PM Sunday - Weekend Day</a>
+              </li>
+            </ul>
+            <span class="flex">
+              <a href="#"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </span>
+          </section>
+        </header>
+
+        <section class="hero">
+          <div class="container" data-aos="zoom-in">
+            <div>
+              <div class="center-data">
+                <h1>Soldier's Letters</h1>
+                <h3 class="letters-p">
+                  Every soldier's letter shares courage, longing, and sacrifice.
+                  Support Brothers in Arms to honor their service and provide
+                  aid.
+                </h3>
+                <div class="center-btn flex">
+                  <a href="#letter" class="btn_hover1">Letter's List</a>
+                  <!-- <a href="#" class="btn_hover2">Letters List</a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <section>
+        <div class="bg-fixed"></div>
+        <div class="col-span-full">
+          <canvas id="explode-view"></canvas>
+        </div>
+      </section>
+      <section class="letter p-relative" id="letter">
+        <span> </span>
+        <div class="container">
+          <div class="container position-relative">
+            <!-- <div class="w-50 text-center" data-aos="fade-up">
+              <div class="flex gap-2">
+                <hr class="letter-hr1" />
+                <h5>LETTERS</h5>
+              </div>
+              <h2 class="mt-1">
+                Voices from the Front: Letters of Honor and Sacrifice
+              </h2>
+              <p class="mt-1">
+                Every letter from a soldier tells a story of courage, longing,
+                and resilience. These heartfelt messages offer a glimpse into
+                their sacrifices, hopes, and dreams while serving far from home.
+                By supporting Brothers in Arms, you help honor their service and
+                provide aid to those who have given so much for our freedom.
+              </p>
+            </div> -->
+            <div class="letter-para text-center" data-aos="fade-up">
+              <h5>SOLDIER'S LETTERS</h5>
+              <br />
+              <h2 class="h2_margin">
+                Voices from the Front: Letters of Honor and Sacrifice
+              </h2>
+              <br />
+              <p>
+                Every letter from a soldier tells a story of courage, longing,
+                and resilience. These heartfelt messages offer a glimpse into
+                their sacrifices, hopes, and dreams while serving far from home.
+                By supporting Brothers in Arms, you help honor their service and
+                provide aid to those who have given so much for our freedom.
+              </p>
+            </div>
+            <br />
+            <!-- <div class="donation-hr flex gap-1">
+              <hr />
+              <h6>Soldiers Letters</h6>
+            </div> -->
+            <div class="mt-15">
+              <div
+                class="accordion2 flex flex-col gap-2"
+                id="accordionExample"
+                data-aos="fade-down"
+              >
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button flex-sb" type="button">
+                      Muslim officer to his brother (December 1914 | Pg. 25)
+                      <img src="images/plus.png" alt="img" />
+                    </button>
+                  </h2>
+                  <div class="accordion-collapse letter-accord">
+                    <p>
+                      “Without death there is no victory, but I am alive and
+                      very well, and I tell you truly that I will return alive
+                      to India.”
+                    </p>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button flex-sb" type="button">
+                      A Garhwali to his father (January 14th, 1915 | Pg. 27-28)
+                      <img src="images/plus.png" alt="img" />
+                    </button>
+                  </h2>
+                  <div class="accordion-collapse">
+                    <p>
+                      It is very hard to endure the bombs, father. [...] The
+                      numbers that have fallen cannot be counted.”
+                    </p>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button flex-sb" type="button">
+                      A wounded Sikh to his brother (January 18th, 1915 | Pg.
+                      30)
+                      <img src="images/plus.png" alt="img" />
+                    </button>
+                  </h2>
+                  <div class="accordion-collapse">
+                    <p>
+                      “There can be no confidence of life or of seeing again the
+                      dear children or of seeing you once more. [...] If I live
+                      I will write again”
+                    </p>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button flex-sb" type="button">
+                      A wounded Sikh to his father (January 18th, 1915 | Pg. 30)
+                      <img src="images/plus.png" alt="img" />
+                    </button>
+                  </h2>
+                  <div class="accordion-collapse">
+                    <p>
+                      “Tell my mother not to go wandering madly because her son,
+                      my brother, is dead. To be born and to die is God’s order.
+                      Some day we must die, sooner or later, and if I die here,
+                      who will remember me? It is a fine thing to die far from
+                      home. A saint said this, and, as he was a good man, it
+                      must be true.”
+                    </p>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button flex-sb" type="button">
+                      A wounded Sikh to his brother (January 21st, 1915 | Pg.
+                      31)
+                      <img src="images/plus.png" alt="img" />
+                    </button>
+                  </h2>
+                  <div class="accordion-collapse">
+                    <p>
+                      “The battle is beginning and the men are dying like
+                      maggots. No one can count them - not in thousands but in
+                      hundreds of thousands of thousands. No one can count
+                      them.”
+                    </p>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button flex-sb" type="button">
+                      A wounded Punjabi Rajput to a relative (January 29th, 1915
+                      | Pg. 32)
+                      <img src="images/plus.png" alt="img" />
+                    </button>
+                  </h2>
+                  <div class="accordion-collapse">
+                    <p>
+                      “Do not think that this is war. This is not war. It is the
+                      ending of the world.”
+                    </p>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button flex-sb" type="button">
+                      A South Indian Muslin to a Friend (February 9th, 1915 |
+                      Pg. 35)
+                      <img src="images/plus.png" alt="img" />
+                    </button>
+                  </h2>
+                  <div class="accordion-collapse">
+                    <p>
+                      “If God enables me to see my people again, I shall look
+                      upon it as a new life.”
+                    </p>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button flex-sb" type="button">
+                      The 20th Deccan Horse in the Carnoy Valley, near Mametz,
+                      hours before their attack (July 14th, 1916 | Letter #356)
+                      <img src="images/plus.png" alt="img" />
+                    </button>
+                  </h2>
+                  <div class="accordion-collapse">
+                    <p>
+                      “What I saw in the course of the advance I shall never
+                      forget.”
+                    </p>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button flex-sb" type="button">
+                      Rifleman Amar Singh Rawat (Garhwal Rifles) to a friend
+                      (March 26th, 1915 | Pg. 45)
+                      <img src="images/plus.png" alt="img" />
+                    </button>
+                  </h2>
+                  <div class="accordion-collapse">
+                    <p>
+                      “The scene was indescribable. If I survive I will tell you
+                      all.”
+                    </p>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button flex-sb" type="button">
+                      Jemadar Khan Muhammad to Lance Naik Sher Khan (March 1915
+                      | Pg. 47)
+                      <img src="images/plus.png" alt="img" />
+                    </button>
+                  </h2>
+                  <div class="accordion-collapse">
+                    <p>
+                      “In this calamity there is also the misfortune of
+                      separation from you. O young men, be careful and do not
+                      get confused: even if you die, show some bravery! One day
+                      we all have to die.”
+                    </p>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button flex-sb" type="button">
+                      Rifleman Amar Singh Rawat to Dayaram Jhapaliyal (April
+                      1st, 1915 | Pg. 48)
+                      <img src="images/plus.png" alt="img" />
+                    </button>
+                  </h2>
+                  <div class="accordion-collapse">
+                    <p>
+                      “The condition of affairs in the war is like leaves
+                      falling off a tree, and no empty space remains on the
+                      ground. [...] One has to stay on top of the corpses and
+                      even sleep on them, because not an empty place remains
+                      anywhere [...] Such is the scene and one was powerless.
+                      Now I have not any sure confidence that I will see you
+                      people again; there is nothing but hopelessness.”
+                    </p>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button flex-sb" type="button">
+                      A Sikh sepoy to his brother (April 5th, 1915 | Pg. 51)
+                      <img src="images/plus.png" alt="img" />
+                    </button>
+                  </h2>
+                  <div class="accordion-collapse">
+                    <p>
+                      “The war is a great sight at night. Here cannons are
+                      firing, there machine guns; here there are bright lights,
+                      there bombs hurl through the air. Bullets fly day and
+                      night incessantly drinking the blood of heroes.”
+                    </p>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button flex-sb" type="button">
+                      Havildar Ghufran Khan to a friend (mid-April 1915 | Pg.
+                      55)
+                      <img src="images/plus.png" alt="img" />
+                    </button>
+                  </h2>
+                  <div class="accordion-collapse">
+                    <p>
+                      “Our people have many lice in their clothes, and they bite
+                      terribly. They are worse than a rifle bullet. But there
+                      are no mosquitoes or other creatures which bite mankind,
+                      and no snakes or scorpions at all.”
+                    </p>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button flex-sb" type="button">
+                      Jemadar Indar Singh to a family member in Ludhiana, India,
+                      originally written in Urdu (15 September 1916 | Pg. 55)
+                      <img src="images/plus.png" alt="img" />
+                    </button>
+                  </h2>
+                  <div class="accordion-collapse">
+                    <p>
+                      “Don’t be grieved at my death because I shall die arms in
+                      hand wearing the warrior’s clothes. This is the most happy
+                      death that anyone can die. I am very sorry that I have not
+                      been able to discharge my obligations towards my family
+                      because God has called me already. Well, never mind you
+                      must forgive me. I have abandoned to you all my worldly
+                      possessions which you must make use of without hesitation.
+                      Don’t worry your grandparents after I am gone. Give my
+                      love to my parents and tell them not to grieve as we must
+                      all die some day. Indeed this day of death is an occasion
+                      for rejoicing.”
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer>
+        <div class="container">
+          <div class="footer-hr flex flex-col">
+            <div class="flex gap-1" data-aos="fade-left">
+              <hr />
+              <h6>Keep in Touch</h6>
+            </div>
+            <h3>KEEP UPDATED FOR THE LATEST NEWS</h3>
+            <p class="text-center">
+              Subscribe to our newsletter by entering your email and clicking
+              'Get Notified' to stay updated with the latest news and exclusive
+              updates!
+            </p>
+          </div>
+          <form
+            id="footer-form"
+            class="flex flex-sb gap-2"
+            data-aos="zoom-in"
+            data-aos-delay="400"
+          >
+            <div id="footer-message"></div>
+            <input type="email" required placeholder="Enter your mail" />
+            <button type="submit" class="btn_hover1">Get Notified</button>
+          </form>
+        </div>
+        <div class="footer-menu">
+          <div class="container">
+            <div class="flex flex-start footer-center">
+              <div class="w-33 flex flex-col gap-2 flex-start">
+                <a href="index.html"
+                  ><img
+                    src="images/brothers-in-arms-logo.svg"
+                    alt="footer-logo"
+                /></a>
+                <p>
+                  Brothers in Arms is committed to helping veterans rebuild
+                  their lives through mental health support, financial aid, and
+                  community programs. Your donation ensures no hero is left
+                  behind. Stand with us today.
+                </p>
+                <span class="flex gap-2">
+                  <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                  <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </span>
+              </div>
+              <div class="w-16 mt-1">
+                <h4>Quick Links</h4>
+                <ul class="flex flex-col gap-2 flex-start">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Donation</a></li>
+                  <li><a href="#">Blogs</a></li>
+                </ul>
+              </div>
+              <div class="w-16 mt-45 flex-end">
+                <ul class="flex flex-col gap-2 flex-start">
+                  <li><a href="history.html">History</a></li>
+                  <li><a href="contactform.html">Contact Us</a></li>
+                  <li><a href="#">Privacy policy</a></li>
+                </ul>
+              </div>
+              <div class="w-33 mt-1 flex flex-col flex-start">
+                <h4>Keep in Touch</h4>
+                <ul class="flex flex-col gap-2 flex-start">
+                  <li>
+                    <a href="#"> <i class="fa-solid fa-phone"></i></a>
+                    <a href="#" class="text-lowercase">+123-456-7890</a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa-sharp fa-regular fa-clock"></i
+                    ></a>
+                    <a href="#">8AM - 11PM Sunday - Weekend Day</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <div class="container">
+            <h6>
+              Copyright © 2025 By
+              <a href="index.html" class="p-0"> The Brother's in Arms. </a>
+              All Rights Reserved.
+            </h6>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!--========== SCROLL UP ==========-->
+
+    <a href="#" class="scrollup" id="scroll-up">
+      <i class="bx bx-up-arrow-alt scrollup__icon"></i>
+    </a>
+  </body>
+</html>

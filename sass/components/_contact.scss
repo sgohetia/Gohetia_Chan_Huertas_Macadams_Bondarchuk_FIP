@@ -4,6 +4,10 @@ body {
   font-family: a.$secondary-font;
 }
 .contact-sec {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url("../images/hero_bgv3.png");
+  background-position: center center;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -120,4 +124,7 @@ select:focus {
   border-color: #333;
   outline: none;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.contact-footer {
+  background-color: #1e1c1d;
 }
