@@ -13,17 +13,18 @@ body {
   position: relative;
   text-align: center;
   padding: 1px 0;
+  filter: drop-shadow(0 0 5px #fff);
 }
 .progress-bar {
   width: 0;
   height: 30px;
-  // background: #02d114;
-  background: rgb(255, 186, 57);
-  background: linear-gradient(
-    103deg,
-    rgba(255, 186, 57, 1) 2%,
-    rgba(2, 209, 20, 1) 86%
-  );
+  background: #ffba39;
+  // background: rgb(255, 186, 57);
+  // // background: linear-gradient(
+  // //   103deg,
+  // //   rgba(255, 186, 57, 1) 2%,
+  // //   rgba(2, 209, 20, 1) 86%
+  // // );
   text-align: center;
   line-height: 30px;
   font-weight: bold;
@@ -40,7 +41,7 @@ body {
   font-weight: bold;
 }
 .progress-container::after {
-  content: "100%";
+  content: "";
   position: absolute;
   right: 10px;
   top: 50%;

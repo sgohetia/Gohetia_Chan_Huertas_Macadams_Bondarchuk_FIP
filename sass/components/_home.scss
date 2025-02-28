@@ -2,18 +2,25 @@
 
 /* Header Styles */
 
+// .header-index {
+//   background-image: url("../images/hero_bgv2.png");
+//   background-position: center center;
+//   background-size: cover;
+// }
 .header-index {
-  background-image: url("../images/hero_bg.png");
-  // background: linear-gradient(0deg, #471133 0%, #140921 100%);
-  // background: linear-gradient(0deg, #ffba39 0%, #221f1d 100%);
-  //background: #fff;
-  // background: rgb(254, 254, 254);
-  // background: linear-gradient(
-  //   0deg,
-  //   rgba(255, 186, 57, 1) 2%,
-  //   rgba(0, 0, 0, 1) 86%,
-  //   rgba(34, 31, 29, 1) 100%
-  // );
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url("../images/hero_bgv2.png");
+  background-position: center center;
+  background-size: cover;
+}
+
+.header-index2 {
+  background-image: url("../images/hero_bgv2.png");
+  background-position: center center;
+  background-size: cover;
+}
+.header-index3 {
+  background-color: #bbaa91;
   background-position: center center;
   background-size: cover;
 }
@@ -42,17 +49,35 @@ header {
   gap: 70px;
 }
 
-.navbar-logo {
-  margin-right: 25px;
-}
-
 .navbar-nav {
   gap: 50px;
 }
+.navbar-logo {
+  margin-right: 25px;
+  width: 250px;
+  height: 80px;
+  filter: drop-shadow(0 0 10px white);
+}
+.logo-mobile {
+  display: none; /* Hide mobile logo by default */
+}
 
+@media screen and (max-width: 768px) {
+  .logo-desktop {
+    display: none; /* Hide desktop logo on small screens */
+  }
+
+  .logo-mobile {
+    display: block; /* Show mobile logo */
+    width: 200px; /* Adjust size if needed */
+    height: auto;
+    margin-right: -59px;
+    filter: drop-shadow(0 0 10px white);
+  }
+}
 .nav-link {
   font-weight: 400;
-  color: #221f1d;
+  color: #fff;
 }
 
 nav li a.active,
@@ -82,7 +107,7 @@ nav li a.active,
   width: 220px;
   padding: 15px 0px 15px 0px;
   border-radius: 10px;
-  background-color: #fff;
+  background-color: #e6d9c8;
   border: solid 1px #221f1d;
   margin-left: -52px;
 }
@@ -137,7 +162,7 @@ nav li a.active,
 }
 
 .nav-right p:first-child {
-  color: #d3c9c1;
+  color: #e6d9c8;
 }
 
 .nav-right span {
@@ -145,45 +170,47 @@ nav li a.active,
 }
 
 .nav-right .fa-magnifying-glass {
-  color: #221f1d;
+  color: #fff;
   font-size: 30px;
   cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.nav-right .fa-magnifying-glass:hover {
+  color: #e22e2b;
+  transform: scale(1.2);
 }
 
 .nav-right .fa-magnifying-glass:active {
-  color: #c5c4c4;
+  color: #e22e2b;
   transform: scale(0.8);
 }
 
 .nav-right .fa-hand-holding-dollar {
-  color: #221f1d;
+  color: #fff;
   font-size: 30px;
-  // background-color: #150803;
   padding: 7px 8px;
-  // border-radius: 50%;
   cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.nav-right .fa-hand-holding-dollar:hover {
+  color: #e22e2b;
+  transform: scale(1.2);
 }
 
 .nav-right .fa-hand-holding-dollar:active {
-  transform: scale(0.9);
-}
-
-.navbar-toggler {
-  border: 1px solid #221f1d;
-  background: #fff;
-  padding: 10px 20px;
-  border-radius: 6px;
-  cursor: pointer;
-  display: none;
+  color: #e22e2b;
 }
 
 .navbar-toggler:hover {
-  background: inherit;
+  background: #e6d9c8;
 }
 
 .navbar-toggler span {
-  color: #221f1d;
+  color: #fff;
   font-size: 22px;
+}
+.navbar-toggler span:hover {
+  color: #221f1d;
 }
 
 @media screen and (max-width: 1000px) {
@@ -205,7 +232,7 @@ nav li a.active,
 /* Sidebar */
 
 aside {
-  background-color: #fff;
+  background-color: #c7b9a6;
   z-index: 10;
 }
 
@@ -251,6 +278,7 @@ aside {
 }
 
 .btn_hover1 {
+  font-size: 22px;
   display: inline-block;
   position: relative;
   overflow: hidden;
@@ -302,13 +330,13 @@ aside ul li {
 }
 
 aside li a {
-  color: #d3c9c1;
+  color: #e22e2b;
   transition: 500ms;
   padding: 10px 0;
 }
 
 aside ul li a.active {
-  color: #000000;
+  color: #e22e2b;
 }
 
 aside li a:hover {
@@ -335,7 +363,7 @@ aside .pages {
 }
 
 .collapse_btn i:hover {
-  border: 1px solid #000000;
+  border: 1px solid #e22e2b;
 }
 
 .plus_collapse {
@@ -457,12 +485,12 @@ aside .pages {
 
 .header-right-sidebar h4 {
   margin: 25px 0;
-  font-size: 18px;
+  font-size: 14px;
 }
 
 .header-right-sidebar hr {
   margin: 28px 0 0 0;
-  border: 1px solid;
+  // border: 1px solid;
   opacity: 1;
   color: #000000;
 }
@@ -485,6 +513,7 @@ aside .pages {
 }
 
 .header-right-sidebar ul a {
+  font-size: 14px;
   padding: 0 !important;
   color: #231f20;
 }
@@ -516,9 +545,10 @@ aside .pages {
 }
 
 .hero h1 {
-  color: #221f1d;
+  color: #fff;
   letter-spacing: 3.75px;
   text-transform: uppercase;
+  filter: drop-shadow(0 0 10px #3f341e);
 }
 
 .hero-social-icon a {
@@ -551,7 +581,7 @@ aside .pages {
 }
 
 .hero h3 {
-  color: #231f20;
+  color: #fff;
 }
 
 .center-btn {
@@ -562,12 +592,13 @@ aside .pages {
 /* button hover with background */
 
 .btn_hover2 {
+  font-size: 22px;
   display: inline-block;
   position: relative;
   overflow: hidden;
   border-radius: 50px;
-  border: 1.5px solid #231f20;
-  color: #231f20;
+  border: 1.5px solid #fff;
+  color: #fff;
   z-index: 1;
   letter-spacing: 0.8px;
 }
@@ -630,7 +661,7 @@ aside .pages {
 /* Card Style*/
 
 .feature {
-  background-color: #221f1d;
+  background-color: #1e1c1d;
   margin-top: -1px;
   position: relative;
 }
@@ -645,10 +676,10 @@ aside .pages {
 
 .header-card div {
   border-radius: 20px;
-  background: #fff;
+  background: #e6d9c8;
   color: #221f1d;
   padding: 40px 30px;
-  border: solid 1px #221f1d;
+  border: solid 2px #bb513b;
   transition: all 0.4s ease;
 }
 
