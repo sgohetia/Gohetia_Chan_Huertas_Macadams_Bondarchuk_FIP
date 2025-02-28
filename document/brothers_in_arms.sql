@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Feb 22, 2025 at 04:30 AM
+-- Generation Time: Feb 28, 2025 at 04:30 PM
 -- Server version: 8.0.40
 -- PHP Version: 8.3.14
 
@@ -58,15 +58,22 @@ CREATE TABLE `contact_volunteer` (
   `last_name` varchar(255) NOT NULL COMMENT 'madatory',
   `email` varchar(255) NOT NULL COMMENT 'madatory',
   `message` text NOT NULL COMMENT 'madatory',
-  `date_time` datetime NOT NULL COMMENT 'hidden',
-  `volunteer_event_interest` varchar(500) NOT NULL COMMENT 'Only appear in volunteer\nmadatory',
-  `availability` varchar(500) NOT NULL COMMENT 'Only appear in volunteer\nmadatory',
-  `race` varchar(255) NOT NULL DEFAULT 'Not to answer' COMMENT 'Only appear in volunteer\noptional',
+  `date_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'hidden',
+  `volunteer_event_interest` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT 'NULL' COMMENT 'Only appear in volunteer\r\nmadatory',
+  `availability` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT 'NULL' COMMENT 'Only appear in volunteer\r\nmadatory',
+  `race` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT 'Not to answer' COMMENT 'Only appear in volunteer\r\noptional',
   `dietary_requirements` varchar(600) NOT NULL DEFAULT 'blank' COMMENT 'Only appear in volunteer\noptional',
-  `gender` varchar(255) NOT NULL DEFAULT 'Not to answer' COMMENT 'Only appear in volunteer\nWoman Man Not to answer \noptional',
+  `gender` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'Only appear in volunteer\r\nWoman Man Not to answer \r\noptional',
   `age` varchar(255) NOT NULL COMMENT 'Only appear in volunteer\n18 , 19-25, 26-35,36-45, 46-55 56 or above \nmandatory',
-  `experience` varchar(1000) NOT NULL
+  `experience` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `contact_volunteer`
+--
+
+INSERT INTO `contact_volunteer` (`id`, `first_name`, `last_name`, `email`, `message`, `date_time`, `volunteer_event_interest`, `availability`, `race`, `dietary_requirements`, `gender`, `age`, `experience`) VALUES
+(1, 'a', 'a', 'a@a.com', '123', '2025-02-26 23:29:10', 'NULL', 'NULL', 'Not to answer', 'blank', 'Male', '11', '11');
 
 -- --------------------------------------------------------
 
@@ -138,6 +145,30 @@ CREATE TABLE `gallery` (
   `type` varchar(255) NOT NULL,
   `year` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `gallery`
+--
+
+INSERT INTO `gallery` (`id`, `title`, `description`, `fname`, `fname_alt`, `type`, `year`) VALUES
+(1, 'World war 1 image 1', 'World war 1 image 1', 'ww1_1.png', 'World war 1 image 1', 'ww1', 1914),
+(2, 'World war 1 image 2', 'World war 1 image 2', 'ww1_2.png', 'World war 1 image 2', 'ww1', 1914),
+(3, 'World war 1 image 3', 'World war 1 image 3', 'ww1_3.png', 'World war 1 image 3', 'ww1', 1914),
+(4, 'World war 1 image 4', 'World war 1 image 4', 'ww1_3.png', 'World war 1 image 4', 'ww1', 1914),
+(5, 'World war 1 image 5', 'World war 1 image 5', 'ww1_5.png', 'World war 1 image 5', 'ww1', 1914),
+(6, 'World war 2 image 1', 'World war 2 image 1', 'ww2_1.png', 'World war 2 image 1', 'ww2', 1939),
+(7, 'World war 2 image 2', 'World war 2 image 2', 'ww2_2.png', 'World war 2 image 2', 'ww2', 1939),
+(8, 'World war 2 image 3', 'World war 2 image 3', 'ww2_3.png', 'World war 2 image 3', 'ww2', 1939),
+(9, 'World war 2 image 4', 'World war 2 image 4', 'ww2_4.png', 'World war 2 image 4', 'ww2', 1939),
+(10, 'Date1 image 1', 'Date1 image 1', 'date1_1.png', 'Date1 image 1', 'date1', 1943),
+(11, 'Date1 image 2', 'Date1 image 2', 'date1_2.png', 'Date1 image 2', 'date1', 1943),
+(12, 'Date1 image 3', 'Date1 image 3', 'date1_3.png', 'Date1 image 3', 'date1', 1943),
+(13, 'Date2 image 1', 'Date2 image 1', 'date2_1.png', 'Date2 image 1', 'date2', 1943),
+(14, 'Date2 image 2', 'Date2 image 2', 'date2_2.png', 'Date2 image 2', 'date2', 1943),
+(15, 'Date2 image 3', 'Date2 image 3', 'date2_3.png', 'Date2 image 3', 'date2', 1943),
+(16, 'Date3 image 1', 'Date3 image 1', 'date3_1.png', 'Date3 image 1', 'date3', 1943),
+(17, 'Date3 image 2', 'Date3 image 2', 'date3_2.png', 'Date3 image 2', 'date3', 1943),
+(18, 'Date3 image 3', 'Date3 image 3', 'date3_3.png', 'Date3 image 3', 'date3', 1943);
 
 -- --------------------------------------------------------
 
@@ -255,7 +286,7 @@ ALTER TABLE `contact_general_sponsor`
 -- AUTO_INCREMENT for table `contact_volunteer`
 --
 ALTER TABLE `contact_volunteer`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `donors`
@@ -279,7 +310,7 @@ ALTER TABLE `event_gallery`
 -- AUTO_INCREMENT for table `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `memorial`
