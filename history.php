@@ -19,7 +19,7 @@
     <title>History - Brothers in Arms</title>
     <link
       rel="shortcut icon"
-      href="images/brothers-in-arms-logo.svg"
+      href="images/brothers-in-arms-icon.svg"
       type="image/x-icon"
     />
     <link
@@ -76,7 +76,7 @@
               </button>
               <ul class="navbar-nav flex">
                 <li><a class="nav-link" href="index.php">Home</a></li>
-                <li><a class="nav-link" href="#">About Us</a></li>
+                <li><a class="nav-link" href="index.php#about">About Us</a></li>
                 <li>
                   <a class="nav-link" href="contactform.html">Contact Us</a>
                 </li>
@@ -95,14 +95,14 @@
                     class="dropdown-menu"
                     aria-labelledby="navbarScrollingDropdown"
                   >
-                    <li><a class="dropdown-item" href="#">Memorial</a></li>
+                  <li><a class="dropdown-item" href="#donate">Donate</a></li>
                     <li>
                       <a class="dropdown-item active" href="history.html"
                         >History</a
                       >
                     </li>
-                    <li><a class="dropdown-item" href="#">Event</a></li>
-                    <li><a class="dropdown-item" href="#">Blog</a></li>
+                    <li><a class="dropdown-item" href="index.php#event">Event</a></li>
+                    <li><a class="dropdown-item" href="index.php#blog">Blog</a></li>
                   </ul>
                 </li>
               </ul>
@@ -127,9 +127,9 @@
             </div>
             <div>
               <ul>
-                <li><a class="nav-link active" href="index.php">Home</a></li>
-                <li><a class="nav-link" href="about.html">About Us</a></li>
-                <li><a class="nav-link" href="contact.html">Contact Us</a></li>
+                <li><a class="nav-link" href="index.php">Home</a></li>
+                <li><a class="nav-link" href="index.php#about">About Us</a></li>
+                <li><a class="nav-link" href="contactform.html">Contact Us</a></li>
                 <li class="pages"><a href="#">More</a></li>
                 <li class="collapse_btn">
                   <a
@@ -142,10 +142,9 @@
                   </a>
                   <div class="collapse" id="pages">
                     <ul>
-                      <li><a class="nav-link" href="#">Memorial</a></li>
-                      <li><a class="nav-link" href="#">History</a></li>
-                      <li><a class="dropdown-item" href="#">Memorial</a></li>
-                      <li><a class="nav-link" href="contact.html">Blog</a></li>
+                      <li><a class="nav-link active" href="history.php">History</a></li>
+                      <li><a class="nav-link" href="index.php#event">Event</a></li>
+                      <li><a class="nav-link" href="index.php#blog">Blog</a></li>
                     </ul>
                   </div>
                 </li>
@@ -195,108 +194,136 @@
             </span>
           </section>
         </header>
+        <section class="hero">
+          <div class="container" data-aos="zoom-in">
+            <div>
+              <!-- <div class="hero-social-icon flex">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <hr class="d-md-block d-sm-none d-none" />
+              </div> -->
+              <div class="center-data">
+                <h1>
+                  The <span class="span-heroes">Legacy</span> of <span class="span-impact">Brotherhood</span>:
+                </h1>
+                <h2 class="history-h2">The History of Brothers in Arms</h2>
+                <h3 class="history-h3">
+                "Honoring Service, Preserving Brotherhood."
+                </h3>
+                <div class="center-btn flex">
+                  <a href="#vcross" class="btn_hover1">Victoria Cross</a>
+                  <a href="#awards" class="btn_hover2">Gallery</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
-      <section class="blank">
-        <h1>Welcome to Brother's in Arms History</h1>
-        <p>Scroll to read more details.</p>
-      </section>
-      <section class="horizontal section">
-        <div class="pin-wrap">
-          <div class="animation-wrap to-right">
-            <div class="item">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Necessitatibus, temporibus esse magni illum eos natus ipsum minus?
-              Quis excepturi voluptates atque dolorum minus eligendi! Omnis
-              minima magni recusandae ex dignissimos.
-            </div>
-            <div class="item">
-              Eaque ullam illum nobis deleniti mollitia unde, sed, nemo ipsa
-              ratione ex, dicta aliquam voluptates! Odio vitae eum nobis
-              dignissimos sunt ipsum repellendus totam optio distinctio. Laborum
-              suscipit quia aperiam.
-            </div>
-            <div class="item">
-              Animi, porro molestias? Reiciendis dolor aspernatur ab quos nulla
-              impedit, dolores ullam hic commodi nobis nam. Dolorem expedita
-              laudantium dignissimos nobis a. Dolorem, unde quidem. Tempora et a
-              quibusdam inventore!
-            </div>
-            <div class="item">
-              Labore, unde amet! Alias delectus hic laboriosam et dolorum?
-              Saepe, dicta eaque? Veniam eos blanditiis neque. Officia et
-              nostrum, tempore modi quo praesentium aspernatur vero dolor, ipsa
-              unde perspiciatis minima.
-            </div>
-            <div class="item">
-              Quaerat error dolorem aspernatur magni dicta ut consequuntur
-              maxime tempore. Animi odio eos quod culpa nulla consectetur?
-              Aperiam ipsam ducimus delectus reprehenderit unde, non laborum
-              voluptate laboriosam, officiis at ea!
+      <section class="history" id="history">
+        <div class="container">
+          <div class="history-data flex-sb">
+            <div class="w-100" data-aos="fade-up">
+              <div class="flex history-title">
+                <hr />
+                <h5>HISTORY</h5>
+              </div>
+              <h2>The History of Brothers in Arms</h2>
+              <p>
+              For generations, soldiers have stood side by side, bound not just by duty but by an unbreakable bond—one forged in courage, sacrifice, and unwavering loyalty. Brothers in Arms was founded to honor this deep connection and support those who have dedicated their lives to serving their country. <br/><br/>
+
+Our journey began with a simple yet powerful mission: to provide aid, recognition, and a sense of belonging to veterans and active service members. Over the years, we have worked to ensure that their sacrifices are never forgotten, sharing their stories, offering resources, and building a community where they are always supported.<br/><br/>
+
+From battlefield letters filled with hope and longing to the enduring friendships that transcend war, the spirit of brotherhood has remained a guiding force. Brothers in Arms continues to stand as a pillar of strength, reminding the world that no soldier fights alone—both on and off the battlefield.
+              </p>
             </div>
           </div>
         </div>
       </section>
-      <section class="awards">
+      <section class="vcross" id="vcross">
+        <div class="container">
+          <div class="vcross-data flex-sb">
+            <div class="w-50" data-aos="fade-up">
+              <div class="flex vcross-title">
+                <hr />
+                <h5>VICTORIA CROSS</h5>
+              </div>
+              <h2>Victoria Cross Recipients</h2>
+              <p>
+              These 81 members of the Canadian Armed Forces were awarded the Victoria Cross through acts of valour. They were among 1,351 crosses and 3 bars awarded throughout the British Empire. The 81 include: <br /><br />
+              
+                 4 from the South African (Boer) War 1899-1902 <br />
+                 64 from the First World War, 1914-1918<br />
+                 13 from the Second World War, 1939-1945<br />
+            
+              </p>
+              <div class="flex gap-2 mt-30">
+                <a href="#awards" class="btn_hover1">Gallery</a>
+                <a href="https://www.canada.ca/en/department-national-defence/services/medals/victoria-cross-recipients.html" class="btn_hover2ac"
+                  >Read More Details</a
+                >
+              </div>
+            </div>
+            <div class="vcross-imgs flex flex-center w-50" data-aos="fade-down">
+              <div>
+                <figure>
+                  <img src="images/brothers-in-arms-award.png" alt="img" />
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="awards" id="awards">
         <div class="slider">
           <!-- list Items -->
           <div class="list">
             <div class="item active">
               <img src="images/img1.png" />
               <div class="content">
-                <p>Award</p>
-                <h2>Soldier 01</h2>
+                <p>Victoria Cross</p>
+                <h2>Hampden Zane Churchill <span class="vcross-span">Cockburn</span></h2>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Labore, neque? Lorem ipsum dolor sit amet consectetur
-                  adipisicing elit. Ipsum, ex.
+                This medal is awarded for the most conspicuous bravery, a daring or pre-eminent act of valour, or self-sacrifice or extreme devotion to duty in the presence of the enemy.
                 </p>
               </div>
             </div>
             <div class="item">
               <img src="images/img2.jpg" />
               <div class="content">
-                <p>Award</p>
-                <h2>Soldier 02</h2>
+                <p>Victoria Cross</p>
+                <h2>Edward James Gibson <span class="vcross-span">Holland</span></h2>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Labore, neque? Lorem ipsum dolor sit amet consectetur
-                  adipisicing elit. Ipsum, ex.
+                This medal is awarded for the most conspicuous bravery, a daring or pre-eminent act of valour, or self-sacrifice or extreme devotion to duty in the presence of the enemy.
                 </p>
               </div>
             </div>
             <div class="item">
               <img src="images/img3.jpg" />
               <div class="content">
-                <p>Award</p>
-                <h2>Soldier 03</h2>
+                <p>Victoria Cross</p>
+                <h2>Arthur Herbert Lindsay <span class="vcross-span">Richardson</span></h2>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Labore, neque? Lorem ipsum dolor sit amet consectetur
-                  adipisicing elit. Ipsum, ex.
+                This medal is awarded for the most conspicuous bravery, a daring or pre-eminent act of valour, or self-sacrifice or extreme devotion to duty in the presence of the enemy.
                 </p>
               </div>
             </div>
             <div class="item">
               <img src="images/img4.jpg" />
               <div class="content">
-                <p>Award</p>
-                <h2>Soldier 04</h2>
+                <p>Victoria Cross</p>
+                <h2>Richard Ernest William <span class="vcross-span">Turner</span></h2>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Labore, neque? Lorem ipsum dolor sit amet consectetur
-                  adipisicing elit. Ipsum, ex.
+                This medal is awarded for the most conspicuous bravery, a daring or pre-eminent act of valour, or self-sacrifice or extreme devotion to duty in the presence of the enemy.
                 </p>
               </div>
             </div>
             <div class="item">
               <img src="images/img5.jpg" />
               <div class="content">
-                <p>Award</p>
-                <h2>Soldier 05</h2>
+                <p>Victoria Cross</p>
+                <h2>Wallace Lloyd <span class="vcross-span">Algie</span></h2>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Labore, neque? Lorem ipsum dolor sit amet consectetur
-                  adipisicing elit. Ipsum, ex.
+                This medal is awarded for the most conspicuous bravery, a daring or pre-eminent act of valour, or self-sacrifice or extreme devotion to duty in the presence of the enemy.
                 </p>
               </div>
             </div>
@@ -309,30 +336,30 @@
           <!-- thumbnail -->
           <div class="thumbnail">
             <div class="item active">
-              <img src="images/img1.png" />
-              <div class="content">Soldier Name</div>
+              <img src="images/cockburn.png" />
+              <div class="content">Cockburn</div>
             </div>
             <div class="item">
-              <img src="images/img2.jpg" />
-              <div class="content">Soldier Name</div>
+              <img src="images/holland.png" />
+              <div class="content">Holland</div>
             </div>
             <div class="item">
-              <img src="images/img3.jpg" />
-              <div class="content">Soldier Name</div>
+              <img src="images/richardson.png" />
+              <div class="content">Richardson</div>
             </div>
             <div class="item">
-              <img src="images/img4.jpg" />
-              <div class="content">Soldier Name</div>
+              <img src="images/turner.png" />
+              <div class="content">Turner</div>
             </div>
             <div class="item">
-              <img src="images/img5.jpg" />
-              <div class="content">Soldier Name</div>
+              <img src="images/wallace.png" />
+              <div class="content">Wallace</div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section-gal">
+      <section class="section-gal" id="gallery">
         <div class="flex gap-2">
           <hr class="event-hr1" />
           <h2>The Gallery</h2>
@@ -384,15 +411,15 @@
                 <h4>Quick Links</h4>
                 <ul class="flex flex-col gap-2 flex-start">
                   <li><a href="index.php">Home</a></li>
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="#">Donation</a></li>
-                  <li><a href="#">Blogs</a></li>
+                  <li><a href="index.php#about">About Us</a></li>
+                  <li><a href="index.php#donate">Donation</a></li>
+                  <li><a href="index.php#blog">Blogs</a></li>
                 </ul>
               </div>
               <div class="w-16 mt-45 flex-end">
                 <ul class="flex flex-col gap-2 flex-start">
-                  <li><a href="history.html">History</a></li>
-                  <li><a href="contactform.html">Contact Us</a></li>
+                  <li><a href="history.php">History</a></li>
+                  <li><a href="index.php#contactform.html">Contact Us</a></li>
                   <li><a href="#">Privacy policy</a></li>
                 </ul>
               </div>

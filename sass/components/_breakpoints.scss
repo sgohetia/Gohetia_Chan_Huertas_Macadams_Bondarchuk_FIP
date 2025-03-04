@@ -62,11 +62,29 @@
   background: #e6d9c8;
   padding: 100px 0;
 }
+.history {
+  background: #1e1c1d;
+  padding: 100px 0;
+}
+.vcross {
+  background: #e6d9c8;
+  padding: 100px 0;
+}
 .w-50 {
   flex: 0 0 auto;
   width: 50%;
 }
+.w-100 {
+  flex: 0 0 auto;
+  width: 100%;
+}
 .about-data a {
+  padding: 16px 38px 16px 38px !important;
+}
+.history-data a {
+  padding: 16px 38px 16px 38px !important;
+}
+.vcross-data a {
   padding: 16px 38px 16px 38px !important;
 }
 .ab-count {
@@ -371,6 +389,12 @@
   .about {
     padding: 70px 0;
   }
+  .history {
+    padding: 70px 0;
+  }
+  .vcross {
+    padding: 70px 0;
+  }
 
   .ab-count {
     width: 155px;
@@ -576,6 +600,9 @@
   }
 
   .about-imgs {
+    margin-top: 50px;
+  }
+  .vcross-imgs {
     margin-top: 50px;
   }
 
