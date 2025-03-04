@@ -18,7 +18,7 @@
     <title>Brothers in Arms</title>
     <link
       rel="shortcut icon"
-      href="images/brothers-in-arms-logo.png"
+      href="images/brothers-in-arms-icon.svg"
       type="image/x-icon"
     />
     <link
@@ -230,7 +230,7 @@
                 </div>
                 <div class="center-btn flex">
                   <a href="#donate" class="btn_hover1">Donate</a>
-                  <a href="#" class="btn_hover2">Memorial</a>
+                  <a href="memorial.html" class="btn_hover2">Memorial</a>
                 </div>
               </div>
             </div>
@@ -267,10 +267,11 @@
                 </figure>
                 <h4>Fundraising Campaign</h4>
                 <p>
-                  Brothers in Arms is launching a special fundraising campaign
-                  to provide essential aid to those who need it most. Every
-                  donation, help, support, big or small, brings us closer to our
-                  goal.
+                We are thrilled to announce the official launch of Brothers in
+                  Arms, a dynamic and interactive donation platform dedicated to
+                  making a real impact. Our mission is to support those in need,
+                  one step at a time. Join us as we embark on this journey of
+                  hope and solidarity.
                 </p>
               </div>
             </div>
@@ -281,11 +282,11 @@
                 </figure>
                 <h4>Volunteer Recruitment</h4>
                 <p>
-                  Are you passionate about making a difference? Brothers in Arms
-                  is looking for dedicated volunteers to help with our upcoming
-                  initiatives. Whether it’s organizing events, spreading
-                  awareness, or supporting our digital platforms, your skills
-                  can create an impact!
+                We are thrilled to announce the official launch of Brothers in
+                  Arms, a dynamic and interactive donation platform dedicated to
+                  making a real impact. Our mission is to support those in need,
+                  one step at a time. Join us as we embark on this journey of
+                  hope and solidarity.
                 </p>
               </div>
             </div>
@@ -296,9 +297,11 @@
                 </figure>
                 <h4>Thank You Message</h4>
                 <p>
-                  We at Brothers in Arms are beyond grateful for every donation,
-                  share, and act of kindness from our incredible community. Your
-                  generosity is changing lives, one step at a time.
+                We are thrilled to announce the official launch of Brothers in
+                  Arms, a dynamic and interactive donation platform dedicated to
+                  making a real impact. Our mission is to support those in need,
+                  one step at a time. Join us as we embark on this journey of
+                  hope and solidarity.
                 </p>
               </div>
             </div>
