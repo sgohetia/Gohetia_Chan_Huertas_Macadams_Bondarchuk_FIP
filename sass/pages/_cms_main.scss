@@ -1,0 +1,16 @@
+@use "../abstracts/variables" as a;
+
+body {
+  font-family: a.$secondary-font;
+}
+
+#cms-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 10px 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

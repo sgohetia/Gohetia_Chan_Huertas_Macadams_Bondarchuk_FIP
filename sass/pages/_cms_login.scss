@@ -1,0 +1,44 @@
+@use "../abstracts/variables" as a;
+
+body {
+  font-family: a.$secondary-font;
+}
+
+#login {
+  background: white;
+  padding: 50px 70px;
+  border-radius: 5px;
+  margin: 10px 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#login h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#login p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#login_form {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+
+#login_submit {
+  width: 100%;
+  padding: 10px;
+  background: #ffba39;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+#login_submit:hover {
+  background: #e22e2b;
+}
