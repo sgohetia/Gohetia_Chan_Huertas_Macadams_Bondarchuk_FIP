@@ -65,20 +65,21 @@ $stmt->execute();
     <script defer src="../js/main.js"></script>
   </head>
 <body>
-<section class="grid-con cms-menu">
-    <div class="col-span-full m-col-start-2 m-col-end-12 l-col-start-2 l-col-end-12">
+
+<section class="grid-con new-form-con">
+  <div
+    class=" new-form col-span-full m-col-start-2 m-col-end-12 l-col-start-2 l-col-end-12"
+  >
+  <div class="col-span-full m-col-start-2 m-col-end-12 l-col-start-2 l-col-end-12 list-menu">
 <a class="cntct-btn" href="cms_main_page.php">Home</a>
 <a class="cntct-btn" href="donor_list.php">Donors</a>
 <a class="cntct-btn" href="event_list.php">Event</a>
-<a class="cntct-btn"href="memorial_list.php">Memorial</a>
 <a class="cntct-btn" href="news_blog_list.php">News and Blog</a>
+<a class="cms-btn2" id="logout" href="login_form.php">log out</a>
 </div>
-</section>
-
-<section id="project-list-con" class="grid-con">
-      <div
+<div
         id="project-list"
-        class="col-span-full m-col-start-2 m-col-end-12 l-col-start-2 l-col-end-12"
+        class="col-span-full m-col-start-2 m-col-end-12 l-col-start-2 l-col-end-12 list-project"
       >
 <?php
 
@@ -95,12 +96,6 @@ $stmt = null;
 
 ?>
 </div>
-</section>
-<br>
-<section class="grid-con new-form-con">
-  <div
-    class=" new-form col-span-full m-col-start-2 m-col-end-12 l-col-start-2 l-col-end-12"
-  >
 <h3>Add a New News or Blog</h3>
 <form  action="add_new_blog.php" method="post" enctype="multipart/form-data">
     <label for="title">Title: </label>
@@ -122,14 +117,6 @@ $stmt = null;
 </form>
 </div>
 </section>
-<br><br><br>
-<section id="logout-con" class="grid-con">
-  <div
-    id="logout"
-class="col-span-full m-col-start-10 m-col-end-13 l-col-start-10 l-col-end-12 "
-  >
-<a class="cntct-btn" id="logout" href="login_form.php">log out</a>
-</div>
-</section>
+
 </body>
 </html>

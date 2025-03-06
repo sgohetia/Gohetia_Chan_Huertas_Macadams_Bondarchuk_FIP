@@ -6,7 +6,7 @@
     <title>Brothers in Arms</title>
     <link
       rel="shortcut icon"
-      href="../images/brothers-in-arms-logo.png"
+      href="../images/brothers-in-arms-icon.svg"
       type="image/x-icon"
     />
     <link

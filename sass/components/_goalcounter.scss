@@ -3,7 +3,12 @@
 body {
   font-family: a.$secondary-font;
 }
-
+.progress-h3 {
+  font-size: 18px;
+  color: #fff;
+  font-weight: 600;
+  filter: drop-shadow(0 0 20px #3f341e);
+}
 .progress-container {
   width: 300px;
   background: #fff;
@@ -18,7 +23,7 @@ body {
 .progress-bar {
   width: 0;
   height: 30px;
-  background: #ffba39;
+  background: orange;
   // background: rgb(255, 186, 57);
   // // background: linear-gradient(
   // //   103deg,

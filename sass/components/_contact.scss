@@ -14,14 +14,6 @@ body {
   min-height: 100vh; /* Adjust as needed */
   // text-align: center;
 }
-.wrapper-contact {
-  display: flex;
-  gap: 40px;
-  align-items: center;
-  max-width: 500px;
-  width: 100%;
-  justify-content: center; /* Ensures child elements are centered */
-}
 
 .container-contact {
   background: white;
@@ -45,7 +37,7 @@ body {
 }
 .tabs {
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
   margin-bottom: 20px;
 }
 .tab {
