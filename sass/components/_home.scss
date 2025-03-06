@@ -9,13 +9,13 @@
 // }
 .header-index {
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-    url("../images/hero_bgv2.png");
+    url("../images/brothers-in-arms-v2.png");
   background-position: center center;
   background-size: cover;
 }
 
 .header-index2 {
-  background-image: url("../images/hero_bgv2.png");
+  background-image: url("../images/soldierletter-bg.png");
   background-position: center center;
   background-size: cover;
 }
@@ -84,7 +84,7 @@ header {
   margin-right: 25px;
   width: 250px;
   height: 80px;
-  filter: drop-shadow(0 0 10px white);
+  // filter: drop-shadow(0 0 10px white);
 }
 .logo-mobile {
   display: none; /* Hide mobile logo by default */
@@ -103,14 +103,10 @@ header {
     filter: drop-shadow(0 0 10px white);
   }
 }
-.nav-link {
-  font-weight: 400;
-  color: #fff;
-}
 
 nav li a.active,
 .nav-link:is(:hover, :focus-visible) {
-  color: #e22e2b;
+  color: orangered;
 }
 
 .dropdown {
@@ -136,7 +132,7 @@ nav li a.active,
   padding: 15px 0px 15px 0px;
   border-radius: 10px;
   background-color: #e6d9c8;
-  border: solid 1px #221f1d;
+  border: solid 1px orangered;
   margin-left: -52px;
 }
 
@@ -174,7 +170,7 @@ nav li a.active,
   width: 0;
   height: 100%;
   transition: all 0.3s ease-in-out;
-  background: #e22e2b;
+  background: orangered;
   z-index: -1;
   top: 0;
   left: 0;
@@ -182,7 +178,7 @@ nav li a.active,
 
 .dropdown-menu .dropdown-item:hover::before {
   width: 100%;
-  background: #e22e2b;
+  background: orangered;
 }
 
 .nav-right {
@@ -199,34 +195,34 @@ nav li a.active,
 
 .nav-right .fa-magnifying-glass {
   color: #fff;
-  font-size: 30px;
+  font-size: 23px;
   cursor: pointer;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 .nav-right .fa-magnifying-glass:hover {
-  color: #e22e2b;
+  color: orangered;
   transform: scale(1.2);
 }
 
 .nav-right .fa-magnifying-glass:active {
-  color: #e22e2b;
+  color: orangered;
   transform: scale(0.8);
 }
 
 .nav-right .fa-hand-holding-dollar {
   color: #fff;
-  font-size: 30px;
+  font-size: 23px;
   padding: 7px 8px;
   cursor: pointer;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 .nav-right .fa-hand-holding-dollar:hover {
-  color: #e22e2b;
+  color: orangered;
   transform: scale(1.2);
 }
 
 .nav-right .fa-hand-holding-dollar:active {
-  color: #e22e2b;
+  color: orangered;
 }
 
 .navbar-toggler:hover {
@@ -299,14 +295,14 @@ aside {
   background: #fff;
   padding: 10px 12px 10px 12px;
   margin-bottom: -15px;
-  border-radius: 0.25em;
+  // border-radius: 0.25em;
   border: 1.5px solid #ffffff;
   color: #ffffff;
   cursor: pointer;
 }
 
 .btn_hover1 {
-  font-size: 22px;
+  font-size: 18px;
   display: inline-block;
   position: relative;
   overflow: hidden;
@@ -326,7 +322,7 @@ aside {
   width: 100%;
   height: 100%;
   transition: all 0.3s ease-in;
-  background: #e22e2b;
+  background: orangered;
   z-index: -1;
   top: 0;
   right: 0;
@@ -334,7 +330,7 @@ aside {
 
 .btn_hover1:hover::before {
   width: 0;
-  background: linear-gradient(42deg, #ffba39 0.01%, #e22e2b 100%);
+  background: linear-gradient(42deg, #ffba39 0.01%, orangered 100%);
   color: #221f1d;
 }
 
@@ -358,13 +354,13 @@ aside ul li {
 }
 
 aside li a {
-  color: #e22e2b;
+  color: orangered;
   transition: 500ms;
   padding: 10px 0;
 }
 
 aside ul li a.active {
-  color: #e22e2b;
+  color: orangered;
 }
 
 aside li a:hover {
@@ -391,7 +387,7 @@ aside .pages {
 }
 
 .collapse_btn i:hover {
-  border: 1px solid #e22e2b;
+  border: 1px solid orangered;
 }
 
 .plus_collapse {
@@ -429,7 +425,7 @@ aside .pages {
   width: 44px;
   height: 44px;
   right: 0;
-  background: #e22e2b;
+  background: orangered;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -441,7 +437,7 @@ aside .pages {
 }
 
 #search-bar div:first-child:hover {
-  background: #e22e2b;
+  background: orangered;
 }
 
 #search-bar form {
@@ -503,7 +499,7 @@ aside .pages {
 }
 
 .header-right-sidebar button:hover {
-  background: #e22e2b;
+  background: orangered;
 }
 
 .header-right-sidebar p {
@@ -573,6 +569,7 @@ aside .pages {
 }
 
 .hero h1 {
+  font-size: 40px;
   color: #fff;
   letter-spacing: 3.75px;
   text-transform: uppercase;
@@ -605,7 +602,7 @@ aside .pages {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 1em;
 }
 
 .hero h3 {
@@ -620,7 +617,7 @@ aside .pages {
 /* button hover with background */
 
 .btn_hover2 {
-  font-size: 22px;
+  font-size: 18px;
   display: inline-block;
   position: relative;
   overflow: hidden;
@@ -638,7 +635,7 @@ aside .pages {
   width: 0;
   height: 100%;
   transition: all 0.3s ease-in;
-  background: linear-gradient(0deg, #ffba39 0%, #e22e2b 100%);
+  background: linear-gradient(0deg, #ffba39 0%, orangered 100%);
   z-index: -1;
   top: 0;
   left: 0;
@@ -651,7 +648,7 @@ aside .pages {
 }
 
 .btn_hover2ab {
-  font-size: 22px;
+  font-size: 16px;
   display: inline-block;
   position: relative;
   overflow: hidden;
@@ -776,7 +773,7 @@ aside .pages {
   position: fixed;
   right: 1rem;
   bottom: -30%;
-  background: #e22e2b;
+  background: orangered;
   border-radius: 0.4rem;
   display: inline-flex;
   padding: 0.25rem;

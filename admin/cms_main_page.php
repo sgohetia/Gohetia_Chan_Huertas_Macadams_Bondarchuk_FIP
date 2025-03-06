@@ -18,7 +18,7 @@ if (!isset($_SESSION['username'])) {
     <title>Brothers in Arms</title>
     <link
       rel="shortcut icon"
-      href="../images/brothers-in-arms-logo.png"
+      href="../images/brothers-in-arms-icon.svg"
       type="image/x-icon"
     />
     <link
@@ -66,22 +66,27 @@ if (!isset($_SESSION['username'])) {
 <section id="cms-con" class="grid-con">
   <div
     id="cms-form"
-    class="col-span-full m-col-start-2 m-col-end-12 l-col-start-2 l-col-end-12"
+    class="col-span-full m-col-start-2 m-col-end-12 l-col-start-2 l-col-end-12 mainform"
   >
-  <img src="../images/brothers-in-arms-logo.png" alt="Brothers in Arms logo" />
+  <img src="../images/brothers-in-arms-logo.svg" alt="Brothers in Arms logo" />
 <h3>Brothers and Arms CMS</h3>
 <p>Welcome to the CMS page. Here you can add, edit the website.</p>
 <p>Please choose what you want to ador edit</p>
 <br>
-<div class="flex flex-col gap-2">
+<div class=" flex-col gap-2">
 <a class="cntct-btn" href="donor_list.php">Donors</a>
 <a class="cntct-btn" href="event_list.php">Event</a>
-<a class="cntct-btn"href="memorial_list.php">Memorial</a>
 <a class="cntct-btn" href="news_blog_list.php">News and Blog</a>
+</div>
+<div
+    id="logout"
+    class="col-span-full m-col-start-9 m-col-end-11 l-col-start-10 l-col-end-12 cms-div"
+  >
+<a id="logout" class="cms-btn" href="login_form.php">log out</a>
 </div>
 </div>
 </section>
-<br><br><br>
+<!-- <br><br><br>
 <section id="logout-con" class="grid-con">
   <div
     id="logout"
@@ -89,6 +94,6 @@ if (!isset($_SESSION['username'])) {
   >
 <a id="logout" class="cntct-btn" href="login_form.php">log out</a>
 </div>
-</section>
+</section> -->
 </body>
 </html>

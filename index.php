@@ -58,7 +58,7 @@
       src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
     ></script>
 
-    <script defer src="js/main.js"></script>
+    <script defer type="module" src="js/home.js"></script>
   </head>
 
   <body>
@@ -66,7 +66,7 @@
       <div class="header-index">
         <header>
           <nav class="container navbar">
-            <div class="container-nav flex">
+            <div class="container-nav flex" id="main-header">
               <a class="navbar-logo" href="index.php">
                 <!-- <img src="images/brothers-in-arms-logo.svg" alt="logo"
               /> -->
@@ -109,6 +109,10 @@
                     <li>
                       <a class="dropdown-item" href="history.php">History</a>
                     </li>
+                    <li><a class="dropdown-item" href="soldiers-letter.html">Soldiers Letters</a></li>
+                    <li>
+                      <a class="dropdown-item" href="memorial.html">Memorial</a>
+                    </li>
                     <li><a class="dropdown-item" href="#event">Event</a></li>
                     <li><a class="dropdown-item" href="#blog">Blog</a></li>
                   </ul>
@@ -137,7 +141,7 @@
               <ul>
                 <li><a class="nav-link active" href="index.php">Home</a></li>
                 <li><a class="nav-link" href="#about">About Us</a></li>
-                <li><a class="nav-link" href="contact.html">Contact Us</a></li>
+                <li><a class="nav-link" href="contactform.html">Contact Us</a></li>
                 <li class="pages"><a href="#">More</a></li>
                 <li class="collapse_btn">
                   <a
@@ -154,6 +158,11 @@
                       <li>
                         <a class="nav-link" href="history.php">History</a>
                       </li>
+                      <li><a class="nav-link" href="soldiers-letter.html">Soldiers Letters</a></li>
+                    <li>
+                      <a class="nav-link" href="memorial.html">Memorial</a>
+                    </li>
+                    <li><a class="nav-link" href="#event">Event</a></li>
                       <li><a class="nav-link" href="#blog">Blog</a></li>
                     </ul>
                   </div>
@@ -208,29 +217,21 @@
         <section class="hero">
           <div class="container" data-aos="zoom-in">
             <div>
-              <!-- <div class="hero-social-icon flex">
-                <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <hr class="d-md-block d-sm-none d-none" />
-              </div> -->
               <div class="center-data">
-                <h1>
-                  Support Our <span class="span-heroes">Heroes</span> <br />Make
-                  an
-                  <span class="span-impact">Impact</span>
+                <h1>                 
+                <span id="counter">0</span> Million Soldiers, One Untold Story
                 </h1>
-                <!-- <h3>
-                  Support Our <span class="span-heroes">Heroes</span>. Make an
-                  <span class="span-impact">Impact</span>.
-                </h3> -->
+                <h3 class="progress-h3 w-50">
+                The progress bar shows the total donations raised so far, bringing us closer to our goal of supporting our heroes.
+                </h3>
                 <div class="counter-container">
                   <div class="progress-container">
                     <div class="progress-bar" id="progress-bar">0%</div>
                   </div>
                 </div>
                 <div class="center-btn flex">
-                  <a href="#donate" class="btn_hover1">Donate</a>
-                  <a href="memorial.html" class="btn_hover2">Memorial</a>
+                  <a href="#donate" class="btn_hover1 home-btn1">Donate</a>
+                  <a href="memorial.html" class="btn_hover2 home-btn2">Memorial</a>
                 </div>
               </div>
             </div>
@@ -344,7 +345,7 @@
       <section class="about" id="about">
         <div class="container">
           <div class="about-data flex-sb">
-            <div class="w-50" data-aos="fade-up">
+            <div class="w-50 about-text" data-aos="fade-up">
               <div class="flex about-title">
                 <hr />
                 <h5>ABOUT US</h5>
@@ -368,7 +369,7 @@
                 >
               </div>
             </div>
-            <div class="about-imgs flex flex-center w-50" data-aos="fade-down">
+            <div class="about-imgs flex flex-center w-50 about-image" data-aos="fade-down">
               <div>
                 <figure>
                   <img src="images/brothers-in-arms-statue.png" alt="img" />
@@ -376,10 +377,10 @@
               </div>
               <div class="ab-count flex flex-center">
                 <div class="flex flex-center">
-                  <h2>100</h2>
-                  <h2>+</h2>
+                  <h2>2.4</h2>
+                  <h2>M</h2>
                 </div>
-                <p>years of remembering</p>
+                <p>Soldiers, One Untold Story</p>
               </div>
               <div class="about-hr flex gap-1">
                 <hr />
@@ -407,19 +408,19 @@
           <div
             class="donation-line flex flex-center gap-1 flex-wrap p-relative"
           >
-            <div data-aos="zoom-in">
+            <div data-aos="zoom-in" class="support1">
               <h2>01.</h2>
               <h4>Support Veterans' Well-being</h4>
             </div>
-            <div data-aos="zoom-in">
+            <div data-aos="zoom-in" class="support2">
               <h2>02.</h2>
               <h4>Honor Their Sacrifice</h4>
             </div>
-            <div data-aos="zoom-in">
+            <div data-aos="zoom-in" class="support3">
               <h2>03.</h2>
               <h4>Provide Essential Aid</h4>
             </div>
-            <div data-aos="zoom-in">
+            <div data-aos="zoom-in" class="support4">
               <h2>04.</h2>
               <h4>Strengthen Community Bonds</h4>
             </div>
@@ -434,7 +435,7 @@
         <span> </span>
         <div class="container">
           <div class="flex flex-wrap">
-            <div class="w-50 text-center" data-aos="fade-up">
+            <div class="w-50 text-center event-text" data-aos="fade-up">
               <div class="flex gap-2">
                 <hr class="event-hr1" />
                 <h5>EVENTS</h5>
@@ -452,7 +453,7 @@
                 of something bigger—join us in making a lasting impact.
               </p>
             </div>
-            <div class="w-50 mt-15">
+            <div class="w-50 mt-15 event-content">
               <div
                 class="accordion flex flex-col gap-2"
                 id="accordionExample"
@@ -492,7 +493,7 @@
       <section class="blog" id="blog">
         <div class="container">
           <div class="flex blog-center" data-aos="fade-down">
-            <div class="w-66">
+            <div class="w-66 blog-text">
               <div class="flex gap-1">
                 <hr class="blog-hr1" />
                 <h5>BLOGS</h5>
@@ -504,29 +505,29 @@
                 and see the impact we’re making together!
               </p>
             </div>
-            <div class="w-33 mt-1 flex flex-end">
+            <div class="w-33 mt-1 flex flex-end blog-allbtn">
               <a href="blog.html" class="btn_hover2">See all blogs</a>
             </div>
           </div>
           <div class="flex gap-2 mt-15 blog-cards">
             <div data-aos="fade-up" class="blog-card w-100">
-              <img src="images/sample.png" class="card-img-top" alt="img" />
+              <img src="images/blog1.png" class="card-img-top" alt="img" />
               <div class="card-body">
-                <h4>2023 NEWS UPDATES OF BROTHER'S IN ARMS</h4>
+                <h4>2025 NEWS UPDATES OF BROTHER'S IN ARMS</h4>
                 <a href="#">Read More</a>
               </div>
             </div>
             <div data-aos="fade-down" class="blog-card w-100">
-              <img src="images/sample.png" class="card-img-top" alt="img" />
+              <img src="images/blog2.png" class="card-img-top" alt="img" />
               <div class="card-body">
                 <h4>2024 NEWS UPDATES OF BROTHER'S IN ARMS</h4>
                 <a href="#">Read More</a>
               </div>
             </div>
             <div data-aos="fade-up" class="blog-card w-100">
-              <img src="images/sample.png" class="card-img-top" alt="img" />
+              <img src="images/blog3.png" class="card-img-top" alt="img" />
               <div class="card-body">
-                <h4>2025 NEWS UPDATES OF BROTHER'S IN ARMS</h4>
+                <h4>2023 NEWS UPDATES OF BROTHER'S IN ARMS</h4>
                 <a href="#">Read More</a>
               </div>
             </div>
@@ -556,7 +557,7 @@
           >
             <div id="footer-message"></div>
             <input type="email" required placeholder="Enter your mail" />
-            <button type="submit" class="btn_hover1">Get Notified</button>
+            <button type="submit" class="btn_hover1">Subscribe</button>
           </form>
         </div>
         <div class="footer-menu">

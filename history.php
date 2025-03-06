@@ -59,12 +59,12 @@
       src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
     ></script>
 
-    <script defer src="js/main.js"></script>
+    <script defer type="module" src="js/history.js"></script>
   </head>
 
   <body>
     <div class="site-wrapper">
-      <div class="header-index">
+      <div class="header-index-history">
         <header>
           <nav class="container navbar">
             <div class="container-nav flex">
@@ -97,9 +97,13 @@
                   >
                   <li><a class="dropdown-item" href="#donate">Donate</a></li>
                     <li>
-                      <a class="dropdown-item active" href="history.html"
+                      <a class="dropdown-item active" href="history.php"
                         >History</a
                       >
+                    </li>
+                    <li><a class="dropdown-item" href="soldiers-letter.html">Soldiers Letters</a></li>
+                    <li>
+                      <a class="dropdown-item" href="memorial.html">Memorial</a>
                     </li>
                     <li><a class="dropdown-item" href="index.php#event">Event</a></li>
                     <li><a class="dropdown-item" href="index.php#blog">Blog</a></li>
@@ -143,6 +147,10 @@
                   <div class="collapse" id="pages">
                     <ul>
                       <li><a class="nav-link active" href="history.php">History</a></li>
+                      <li><a class="nav-link" href="soldiers-letter.html">Soldiers Letters</a></li>
+                    <li>
+                      <a class="nav-link" href="memorial.html">Memorial</a>
+                    </li>
                       <li><a class="nav-link" href="index.php#event">Event</a></li>
                       <li><a class="nav-link" href="index.php#blog">Blog</a></li>
                     </ul>
@@ -202,10 +210,10 @@
                 <a href="#"><i class="fa-brands fa-instagram"></i></a>
                 <hr class="d-md-block d-sm-none d-none" />
               </div> -->
-              <div class="center-data">
-                <h1>
+              <div class="center-data-history">
+                <!-- <h1>
                   The <span class="span-heroes">Legacy</span> of <span class="span-impact">Brotherhood</span>:
-                </h1>
+                </h1> -->
                 <h2 class="history-h2">The History of Brothers in Arms</h2>
                 <h3 class="history-h3">
                 "Honoring Service, Preserving Brotherhood."
@@ -222,7 +230,7 @@
       <section class="history" id="history">
         <div class="container">
           <div class="history-data flex-sb">
-            <div class="w-100" data-aos="fade-up">
+            <div class="w-100 history-desc" data-aos="fade-up">
               <div class="flex history-title">
                 <hr />
                 <h5>HISTORY</h5>
@@ -242,7 +250,7 @@ From battlefield letters filled with hope and longing to the enduring friendship
       <section class="vcross" id="vcross">
         <div class="container">
           <div class="vcross-data flex-sb">
-            <div class="w-50" data-aos="fade-up">
+            <div class="w-50 vcross-desc" data-aos="fade-up">
               <div class="flex vcross-title">
                 <hr />
                 <h5>VICTORIA CROSS</h5>
@@ -282,7 +290,7 @@ From battlefield letters filled with hope and longing to the enduring friendship
               <div class="content">
                 <p>Victoria Cross</p>
                 <h2>Hampden Zane Churchill <span class="vcross-span">Cockburn</span></h2>
-                <p>
+                <p class="soldiers-p">
                 This medal is awarded for the most conspicuous bravery, a daring or pre-eminent act of valour, or self-sacrifice or extreme devotion to duty in the presence of the enemy.
                 </p>
               </div>
@@ -292,7 +300,7 @@ From battlefield letters filled with hope and longing to the enduring friendship
               <div class="content">
                 <p>Victoria Cross</p>
                 <h2>Edward James Gibson <span class="vcross-span">Holland</span></h2>
-                <p>
+                <p class="soldiers-p">
                 This medal is awarded for the most conspicuous bravery, a daring or pre-eminent act of valour, or self-sacrifice or extreme devotion to duty in the presence of the enemy.
                 </p>
               </div>
@@ -302,7 +310,7 @@ From battlefield letters filled with hope and longing to the enduring friendship
               <div class="content">
                 <p>Victoria Cross</p>
                 <h2>Arthur Herbert Lindsay <span class="vcross-span">Richardson</span></h2>
-                <p>
+                <p class="soldiers-p">
                 This medal is awarded for the most conspicuous bravery, a daring or pre-eminent act of valour, or self-sacrifice or extreme devotion to duty in the presence of the enemy.
                 </p>
               </div>
@@ -312,7 +320,7 @@ From battlefield letters filled with hope and longing to the enduring friendship
               <div class="content">
                 <p>Victoria Cross</p>
                 <h2>Richard Ernest William <span class="vcross-span">Turner</span></h2>
-                <p>
+                <p class="soldiers-p">
                 This medal is awarded for the most conspicuous bravery, a daring or pre-eminent act of valour, or self-sacrifice or extreme devotion to duty in the presence of the enemy.
                 </p>
               </div>
@@ -322,7 +330,7 @@ From battlefield letters filled with hope and longing to the enduring friendship
               <div class="content">
                 <p>Victoria Cross</p>
                 <h2>Wallace Lloyd <span class="vcross-span">Algie</span></h2>
-                <p>
+                <p soldiers-p>
                 This medal is awarded for the most conspicuous bravery, a daring or pre-eminent act of valour, or self-sacrifice or extreme devotion to duty in the presence of the enemy.
                 </p>
               </div>
@@ -376,7 +384,7 @@ From battlefield letters filled with hope and longing to the enduring friendship
         <?php 
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
             echo '<div class="itemBox" data-item="'.$row['type'].'">
-            <img src="'.$row['fname'].'" alt="'.$row['fname_alt'].'" />
+            <img src="images/'.$row['fname'].'" alt="'.$row['fname_alt'].'" />
             </div>';
         }
             $stmt = null;
@@ -385,6 +393,12 @@ From battlefield letters filled with hope and longing to the enduring friendship
 
           
         </div>
+        <div class="popup" id="popup">
+    <span class="close-btn">&times;</span>
+    <img id="popup-img" src="" alt="">
+    <p id="popup-desc">These 81 members of the Canadian Armed Forces were awarded the Victoria Cross through acts of valour. 
+    They were among 1,351 crosses and 3 bars awarded throughout the British Empire. </p>
+</div>
       </section>
       <footer>
         <div class="footer-menu">
