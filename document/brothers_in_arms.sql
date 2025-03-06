@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Mar 04, 2025 at 05:22 PM
+-- Generation Time: Mar 06, 2025 at 04:56 AM
 -- Server version: 8.0.40
 -- PHP Version: 8.3.14
 
@@ -97,9 +97,9 @@ CREATE TABLE `donors` (
 --
 
 INSERT INTO `donors` (`id`, `name`, `campaign`, `amount`) VALUES
-(1, 'Alice Test', 'abc', 200),
-(2, 'Peter Abc', 'abc', 200),
-(3, 'Harry Test', '123', 300);
+(1, 'Alice Day', 'abc', 200),
+(2, 'Peter Day', 'abc', 200),
+(3, 'Harry Styles', '123', 300);
 
 -- --------------------------------------------------------
 
@@ -119,10 +119,10 @@ CREATE TABLE `event` (
 --
 
 INSERT INTO `event` (`id`, `event_name`, `date_time`, `description`) VALUES
-(1, 'Color Run: Brother in Arms', '(3/5/2025)', 'The Color Run: Brother in Arms is a vibrant, family-friendly event that celebrates unity, camaraderie, and resilience. This 5K fun run is designed to honor and support our veterans, active-duty military, first responders, and their families. Participants will run, walk, or jog through a course where they will be showered with bursts of color at designated checkpoints, symbolizing the strength, diversity, and spirit of our brothers and sisters in arms.\r\n\r\nBeyond the run, the event features live music, food vendors, and community activities, creating a festival atmosphere where participants can connect, reflect, and show appreciation for those who serve. A portion of the proceeds will go towards organizations supporting mental health, rehabilitation, and reintegration programs for veterans and first responders.\r\n\r\nWhether you\'re running in honor of a loved one, to show support, or just for fun, the Color Run: Brother in Arms is more than just a race—it\'s a movement of gratitude, unity, and celebration. Join us for an unforgettable experience!'),
-(2, 'Live Benefit Concert and Auction', '(3/25/2025)', 'Music meets purpose! Enjoy a night of live performances\r\n                      from talented artists while supporting Brothers in Arms.\r\n                      Our Benefit Concert and Auction brings the community\r\n                      together for a great cause, with exclusive items up for\r\n                      bidding. Tune in, donate, and make a difference through\r\n                      the power of music.'),
-(3, 'Storytelling and Awareness Night', '(3/20/2025)', 'Real stories. Real impact. Our Storytelling and Awareness\r\n                      Night shines a light on the experiences of veterans, first\r\n                      responders, and community members. Through powerful talks\r\n                      and discussions, we foster understanding, resilience, and\r\n                      support. Join us in honoring their journeys and learning\r\n                      how we can stand together.'),
-(4, 'Charity Gaming Tournament', '(3/12/2025)', 'Compete for a cause! Join our Charity Gaming Tournament,\r\n                      where gamers battle it out in a friendly competition while\r\n                      supporting Brothers in Arms. Entry fees and live-stream\r\n                      donations go directly toward helping those in need. Play,\r\n                      stream, and make an impact—every game counts!');
+(1, 'Honour Run: Brother in Arms', '(6/1/2025)', 'Honour Run: Brother in Arms is a vibrant, family-friendly event that celebrates unity, camaraderie, and resilience. This 5K fun run is designed to honor and support our veterans, active-duty military, first responders, and their families. Participants will run, walk, or jog through a course where they will be showered with bursts of color at designated checkpoints, symbolizing the strength, diversity, and spirit of our brothers and sisters in arms.\n\nBeyond the run, the event features live music, food vendors, and community activities, creating a festival atmosphere where participants can connect, reflect, and show appreciation for those who serve. A portion of the proceeds will go towards organizations supporting mental health, rehabilitation, and reintegration programs for veterans and first responders.\n\nWhether you\'re running in honor of a loved one, to show support, or just for fun, the Color Run: Brother in Arms is more than just a race—it\'s a movement of gratitude, unity, and celebration. Join us for an unforgettable experience!'),
+(2, 'Historical Reenactment', '(3/25/2025)', 'Step into history with costumed performances that bring the past to life with remarkable historical accuracy. Experience the reproduction of wartime lifestyles, battles, and conditions, immersing yourself in the stories of soldiers who stood together on the frontlines.'),
+(3, 'Lectures & Panels', '(3/20/2025)', 'Gain deeper insights into the realities of wartime life from expert discussions. Explore topics such as the role of female nurses, military uniforms, and the daily challenges of frontline soldiers. This session offers an opportunity to learn, reflect, and engage with history through diverse perspectives.'),
+(4, 'Outdoor Cinema', '(3/12/2025)', 'Enjoy an open-air screening of historical newsreels and documentaries, offering a powerful look into real wartime experiences. Bring a blanket and join us for a cinematic journey through history, honoring the legacy of those who served.');
 
 -- --------------------------------------------------------
 
@@ -170,7 +170,7 @@ INSERT INTO `gallery` (`id`, `title`, `description`, `fname`, `fname_alt`, `type
 (1, 'World war 1 image 1', 'World war 1 image 1', 'ww1_1.png', 'World war 1 image 1', 'ww1', 1914),
 (2, 'World war 1 image 2', 'World war 1 image 2', 'ww1_2.png', 'World war 1 image 2', 'ww1', 1914),
 (3, 'World war 1 image 3', 'World war 1 image 3', 'ww1_3.png', 'World war 1 image 3', 'ww1', 1914),
-(4, 'World war 1 image 4', 'World war 1 image 4', 'ww1_3.png', 'World war 1 image 4', 'ww1', 1914),
+(4, 'World war 1 image 4', 'World war 1 image 4', 'ww1_4.png', 'World war 1 image 4', 'ww1', 1914),
 (5, 'World war 1 image 5', 'World war 1 image 5', 'ww1_5.png', 'World war 1 image 5', 'ww1', 1914),
 (6, 'World war 2 image 1', 'World war 2 image 1', 'ww2_1.png', 'World war 2 image 1', 'ww2', 1939),
 (7, 'World war 2 image 2', 'World war 2 image 2', 'ww2_2.png', 'World war 2 image 2', 'ww2', 1939),
@@ -185,29 +185,6 @@ INSERT INTO `gallery` (`id`, `title`, `description`, `fname`, `fname_alt`, `type
 (16, 'Date3 image 1', 'Date3 image 1', 'date3_1.png', 'Date3 image 1', 'date3', 1943),
 (17, 'Date3 image 2', 'Date3 image 2', 'date3_2.png', 'Date3 image 2', 'date3', 1943),
 (18, 'Date3 image 3', 'Date3 image 3', 'date3_3.png', 'Date3 image 3', 'date3', 1943);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `memorial`
---
-
-CREATE TABLE `memorial` (
-  `id` int UNSIGNED NOT NULL,
-  `first_name` varchar(255) NOT NULL,
-  `last_name` varchar(255) NOT NULL,
-  `story` text NOT NULL,
-  `qrcode` varchar(255) NOT NULL,
-  `date_of_death` date NOT NULL,
-  `message` varchar(3000) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Dumping data for table `memorial`
---
-
-INSERT INTO `memorial` (`id`, `first_name`, `last_name`, `story`, `qrcode`, `date_of_death`, `message`) VALUES
-(1, 'test', 'abc', 'test abc', 'NULL', '2025-03-04', 'test message');
 
 -- --------------------------------------------------------
 
@@ -315,12 +292,6 @@ ALTER TABLE `gallery`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `memorial`
---
-ALTER TABLE `memorial`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `news_blog`
 --
 ALTER TABLE `news_blog`
@@ -377,12 +348,6 @@ ALTER TABLE `event_gallery`
 --
 ALTER TABLE `gallery`
   MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
-
---
--- AUTO_INCREMENT for table `memorial`
---
-ALTER TABLE `memorial`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `news_blog`
