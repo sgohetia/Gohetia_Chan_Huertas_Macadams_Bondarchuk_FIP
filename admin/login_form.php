@@ -50,6 +50,7 @@
     <script defer src="../js/main.js"></script>
   </head>
 <body>
+  <div class="body">
 <section id="login-con" class="grid-con">
 <div id="login" class="col-span-full m-col-start-2 m-col-end-12 l-col-start-4 l-col-end-10">
 <h1>CMS Login</h1>
@@ -63,5 +64,6 @@
 </form>
     </div>
 </section>
+</div>
 </body>
 </html>
