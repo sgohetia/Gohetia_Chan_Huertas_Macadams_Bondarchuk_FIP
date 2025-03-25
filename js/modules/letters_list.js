@@ -30,6 +30,11 @@ export function lettersList() {
 
         acoimg[index].style.transform = "rotate(180deg)";
         button.style.backgroundColor = "#ffba39";
+
+        // Read the content inside the p tag
+        let content = collapse.querySelector("p").textContent;
+        let utterance = new SpeechSynthesisUtterance(content);
+        speechSynthesis.speak(utterance);
       }
     });
   });
