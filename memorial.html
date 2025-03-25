@@ -45,7 +45,7 @@
       defer
       src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
     ></script>
-
+    <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script defer type="module" src="js/memorial.js"></script>
   </head>
 
@@ -75,6 +75,12 @@
               <ul class="navbar-nav flex">
                 <li><a class="nav-link" href="index.php">Home</a></li>
                 <li><a class="nav-link" href="index.php#about">About Us</a></li>
+                <li><a class="nav-link" href="history.php">History</a></li>
+                <li>
+                  <a class="nav-link" href="#" id="toggleRightSideBtn"
+                    >Donate</a
+                  >
+                </li>
                 <li>
                   <a class="nav-link" href="contactform.html">Contact Us</a>
                 </li>
@@ -93,14 +99,6 @@
                     class="dropdown-menu"
                     aria-labelledby="navbarScrollingDropdown"
                   >
-                    <li>
-                      <a class="dropdown-item" href="index.php#donate"
-                        >Donate</a
-                      >
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="history.php">History</a>
-                    </li>
                     <li>
                       <a class="dropdown-item" href="soldiers-letter.html"
                         >Soldiers Letters</a
@@ -122,10 +120,10 @@
 
             <div class="flex nav-right">
               <i id="openSearchBarBtn" class="fa-solid fa-magnifying-glass"></i>
-              <i
+              <!-- <i
                 id="toggleRightSideBtn"
                 class="fa-solid fa-hand-holding-dollar"
-              ></i>
+              ></i> -->
             </div>
           </nav>
           <aside id="mySidepanel" class="sidepanel">
@@ -141,6 +139,8 @@
               <ul>
                 <li><a class="nav-link" href="index.php">Home</a></li>
                 <li><a class="nav-link" href="index.php#about">About Us</a></li>
+                <li><a class="nav-link" href="history.php">History</a></li>
+                <li><a class="nav-link" href="index.php#donate">Donate</a></li>
                 <li>
                   <a class="nav-link" href="contactform.html">Contact Us</a>
                 </li>
@@ -156,12 +156,6 @@
                   </a>
                   <div class="collapse" id="pages">
                     <ul>
-                      <li>
-                        <a class="nav-link" href="index.php#donate">Donate</a>
-                      </li>
-                      <li>
-                        <a class="nav-link" href="history.php">History</a>
-                      </li>
                       <li>
                         <a class="nav-link" href="soldiers-letter.html"
                           >Soldiers Letters</a
@@ -182,14 +176,25 @@
               </ul>
             </div>
           </aside>
-          <div id="search-bar">
-            <div class="btn_hover1" id="closeSearchBarBtn">
-              <i class="fa-solid fa-xmark"></i>
+          <div id="app">
+            <div id="search-bar" :style="searchBarStyle">
+              <div
+                class="btn_hover1"
+                id="closeSearchBarBtn"
+                @click="toggleSearchBar(false)"
+              >
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+              <form @submit.prevent="search">
+                <input
+                  type="search"
+                  v-model="query"
+                  required
+                  :placeholder="errorMessage || 'Search...'"
+                />
+                <button type="submit" class="btn_hover1">Search</button>
+              </form>
             </div>
-            <form method="search" action="#">
-              <input type="search" required placeholder="Search..." />
-              <button type="submit" class="btn_hover1">Search</button>
-            </form>
           </div>
 
           <!-- Right Sidebar -->

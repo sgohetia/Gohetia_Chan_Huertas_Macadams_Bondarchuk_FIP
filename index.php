@@ -57,6 +57,7 @@
       defer
       src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
     ></script>
+    <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
     <script defer type="module" src="js/home.js"></script>
   </head>
@@ -87,6 +88,8 @@
               <ul class="navbar-nav flex">
                 <li><a class="nav-link active" href="index.php">Home</a></li>
                 <li><a class="nav-link" href="#about">About Us</a></li>
+                <li><a class="nav-link" href="history.php">History</a></li>
+                <li><a class="nav-link" href="#" id="toggleRightSideBtn">Donate</a></li>
                 <li>
                   <a class="nav-link" href="contactform.html">Contact Us</a>
                 </li>
@@ -105,10 +108,6 @@
                     class="dropdown-menu"
                     aria-labelledby="navbarScrollingDropdown"
                   >
-                    <li><a class="dropdown-item" href="#donate">Donate</a></li>
-                    <li>
-                      <a class="dropdown-item" href="history.php">History</a>
-                    </li>
                     <li><a class="dropdown-item" href="soldiers-letter.html">Soldiers Letters</a></li>
                     <li>
                       <a class="dropdown-item" href="memorial.html">Memorial</a>
@@ -122,10 +121,10 @@
 
             <div class="flex nav-right">
               <i id="openSearchBarBtn" class="fa-solid fa-magnifying-glass"></i>
-              <i
+              <!-- <i
                 id="toggleRightSideBtn"
                 class="fa-solid fa-hand-holding-dollar"
-              ></i>
+              ></i> -->
             </div>
           </nav>
           <aside id="mySidepanel" class="sidepanel">
@@ -141,6 +140,8 @@
               <ul>
                 <li><a class="nav-link active" href="index.php">Home</a></li>
                 <li><a class="nav-link" href="#about">About Us</a></li>
+                <li><a class="nav-link" href="history.php">History</a></li>
+                <li><a class="nav-link" href="#donate">Donate</a></li>
                 <li><a class="nav-link" href="contactform.html">Contact Us</a></li>
                 <li class="pages"><a href="#">More</a></li>
                 <li class="collapse_btn">
@@ -154,10 +155,6 @@
                   </a>
                   <div class="collapse" id="pages">
                     <ul>
-                      <li><a class="nav-link" href="#donate">Donate</a></li>
-                      <li>
-                        <a class="nav-link" href="history.php">History</a>
-                      </li>
                       <li><a class="nav-link" href="soldiers-letter.html">Soldiers Letters</a></li>
                     <li>
                       <a class="nav-link" href="memorial.html">Memorial</a>
@@ -170,7 +167,8 @@
               </ul>
             </div>
           </aside>
-          <div id="search-bar">
+          <!-- search  bar -->
+          <!-- <div id="search-bar">
             <div class="btn_hover1" id="closeSearchBarBtn">
               <i class="fa-solid fa-xmark"></i>
             </div>
@@ -178,7 +176,18 @@
               <input type="search" required placeholder="Search..." />
               <button type="submit" class="btn_hover1">Search</button>
             </form>
+          </div> -->
+          <div id="app">
+            <div id="search-bar" :style="searchBarStyle">
+              <div class="btn_hover1" id="closeSearchBarBtn" @click="toggleSearchBar(false)">
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+            <form @submit.prevent="search">
+              <input type="search" v-model="query" required :placeholder="errorMessage || 'Search...'" />
+              <button type="submit" class="btn_hover1">Search</button>
+            </form>
           </div>
+        </div>
 
           <!-- Right Sidebar -->
           <section class="header-right-sidebar" id="right_side">
@@ -310,34 +319,42 @@
         </div>
       </section>
 
-      <section class="ourpartners">
-        <div class="container">
-          <div class="flex flex-col gap-2">
-            <hr class="hr1" />
-            <h3 data-aos="zoom-in" class="mb-15">OUR SPONSORS</h3>
+      <section class="donation" id="donate">
+        <div class="container position-relative">
+          <div class="donation-para text-center" data-aos="fade-up">
+            <h5>WHY DONATE?</h5>
+            <h2 class="h2_margin">Make a Difference Today</h2>
+            <p>
+              Your support helps provide vital aid, honor sacrifices, and
+              strengthen the community. Together, we empower those who served.
+            </p>
           </div>
-          <div class="swiper ourpartners-slider sliderlogo" data-aos="zoom-in">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="images/TDECU.svg" alt="Sponsor1" />
-              </div>
-              <div class="swiper-slide">
-                <img src="images/chevron.png" alt="Sponsor2" />
-              </div>
-              <div class="swiper-slide">
-                <img src="images/heb.png" alt="Sponsor3" />
-              </div>
-              <div class="swiper-slide">
-                <img src="images/postoak.png" alt="Sponsor4" />
-              </div>
-              <div class="swiper-slide">
-                <img src="images/woodforestbank.png" alt="Sponsor5" />
-              </div>
-              <div class="swiper-slide">
-                <img src="images/amex.png" alt="Sponsor6" />
-              </div>
+          <div class="donation-hr flex gap-1">
+            <hr />
+            <h6>Support Us</h6>
+          </div>
+          <div
+            class="donation-line flex flex-center gap-1 flex-wrap p-relative"
+          >
+            <div data-aos="zoom-in" class="support1">
+              <h2>01.</h2>
+              <h4>Support Veterans' Well-being</h4>
             </div>
-            <hr class="hr2" />
+            <div data-aos="zoom-in" class="support2">
+              <h2>02.</h2>
+              <h4>Honor Their Sacrifice</h4>
+            </div>
+            <div data-aos="zoom-in" class="support3">
+              <h2>03.</h2>
+              <h4>Provide Essential Aid</h4>
+            </div>
+            <div data-aos="zoom-in" class="support4">
+              <h2>04.</h2>
+              <h4>Strengthen Community Bonds</h4>
+            </div>
+          </div>
+          <div class="flex flex-center" data-aos="zoom-in">
+            <a href="#" class="btn_hover2">I want to Donate</a>
           </div>
         </div>
       </section>
@@ -387,46 +404,6 @@
                 <h6>Who we are</h6>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="donation" id="donate">
-        <div class="container position-relative">
-          <div class="donation-para text-center" data-aos="fade-up">
-            <h5>WHY DONATE?</h5>
-            <h2 class="h2_margin">Make a Difference Today</h2>
-            <p>
-              Your support helps provide vital aid, honor sacrifices, and
-              strengthen the community. Together, we empower those who served.
-            </p>
-          </div>
-          <div class="donation-hr flex gap-1">
-            <hr />
-            <h6>Support Us</h6>
-          </div>
-          <div
-            class="donation-line flex flex-center gap-1 flex-wrap p-relative"
-          >
-            <div data-aos="zoom-in" class="support1">
-              <h2>01.</h2>
-              <h4>Support Veterans' Well-being</h4>
-            </div>
-            <div data-aos="zoom-in" class="support2">
-              <h2>02.</h2>
-              <h4>Honor Their Sacrifice</h4>
-            </div>
-            <div data-aos="zoom-in" class="support3">
-              <h2>03.</h2>
-              <h4>Provide Essential Aid</h4>
-            </div>
-            <div data-aos="zoom-in" class="support4">
-              <h2>04.</h2>
-              <h4>Strengthen Community Bonds</h4>
-            </div>
-          </div>
-          <div class="flex flex-center" data-aos="zoom-in">
-            <a href="#" class="btn_hover2">I want to Donate</a>
           </div>
         </div>
       </section>
@@ -506,7 +483,7 @@
               </p>
             </div>
             <div class="w-33 mt-1 flex flex-end blog-allbtn">
-              <a href="blog.html" class="btn_hover2">See all blogs</a>
+              <a href="blogs.html" class="btn_hover2">See all blogs</a>
             </div>
           </div>
           <div class="flex gap-2 mt-15 blog-cards">
@@ -514,27 +491,57 @@
               <img src="images/blog1.png" class="card-img-top" alt="img" />
               <div class="card-body">
                 <h4>2025 NEWS UPDATES OF BROTHER'S IN ARMS</h4>
-                <a href="#">Read More</a>
+                <a href="blog.html">Read More</a>
               </div>
             </div>
             <div data-aos="fade-down" class="blog-card w-100">
               <img src="images/blog2.png" class="card-img-top" alt="img" />
               <div class="card-body">
                 <h4>2024 NEWS UPDATES OF BROTHER'S IN ARMS</h4>
-                <a href="#">Read More</a>
+                <a href="blog.html">Read More</a>
               </div>
             </div>
             <div data-aos="fade-up" class="blog-card w-100">
               <img src="images/blog3.png" class="card-img-top" alt="img" />
               <div class="card-body">
                 <h4>2023 NEWS UPDATES OF BROTHER'S IN ARMS</h4>
-                <a href="#">Read More</a>
+                <a href="blog.html">Read More</a>
               </div>
             </div>
           </div>
         </div>
       </section>
-
+      <section class="ourpartners">
+        <div class="container">
+          <div class="flex flex-col gap-2">
+            <hr class="hr1" />
+            <h3 data-aos="zoom-in" class="mb-15">OUR SPONSORS</h3>
+          </div>
+          <div class="swiper ourpartners-slider sliderlogo" data-aos="zoom-in">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="images/TDECU.svg" alt="Sponsor1" />
+              </div>
+              <div class="swiper-slide">
+                <img src="images/chevron.png" alt="Sponsor2" />
+              </div>
+              <div class="swiper-slide">
+                <img src="images/heb.png" alt="Sponsor3" />
+              </div>
+              <div class="swiper-slide">
+                <img src="images/postoak.png" alt="Sponsor4" />
+              </div>
+              <div class="swiper-slide">
+                <img src="images/woodforestbank.png" alt="Sponsor5" />
+              </div>
+              <div class="swiper-slide">
+                <img src="images/amex.png" alt="Sponsor6" />
+              </div>
+            </div>
+            <hr class="hr2" />
+          </div>
+        </div>
+      </section>
       <footer>
         <div class="container">
           <div class="footer-hr flex flex-col">

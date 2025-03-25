@@ -58,7 +58,7 @@
       defer
       src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
     ></script>
-
+    <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script defer type="module" src="js/history.js"></script>
   </head>
 
@@ -77,6 +77,8 @@
               <ul class="navbar-nav flex">
                 <li><a class="nav-link" href="index.php">Home</a></li>
                 <li><a class="nav-link" href="index.php#about">About Us</a></li>
+                <li><a class="nav-link active" href="history.php">History</a></li>
+                <li><a class="nav-link" href="#" id="toggleRightSideBtn">Donate</a></li>
                 <li>
                   <a class="nav-link" href="contactform.html">Contact Us</a>
                 </li>
@@ -95,12 +97,6 @@
                     class="dropdown-menu"
                     aria-labelledby="navbarScrollingDropdown"
                   >
-                  <li><a class="dropdown-item" href="#donate">Donate</a></li>
-                    <li>
-                      <a class="dropdown-item active" href="history.php"
-                        >History</a
-                      >
-                    </li>
                     <li><a class="dropdown-item" href="soldiers-letter.html">Soldiers Letters</a></li>
                     <li>
                       <a class="dropdown-item" href="memorial.html">Memorial</a>
@@ -114,10 +110,10 @@
 
             <div class="flex nav-right">
               <i id="openSearchBarBtn" class="fa-solid fa-magnifying-glass"></i>
-              <i
+              <!-- <i
                 id="toggleRightSideBtn"
                 class="fa-solid fa-hand-holding-dollar"
-              ></i>
+              ></i> -->
             </div>
           </nav>
           <aside id="mySidepanel" class="sidepanel">
@@ -133,6 +129,8 @@
               <ul>
                 <li><a class="nav-link" href="index.php">Home</a></li>
                 <li><a class="nav-link" href="index.php#about">About Us</a></li>
+                <li><a class="nav-link" href="history.php">History</a></li>
+                <li><a class="nav-link" href="index.php#donate">Donate</a></li>
                 <li><a class="nav-link" href="contactform.html">Contact Us</a></li>
                 <li class="pages"><a href="#">More</a></li>
                 <li class="collapse_btn">
@@ -146,7 +144,6 @@
                   </a>
                   <div class="collapse" id="pages">
                     <ul>
-                      <li><a class="nav-link active" href="history.php">History</a></li>
                       <li><a class="nav-link" href="soldiers-letter.html">Soldiers Letters</a></li>
                     <li>
                       <a class="nav-link" href="memorial.html">Memorial</a>
@@ -159,15 +156,17 @@
               </ul>
             </div>
           </aside>
-          <div id="search-bar">
-            <div class="btn_hover1" id="closeSearchBarBtn">
-              <i class="fa-solid fa-xmark"></i>
-            </div>
-            <form method="search" action="#">
-              <input type="search" required placeholder="Search..." />
+          <div id="app">
+            <div id="search-bar" :style="searchBarStyle">
+              <div class="btn_hover1" id="closeSearchBarBtn" @click="toggleSearchBar(false)">
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+            <form @submit.prevent="search">
+              <input type="search" v-model="query" required :placeholder="errorMessage || 'Search...'" />
               <button type="submit" class="btn_hover1">Search</button>
             </form>
           </div>
+        </div>
 
           <!-- Right Sidebar -->
           <section class="header-right-sidebar" id="right_side">
@@ -394,7 +393,7 @@ From battlefield letters filled with hope and longing to the enduring friendship
           
         </div>
         <div class="popup" id="popup">
-    <span class="close-btn">&times;</span>
+    <span class="close-btn">x</span>
     <img id="popup-img" src="" alt="">
     <p id="popup-desc">These 81 members of the Canadian Armed Forces were awarded the Victoria Cross through acts of valour. 
     They were among 1,351 crosses and 3 bars awarded throughout the British Empire. </p>

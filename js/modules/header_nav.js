@@ -29,23 +29,23 @@ export function headerNav() {
   document.querySelector("#closeNavBtn").addEventListener("click", closeNav);
 
   //Toggle Search bar
-  const toggleSearchBar = (open) => {
-    const searchBar = document.querySelector("#search-bar");
-    if (!searchBar) {
-      console.error("Error: Search bar element not found!");
-      return;
-    }
+  // const toggleSearchBar = (open) => {
+  //   const searchBar = document.querySelector("#search-bar");
+  //   if (!searchBar) {
+  //     console.error("Error: Search bar element not found!");
+  //     return;
+  //   }
 
-    searchBar.style.height = open ? "100vh" : "0";
-    searchBar.style.borderRadius = open ? "0" : "100% 100% 0 0";
-  };
+  //   searchBar.style.height = open ? "100vh" : "0";
+  //   searchBar.style.borderRadius = open ? "0" : "100% 100% 0 0";
+  // };
 
-  document
-    .querySelector("#openSearchBarBtn")
-    .addEventListener("click", () => toggleSearchBar(true));
-  document
-    .querySelector("#closeSearchBarBtn")
-    .addEventListener("click", () => toggleSearchBar(false));
+  // document
+  //   .querySelector("#openSearchBarBtn")
+  //   .addEventListener("click", () => toggleSearchBar(true));
+  // document
+  //   .querySelector("#closeSearchBarBtn")
+  //   .addEventListener("click", () => toggleSearchBar(false));
 
   // Toggle Sidebar
   const toggleRightSide = (isOpen) => {
