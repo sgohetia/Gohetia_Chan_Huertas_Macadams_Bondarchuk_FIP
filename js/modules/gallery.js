@@ -28,7 +28,7 @@ export function awardsGallery() {
   // auto run slider
   let refreshInterval = setInterval(() => {
     next.click();
-  }, 5000);
+  }, 20000);
   function showSlider() {
     // remove item active old
     let itemActiveOld = document.querySelector(".slider .list .item.active");

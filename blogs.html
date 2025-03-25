@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact - Brothers in Arms</title>
+    <title>Blogs - Brothers in Arms</title>
     <link
       rel="shortcut icon"
       href="images/brothers-in-arms-icon.svg"
@@ -46,26 +46,35 @@
       src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
     ></script>
     <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script defer type="module" src="js/contact.js"></script>
+    <script defer type="module" src="js/home.js"></script>
   </head>
 
   <body>
     <div class="site-wrapper">
-      <div class="header-index3">
+      <div class="header-index">
         <header>
           <nav class="container navbar">
-            <div class="container-nav flex">
-              <a class="navbar-logo" href="index.php"
-                ><img src="images/brothers-in-arms-logo.svg" alt="logo"
-              /></a>
+            <div class="container-nav flex" id="main-header">
+              <a class="navbar-logo" href="index.php">
+                <!-- <img src="images/brothers-in-arms-logo.svg" alt="logo"
+                  /> -->
+                <img
+                  class="logo-desktop"
+                  src="images/brothers-in-arms-logo.svg"
+                  alt="Desktop Logo"
+                />
+                <img
+                  class="logo-mobile"
+                  src="images/logo_v1.png"
+                  alt="Mobile Logo"
+                />
+              </a>
               <button class="navbar-toggler" id="openNavBtn" type="button">
                 <span class="fa-solid fa-bars"></span>
               </button>
               <ul class="navbar-nav flex">
                 <li><a class="nav-link" href="index.php">Home</a></li>
-                <li>
-                  <a class="nav-link" href="index.php#about">About Us</a>
-                </li>
+                <li><a class="nav-link" href="#about">About Us</a></li>
                 <li><a class="nav-link" href="history.php">History</a></li>
                 <li>
                   <a class="nav-link" href="#" id="toggleRightSideBtn"
@@ -73,9 +82,7 @@
                   >
                 </li>
                 <li>
-                  <a class="nav-link active" href="contactform.html"
-                    >Contact Us</a
-                  >
+                  <a class="nav-link" href="contactform.html">Contact Us</a>
                 </li>
                 <li class="dropdown">
                   <a
@@ -100,11 +107,9 @@
                     <li>
                       <a class="dropdown-item" href="memorial.html">Memorial</a>
                     </li>
+                    <li><a class="dropdown-item" href="#event">Event</a></li>
                     <li>
-                      <a class="dropdown-item" href="index.php#event">Event</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="index.php#blog">Blog</a>
+                      <a class="dropdown-item active" href="#blog">Blog</a>
                     </li>
                   </ul>
                 </li>
@@ -130,10 +135,8 @@
             </div>
             <div>
               <ul>
-                <li><a class="nav-link active" href="index.php">Home</a></li>
-                <li>
-                  <a class="nav-link" href="index.php#about">About Us</a>
-                </li>
+                <li><a class="nav-link" href="index.php">Home</a></li>
+                <li><a class="nav-link" href="index.php#about">About Us</a></li>
                 <li><a class="nav-link" href="history.php">History</a></li>
                 <li><a class="nav-link" href="index.php#donate">Donate</a></li>
                 <li>
@@ -159,12 +162,8 @@
                       <li>
                         <a class="nav-link" href="memorial.html">Memorial</a>
                       </li>
-                      <li>
-                        <a class="nav-link" href="index.php#event">Event</a>
-                      </li>
-                      <li>
-                        <a class="nav-link" href="index.php#blog">Blog</a>
-                      </li>
+                      <li><a class="nav-link" href="#event">Event</a></li>
+                      <li><a class="nav-link active" href="#blog">Blog</a></li>
                     </ul>
                   </div>
                 </li>
@@ -226,98 +225,152 @@
           </section>
         </header>
       </div>
-      <section class="contact-sec">
-        <div class="wrapper-contact">
-          <div class="container-contact">
-            <div class="tabs">
-              <div class="tab active" data-target="general">General</div>
-              <div class="tab" data-target="volunteer">Volunteer</div>
-            </div>
 
-            <!-- General Form -->
-            <div class="form-container active" id="general">
-              <form id="generalForm">
-                <div class="form-group">
-                  <label for="first_name">First Name</label>
-                  <input type="text" name="first_name" id="first_name" />
-                </div>
-                <div class="form-group">
-                  <label for="last_name">Last Name</label>
-                  <input type="text" name="last_name" id="last_name" />
-                </div>
-                <div class="form-group">
-                  <label for="company">Company</label>
-                  <input type="text" name="company" id="company" />
-                </div>
-                <div class="form-group">
-                  <label for="email">Email</label>
-                  <input type="email" name="email" id="email" />
-                </div>
-                <div class="form-group dropdown">
-                  <label for="type">Type</label>
-                  <select id="type" name="type">
-                    <option value="" disabled selected>Select Type</option>
-                    <option value="Inquiry">Inquiry</option>
-                    <option value="Feedback">Feedback</option>
-                    <option value="Support">Support</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="message">Message</label>
-                  <textarea id="message" name="message" rows="3"></textarea>
-                </div>
-                <button type="submit" class="cntct-btn">Submit</button>
-                <section id="feedback">
-                  <p>*Please fill out all required sections</p>
-                </section>
-              </form>
+      <section class="blogs" id="blogs">
+        <div class="container">
+          <div class="blogs-data flex-sb">
+            <div class="w-50 blogs-text" data-aos="fade-up">
+              <div class="flex blogs-title">
+                <hr />
+                <h5>BLOGS</h5>
+              </div>
+              <h2>2025 NEWS UPDATES OF BROTHER'S IN ARMS</h2>
+              <p>
+                Honouring the Fallen, Running for Unity! <br />
+                Join the Color Run in support of Brothers in Arms this coming
+                June 9, 2026 and be part of an exciting event filled with fun,
+                energy and vibrant colors!
+              </p>
+              <br />
+              <div class="blogs-react">
+                <i class="ri-heart-line"></i>
+                <i class="ri-thumb-up-line"></i>
+                <i class="ri-thumb-down-line"></i>
+                <i class="ri-chat-new-line"></i>
+              </div>
+              <div class="flex gap-2 mt-30">
+                <a href="blog.html" class="btn_hover1">Read More</a>
+              </div>
             </div>
-            <!-- Volunteer Form -->
-            <div class="form-container" id="volunteer">
-              <form id="volunteerForm">
-                <div class="form-group">
-                  <label for="vfname">First Name</label>
-                  <input type="text" id="vfname" name="vfname" />
-                </div>
-                <div class="form-group">
-                  <label for="vlname">Last Name</label>
-                  <input type="text" id="vlname" name="vlname" />
-                </div>
-                <div class="form-group">
-                  <label for="vemail">Email</label>
-                  <input type="tel" id="vemail" name="vemail" />
-                </div>
-                <div class="form-group dropdown">
-                  <label for="type">Gender</label>
-                  <select id="gender" name="gender">
-                    <option value="" disabled selected>Select Gender</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="Not to answer">Not to answer</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="vage">Age</label>
-                  <input type="tel" id="vage" name="vage" />
-                </div>
-                <div class="form-group">
-                  <label for="vskills">Skills / Experience</label>
-                  <textarea id="vskills" rows="3" name="vskills"></textarea>
-                </div>
-                <div class="form-group">
-                  <label for="message">Message</label>
-                  <textarea id="vmessage" rows="3" name="message"></textarea>
-                </div>
-                <button type="submit" class="cntct-btn">Apply</button>
-                <section id="vfeedback">
-                  <p>*Please fill out all required sections</p>
-                </section>
-              </form>
+            <div
+              class="blogs-imgs flex flex-center w-50 blogs-image"
+              data-aos="fade-down"
+            >
+              <div>
+                <figure>
+                  <img src="images/ad1.png" alt="img" />
+                </figure>
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="blogs-data flex-sb">
+            <div class="w-50 blogs-text" data-aos="fade-up">
+              <div class="flex blogs-title">
+                <hr />
+                <h5>BLOGS</h5>
+              </div>
+              <h2>2024 NEWS UPDATES OF BROTHER'S IN ARMS</h2>
+              <p>
+                Honouring the Fallen, Running for Unity! <br />
+                Join the Color Run in support of Brothers in Arms this coming
+                June 9, 2026 and be part of an exciting event filled with fun,
+                energy and vibrant colors!
+              </p>
+              <br />
+              <div class="blogs-react">
+                <i class="ri-heart-line"></i>
+                <i class="ri-thumb-up-line"></i>
+                <i class="ri-thumb-down-line"></i>
+                <i class="ri-chat-new-line"></i>
+              </div>
+              <div class="flex gap-2 mt-30">
+                <a href="blog.html" class="btn_hover1">Read More</a>
+              </div>
+            </div>
+            <div
+              class="blogs-imgs flex flex-center w-50 blogs-image"
+              data-aos="fade-down"
+            >
+              <div>
+                <figure>
+                  <img src="images/ad2.png" alt="img" />
+                </figure>
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="blogs-data flex-sb">
+            <div class="w-50 blogs-text" data-aos="fade-up">
+              <div class="flex blogs-title">
+                <hr />
+                <h5>BLOGS</h5>
+              </div>
+              <h2>2023 NEWS UPDATES OF BROTHER'S IN ARMS</h2>
+              <p>
+                Honouring the Fallen, Running for Unity! <br />
+                Join the Color Run in support of Brothers in Arms this coming
+                June 9, 2026 and be part of an exciting event filled with fun,
+                energy and vibrant colors!
+              </p>
+              <br />
+              <div class="blogs-react">
+                <i class="ri-heart-line"></i>
+                <i class="ri-thumb-up-line"></i>
+                <i class="ri-thumb-down-line"></i>
+                <i class="ri-chat-new-line"></i>
+              </div>
+              <div class="flex gap-2 mt-30">
+                <a href="blog.html" class="btn_hover1">Read More</a>
+              </div>
+            </div>
+            <div
+              class="blogs-imgs flex flex-center w-50 blogs-image"
+              data-aos="fade-down"
+            >
+              <div>
+                <figure>
+                  <img src="images/ad3.png" alt="img" />
+                </figure>
+              </div>
+            </div>
+          </div>
+          <br /><br />
+          <div class="blogs-data flex-sb">
+            <div class="w-50 blogs-text" data-aos="fade-up">
+              <div class="flex gap-2 mt-30">
+                <a href="index.php#blog" class="btn_hover2ab">Go Back</a>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      <footer class="contact-footer footer-bg">
+
+      <footer>
+        <div class="container">
+          <div class="footer-hr flex flex-col">
+            <div class="flex gap-1" data-aos="fade-left">
+              <hr />
+              <h6>Keep in Touch</h6>
+            </div>
+            <h3>KEEP UPDATED FOR THE LATEST NEWS</h3>
+            <p class="text-center">
+              Subscribe to our newsletter by entering your email and clicking
+              'Get Notified' to stay updated with the latest news and exclusive
+              updates!
+            </p>
+          </div>
+          <form
+            id="footer-form"
+            class="flex flex-sb gap-2"
+            data-aos="zoom-in"
+            data-aos-delay="400"
+          >
+            <div id="footer-message"></div>
+            <input type="email" required placeholder="Enter your mail" />
+            <button type="submit" class="btn_hover1">Subscribe</button>
+          </form>
+        </div>
         <div class="footer-menu">
           <div class="container">
             <div class="flex flex-start footer-center">
@@ -349,7 +402,7 @@
               </div>
               <div class="w-16 mt-45 flex-end">
                 <ul class="flex flex-col gap-2 flex-start">
-                  <li><a href="history.php">History</a></li>
+                  <li><a href="history.html">History</a></li>
                   <li><a href="contactform.html">Contact Us</a></li>
                   <li><a href="#">Privacy policy</a></li>
                 </ul>

@@ -20,7 +20,7 @@
   background-size: cover;
 }
 .header-index3 {
-  background-color: #bbaa91;
+  background-color: #fdfbf8;
   background-position: center center;
   background-size: cover;
 }
@@ -61,7 +61,10 @@
 }
 
 header {
+  height: 100px;
   padding: 20px 0;
+  background-color: #fdfbf8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .navbar {
@@ -69,7 +72,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 15px;
+  // padding: 0.5rem 15px;
   color: #221f1d;
 }
 
@@ -78,11 +81,12 @@ header {
 }
 
 .navbar-nav {
+  transform: translateY(-10px);
   gap: 50px;
 }
 .navbar-logo {
   margin-right: 25px;
-  width: 250px;
+  width: 172px;
   height: 80px;
   // filter: drop-shadow(0 0 10px white);
 }
@@ -106,7 +110,7 @@ header {
 
 nav li a.active,
 .nav-link:is(:hover, :focus-visible) {
-  color: orangered;
+  color: #ff4500;
 }
 
 .dropdown {
@@ -123,7 +127,7 @@ nav li a.active,
   position: absolute;
   padding: 30px;
   display: none;
-  z-index: 9;
+  z-index: 100;
 }
 
 .navbar .dropdown:hover .dropdown-menu {
@@ -131,7 +135,7 @@ nav li a.active,
   width: 220px;
   padding: 15px 0px 15px 0px;
   border-radius: 10px;
-  background-color: #e6d9c8;
+  background-color: #fdfbf8;
   border: solid 1px orangered;
   margin-left: -52px;
 }
@@ -142,6 +146,7 @@ nav li a.active,
 }
 
 .dropdown-item {
+  font-size: 17px;
   color: #221f1d;
   display: block;
   width: 100%;
@@ -182,7 +187,8 @@ nav li a.active,
 }
 
 .nav-right {
-  gap: 45px;
+  transform: translateY(-10px);
+  gap: 25px;
 }
 
 .nav-right p:first-child {
@@ -194,7 +200,7 @@ nav li a.active,
 }
 
 .nav-right .fa-magnifying-glass {
-  color: #fff;
+  color: #221f1d;
   font-size: 23px;
   cursor: pointer;
   transition: color 0.3s ease, transform 0.3s ease;
@@ -210,12 +216,13 @@ nav li a.active,
 }
 
 .nav-right .fa-hand-holding-dollar {
-  color: #fff;
-  font-size: 23px;
+  color: #221f1d;
+  font-size: 17px;
   padding: 7px 8px;
   cursor: pointer;
   transition: color 0.3s ease, transform 0.3s ease;
 }
+
 .nav-right .fa-hand-holding-dollar:hover {
   color: orangered;
   transform: scale(1.2);
@@ -226,15 +233,15 @@ nav li a.active,
 }
 
 .navbar-toggler:hover {
-  background: #e6d9c8;
+  border: 1px solid orangered;
 }
 
 .navbar-toggler span {
-  color: #fff;
+  color: #221f1d;
   font-size: 22px;
 }
 .navbar-toggler span:hover {
-  color: #221f1d;
+  color: orangered;
 }
 
 @media screen and (max-width: 1000px) {
@@ -256,7 +263,7 @@ nav li a.active,
 /* Sidebar */
 
 aside {
-  background-color: #c7b9a6;
+  background-color: #fdfbf8;
   z-index: 10;
 }
 
@@ -299,6 +306,11 @@ aside {
   border: 1.5px solid #ffffff;
   color: #ffffff;
   cursor: pointer;
+}
+
+.sidebar button:hover {
+  border: 1.5px solid #221f1d;
+  color: #221f1d;
 }
 
 .btn_hover1 {

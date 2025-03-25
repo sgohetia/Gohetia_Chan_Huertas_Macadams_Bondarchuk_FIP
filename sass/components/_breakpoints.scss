@@ -62,6 +62,10 @@
   background: #e6d9c8;
   padding: 100px 0;
 }
+.blogs {
+  background: #f3ebe0;
+  padding: 100px 0;
+}
 .history {
   background: #1e1c1d;
   padding: 100px 0;
@@ -79,6 +83,9 @@
   width: 100%;
 }
 .about-data a {
+  padding: 16px 38px 16px 38px !important;
+}
+.blogs-data a {
   padding: 16px 38px 16px 38px !important;
 }
 .history-data a {
@@ -184,12 +191,13 @@
   padding: 0 78px 0 0;
 }
 .navbar-toggler {
-  border: 1px solid #fff;
+  border: 1px solid #221f1d;
   background: inherit;
   padding: 10px 20px;
   border-radius: 6px;
   cursor: pointer;
   display: none;
+  transform: translateY(-10px);
 }
 .letter .text-center p {
   color: #ffffff;
@@ -233,8 +241,9 @@
   justify-content: center; /* Ensures child elements are centered */
 }
 .nav-link {
+  font-size: 17px;
   font-weight: 400;
-  color: #fff;
+  color: #221f1d;
 }
 .slider .list .item .content p {
   font-size: 18px;
@@ -438,6 +447,9 @@
     padding: 70px 0;
   }
   .vcross {
+    padding: 70px 0;
+  }
+  .blogs {
     padding: 70px 0;
   }
 
@@ -645,6 +657,9 @@
   }
 
   .about-imgs {
+    margin-top: 50px;
+  }
+  .blogs-imgs {
     margin-top: 50px;
   }
   .vcross-imgs {
