@@ -65,7 +65,7 @@
   <body>
     <div class="site-wrapper">
       <div class="header-index">
-        <header>
+        <header class="header">
           <nav class="container navbar">
             <div class="container-nav flex" id="main-header">
               <a class="navbar-logo" href="index.php">
