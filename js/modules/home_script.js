@@ -15,19 +15,20 @@ export function homeScript() {
   });
 
   // Announcment animation
-  gsap.registerPlugin(ScrollTrigger);
+  //  This part moved to the announcement.js file for vuejs applying
+  // gsap.registerPlugin(ScrollTrigger);
 
-  gsap.from(".header-card", {
-    opacity: 0,
-    y: 100,
-    duration: 1,
-    stagger: 0.3,
-    scrollTrigger: {
-      trigger: ".header-card",
-      start: "top 80%",
-      toggleActions: "play none none reverse",
-    },
-  });
+  // gsap.from(".header-card", {
+  //   opacity: 0,
+  //   y: 100,
+  //   duration: 1,
+  //   stagger: 0.3,
+  //   scrollTrigger: {
+  //     trigger: ".header-card",
+  //     start: "top 80%",
+  //     toggleActions: "play none none reverse",
+  //   },
+  // });
 
   //Progress Bar
   let progressBar = document.getElementById("progress-bar");
@@ -68,37 +69,38 @@ export function homeScript() {
   requestAnimationFrame(animateCounter);
 
   // Event
-  let accordionButtons = document.querySelectorAll(".accordion-button");
-  let acoimg = document.querySelectorAll(".accordion-button img");
+  // moved to event.js due to the vue.js
+  // let accordionButtons = document.querySelectorAll(".accordion-button");
+  // let acoimg = document.querySelectorAll(".accordion-button img");
 
-  accordionButtons.forEach(function (button, index) {
-    button.addEventListener("click", function () {
-      let collapse = this.parentElement.nextElementSibling;
+  // accordionButtons.forEach(function (button, index) {
+  //   button.addEventListener("click", function () {
+  //     let collapse = this.parentElement.nextElementSibling;
 
-      // Close all other accordion items
-      accordionButtons.forEach(function (otherButton, otherIndex) {
-        if (otherButton !== button) {
-          var otherCollapse = otherButton.parentElement.nextElementSibling;
-          otherCollapse.style.maxHeight = null;
+  //     // Close all other accordion items
+  //     accordionButtons.forEach(function (otherButton, otherIndex) {
+  //       if (otherButton !== button) {
+  //         var otherCollapse = otherButton.parentElement.nextElementSibling;
+  //         otherCollapse.style.maxHeight = null;
 
-          acoimg[otherIndex].src = "images/plus.png";
-          acoimg[otherIndex].style.transform = "rotate(0deg)";
-          otherButton.style.backgroundColor = "#fff";
-        }
-      });
+  //         acoimg[otherIndex].src = "images/plus.png";
+  //         acoimg[otherIndex].style.transform = "rotate(0deg)";
+  //         otherButton.style.backgroundColor = "#fff";
+  //       }
+  //     });
 
-      if (collapse.style.maxHeight) {
-        collapse.style.maxHeight = null;
+  //     if (collapse.style.maxHeight) {
+  //       collapse.style.maxHeight = null;
 
-        acoimg[index].src = "images/plus.png";
-        acoimg[index].style.transform = "rotate(90deg)";
-        button.style.backgroundColor = "";
-      } else {
-        collapse.style.maxHeight = collapse.scrollHeight + "px";
+  //       acoimg[index].src = "images/plus.png";
+  //       acoimg[index].style.transform = "rotate(90deg)";
+  //       button.style.backgroundColor = "";
+  //     } else {
+  //       collapse.style.maxHeight = collapse.scrollHeight + "px";
 
-        acoimg[index].style.transform = "rotate(180deg)";
-        button.style.backgroundColor = "#ffba39";
-      }
-    });
-  });
+  //       acoimg[index].style.transform = "rotate(180deg)";
+  //       button.style.backgroundColor = "#ffba39";
+  //     }
+  //   });
+  // });
 }
