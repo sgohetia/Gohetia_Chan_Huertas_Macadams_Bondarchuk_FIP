@@ -60,7 +60,7 @@ if ($errcount > 0) {
 }else{
 
 // Insert values into the database
-$query = "INSERT INTO contact_general_sponsor (first_name, last_name, company, email, type, message) VALUES (:first_name, :last_name, :company, :email, :type, :message )";
+$query = "INSERT INTO contact_general_sponsors (first_name, last_name, company, email, type, message) VALUES (:first_name, :last_name, :company, :email, :type, :message )";
 $stmt = $connect->prepare($query);
 $stmt->bindParam(':first_name', $first_name);
 $stmt->bindParam(':last_name', $last_name);

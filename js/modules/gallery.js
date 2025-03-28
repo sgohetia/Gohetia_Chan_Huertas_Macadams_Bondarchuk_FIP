@@ -67,59 +67,59 @@ export function awardsGallery() {
   });
 
   //Gallery
-  let list = document.querySelectorAll(".list");
-  let itemBox = document.querySelectorAll(".itemBox");
+  // let list = document.querySelectorAll(".list");
+  // let itemBox = document.querySelectorAll(".itemBox");
 
-  for (let i = 0; i < list.length; i++) {
-    list[i].addEventListener("click", function () {
-      for (let j = 0; j < list.length; j++) {
-        list[j].classList.remove("active");
-      }
-      this.classList.add("active");
+  // for (let i = 0; i < list.length; i++) {
+  //   list[i].addEventListener("click", function () {
+  //     for (let j = 0; j < list.length; j++) {
+  //       list[j].classList.remove("active");
+  //     }
+  //     this.classList.add("active");
 
-      let dataFilter = this.getAttribute("data-filter");
+  //     let dataFilter = this.getAttribute("data-filter");
 
-      for (let k = 0; k < itemBox.length; k++) {
-        itemBox[k].classList.remove("active");
-        itemBox[k].classList.add("hide");
+  //     for (let k = 0; k < itemBox.length; k++) {
+  //       itemBox[k].classList.remove("active");
+  //       itemBox[k].classList.add("hide");
 
-        if (
-          itemBox[k].getAttribute("data-item") == dataFilter ||
-          dataFilter == "all"
-        ) {
-          itemBox[k].classList.remove("hide");
-          itemBox[k].classList.add("active");
-        }
-      }
-    });
-  }
-  document.addEventListener("DOMContentLoaded", () => {
-    const images = document.querySelectorAll(".product .itemBox img");
-    const popup = document.getElementById("popup");
-    const popupImg = document.getElementById("popup-img");
-    const popupDesc = document.getElementById("popup-desc");
-    const closeBtn = document.querySelector(".close-btn");
+  //       if (
+  //         itemBox[k].getAttribute("data-item") == dataFilter ||
+  //         dataFilter == "all"
+  //       ) {
+  //         itemBox[k].classList.remove("hide");
+  //         itemBox[k].classList.add("active");
+  //       }
+  //     }
+  //   });
+  // }
+  // document.addEventListener("DOMContentLoaded", () => {
+  //   const images = document.querySelectorAll(".product .itemBox img");
+  //   const popup = document.getElementById("popup");
+  //   const popupImg = document.getElementById("popup-img");
+  //   const popupDesc = document.getElementById("popup-desc");
+  //   const closeBtn = document.querySelector(".close-btn");
 
-    images.forEach((img) => {
-      img.addEventListener("click", () => {
-        popupImg.src = img.src;
+  //   images.forEach((img) => {
+  //     img.addEventListener("click", () => {
+  //       popupImg.src = img.src;
 
-        // Keep the default text if data-desc is empty
-        const desc = img.getAttribute("data-desc");
-        popupDesc.textContent = desc ? desc : popupDesc.textContent;
+  //       // Keep the default text if data-desc is empty
+  //       const desc = img.getAttribute("data-desc");
+  //       popupDesc.textContent = desc ? desc : popupDesc.textContent;
 
-        popup.classList.add("showPopup");
-      });
-    });
+  //       popup.classList.add("showPopup");
+  //     });
+  //   });
 
-    closeBtn.addEventListener("click", () => {
-      popup.classList.remove("showPopup");
-    });
+  //   closeBtn.addEventListener("click", () => {
+  //     popup.classList.remove("showPopup");
+  //   });
 
-    popup.addEventListener("click", (e) => {
-      if (e.target === popup) {
-        popup.classList.remove("showPopup");
-      }
-    });
-  });
+  //   popup.addEventListener("click", (e) => {
+  //     if (e.target === popup) {
+  //       popup.classList.remove("showPopup");
+  //     }
+  //   });
+  // });
 }

@@ -372,33 +372,41 @@ From battlefield letters filled with hope and longing to the enduring friendship
           <h2>The Gallery</h2>
         </div>
         <ul>
-          <li class="list active" data-filter="all">All</li>
-          <li class="list" data-filter="ww1">WW1</li>
-          <li class="list" data-filter="ww2">WW2</li>
-          <li class="list" data-filter="date1">Date1</li>
-          <li class="list" data-filter="date2">Date2</li>
-          <li class="list" data-filter="date3">Date3</li>
+        <li class="list" :class="{ active: activeFilter === 'all' }" @click="filterGallery('all')">All</li>
+      <li class="list" :class="{ active: activeFilter === 'ww1' }" @click="filterGallery('ww1')">WW1</li>
+      <li class="list" :class="{ active: activeFilter === 'ww2' }" @click="filterGallery('ww2')">WW2</li>
+      <li class="list" :class="{ active: activeFilter === 'date1' }" @click="filterGallery('date1')">Date1</li>
+      <li class="list" :class="{ active: activeFilter === 'date2' }" @click="filterGallery('date2')">Date2</li>
+      <li class="list" :class="{ active: activeFilter === 'date3' }" @click="filterGallery('date3')">Date3</li>
         </ul>
-        <div class="product">
-        <?php 
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-            echo '<div class="itemBox" data-item="'.$row['type'].'">
-            <img src="images/'.$row['fname'].'" alt="'.$row['fname_alt'].'" />
-            </div>';
-        }
-            $stmt = null;
-        
-            ?>
+        <div id="app_gallery">
+        <div class="product"  >
+  <div v-if="loadinggallery">
+  <img src="images/loader.svg" alt="loading indicator" class="loader" />
+  </div>
 
-          
-        </div>
-        <div class="popup" id="popup">
-    <span class="close-btn">x</span>
-    <img id="popup-img" src="" alt="">
-    <p id="popup-desc">These 81 members of the Canadian Armed Forces were awarded the Victoria Cross through acts of valour. 
-    They were among 1,351 crosses and 3 bars awarded throughout the British Empire. </p>
+    <div
+      class="itemBox"
+      v-for="(item, index) in galleryData"
+      :key="index"
+      :data-item="item.type"
+      @click="openPopup(item)"
+
+    >
+      <img :src="'images/' + item.fname" :alt="item.fname_alt" />
+    </div>
+
 </div>
-      </section>
+<div class="popup" v-if="showPopup" @click.self="closePopup">
+      <span class="close-btn" @click="closePopup">X</span>
+      <img :src="'images/' + selectedItem.fname" :alt="selectedItem.fname_alt" />
+      <p>{{ selectedItem.description || 'No description available.' }}</p>
+    </div>
+  </div>
+  </div>
+</section>
+
+
       <footer>
         <div class="footer-menu">
           <div class="container">

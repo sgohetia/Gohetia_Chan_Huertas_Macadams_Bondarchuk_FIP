@@ -61,7 +61,7 @@ if ($errcount > 0) {
 }else{
 
 // Insert values into the database
-$query = "INSERT INTO contact_volunteer (first_name, last_name, email, gender, age, experience, message) 
+$query = "INSERT INTO contact_volunteers (first_name, last_name, email, gender, age, experience, message) 
           VALUES (:first_name, :last_name, :email, :gender, :age, :experience, :message)";
 
 $stmt = $connect->prepare($query);

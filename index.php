@@ -1,17 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php
-    //connect to the running datbase server and the sepcific database
-    
-   require_once ('includes/connect.php');
 
-    // create a  query to run in SQL
-
-    $stmt = $connect->prepare("SELECT event.id AS event, event_name, date_time ,description FROM event order by date_time desc ");
-    $stmt->execute();
-    //$results = mysqli_query($connect,$query);
-
-    ?> 
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -40,6 +29,7 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
 
+
     <link rel="stylesheet" href="css/main.css" />
     <script
       defer
@@ -58,7 +48,6 @@
       src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
     ></script>
     <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
     <script defer type="module" src="js/home.js"></script>
   </head>
 
@@ -248,76 +237,35 @@
         </section>
       </div>
 
-      <section class="feature">
-        <div class="container">
-          <div class="flex">
-            <div class="header-card" data-aos="fade-up">
-              <div>
-                <figure>
-                  <img
-                    src="images/feature2.png"
-                    class="feature-img1"
-                    alt="feature"
-                  />
-                </figure>
-                <h4>Grand Launch</h4>
-                <p>
-                  We are thrilled to announce the official launch of Brothers in
-                  Arms, a dynamic and interactive donation platform dedicated to
-                  making a real impact. Our mission is to support those in need,
-                  one step at a time. Join us as we embark on this journey of
-                  hope and solidarity.
-                </p>
-              </div>
-            </div>
-            <div class="header-card" data-aos="fade-down">
-              <div>
-                <figure>
-                  <img src="images/feature2.png" alt="feature" />
-                </figure>
-                <h4>Fundraising Campaign</h4>
-                <p>
-                We are thrilled to announce the official launch of Brothers in
-                  Arms, a dynamic and interactive donation platform dedicated to
-                  making a real impact. Our mission is to support those in need,
-                  one step at a time. Join us as we embark on this journey of
-                  hope and solidarity.
-                </p>
-              </div>
-            </div>
-            <div class="header-card" data-aos="fade-up">
-              <div>
-                <figure>
-                  <img src="images/feature2.png" alt="feature" />
-                </figure>
-                <h4>Volunteer Recruitment</h4>
-                <p>
-                We are thrilled to announce the official launch of Brothers in
-                  Arms, a dynamic and interactive donation platform dedicated to
-                  making a real impact. Our mission is to support those in need,
-                  one step at a time. Join us as we embark on this journey of
-                  hope and solidarity.
-                </p>
-              </div>
-            </div>
-            <div class="header-card" data-aos="fade-down">
-              <div>
-                <figure>
-                  <img src="images/feature2.png" alt="feature" />
-                </figure>
-                <h4>Thank You Message</h4>
-                <p>
-                We are thrilled to announce the official launch of Brothers in
-                  Arms, a dynamic and interactive donation platform dedicated to
-                  making a real impact. Our mission is to support those in need,
-                  one step at a time. Join us as we embark on this journey of
-                  hope and solidarity.
-                </p>
-              </div>
-            </div>
+<div id="app1">
+  <section class="feature">
+    <div v-if="loadingannouncements">
+      <img src="images/loader.svg" alt="loading indicator" class="loader" />
+    </div>
+    <div v-else class="container">
+      <div class="flex">
+        <div
+          v-for="(announcement, index) in announcementsData"
+          :key="index"
+          class="header-card"
+          v-bind:data-aos="announcement.animation"
+        >
+          <div>
+            <figure>
+              <img
+                src="images/feature2.png"
+                class="feature-img1"
+                alt="feature"
+              />
+            </figure>
+            <h4>{{ announcement.title }}</h4>
+            <p>{{ announcement.message }}</p>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </section>
+</div>
 
       <section class="donation" id="donate">
         <div class="container position-relative">
@@ -436,31 +384,28 @@
                 id="accordionExample"
                 data-aos="fade-down"
               >
-              <?php 
-                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-        
-                echo'<div class="accordion-item">
+              
+        <div id="appevent">
+          <div v-if="loadingEvents">
+            <img src="images/loader.svg" alt="loading indicator" class="loader" />
+            </div>
+                <div v-for="event in eventsData" class="accordion-item">
                        <h2 class="accordion-header">
-                          <button class="accordion-button flex-sb" type="button">';
-               echo $row['event_name'];
-               echo' ';
-               echo $row['date_time'];
-               echo'    <img src="images/plus.png" alt="img" />
+                          <button class="accordion-button flex-sb" type="button">
+                          {{event.event_name}} {{event.date_time}}  
+                  <img src="images/plus.png" alt="img" />
                          </button>
                           </h2>
                           <div class="accordion-collapse">
-                          <p>';
-              echo $row['description'];
-                
-              echo  '</p>
+                          <p>
+               {{event.description}}
+               
+              </p>
+              
                      </div>
-                     </div>';
-
-          
-
-        }
-        $stmt = null;
-        ?>
+                     <br>
+                     </div>
+          </div>
               </div>
             </div>
           </div>
@@ -479,7 +424,7 @@
               <p class="mt-1 mb-15">
                 Get the latest updates, inspiring stories, and community
                 highlights from Brothers in Arms. Stay informed, get involved,
-                and see the impact we’re making together!
+                and see the impact we're making together!
               </p>
             </div>
             <div class="w-33 mt-1 flex flex-end blog-allbtn">
