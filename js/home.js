@@ -6,6 +6,7 @@ import { scrollUp } from "./modules/scroll-up.js";
 import { searchBar } from "./modules/searchbar.js";
 import { announcement } from "./modules/announcement.js";
 import { event } from "./modules/event.js";
+import { news } from "./modules/news.js";
 
 headerNav();
 homeScript();
@@ -15,3 +16,4 @@ scrollUp();
 searchBar();
 announcement();
 event();
+news();

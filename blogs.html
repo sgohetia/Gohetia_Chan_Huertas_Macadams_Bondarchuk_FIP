@@ -227,20 +227,26 @@
       </div>
 
       <section class="blogs" id="blogs">
-        <div class="container">
-          <div class="blogs-data flex-sb">
-            <div class="w-50 blogs-text" data-aos="fade-up">
+        <div class="container" id="app_news">
+          <div v-if="loadingnews">
+            <img
+              src="images/loader.svg"
+              alt="loading indicator"
+              class="loader"
+            />
+          </div>
+          <div
+            v-for="(newsItem, index) in newsData"
+            :key="index"
+            class="blogs-data flex-sb"
+          >
+            <div class="w-50 blogs-text" v-bind:data-aos="newsItem.animation">
               <div class="flex blogs-title">
                 <hr />
                 <h5>BLOGS</h5>
               </div>
-              <h2>2025 NEWS UPDATES OF BROTHER'S IN ARMS</h2>
-              <p>
-                Honouring the Fallen, Running for Unity! <br />
-                Join the Color Run in support of Brothers in Arms this coming
-                June 9, 2026 and be part of an exciting event filled with fun,
-                energy and vibrant colors!
-              </p>
+              <h2>{{ newsItem.title }}</h2>
+              <p>{{ newsItem.summary}}</p>
               <br />
               <div class="blogs-react">
                 <i class="ri-heart-line"></i>
@@ -249,7 +255,9 @@
                 <i class="ri-chat-new-line"></i>
               </div>
               <div class="flex gap-2 mt-30">
-                <a href="blog.html" class="btn_hover1">Read More</a>
+                <a :href="'blog.html?id=' + newsItem.id" class="btn_hover1"
+                  >Read More</a
+                >
               </div>
             </div>
             <div
@@ -258,84 +266,16 @@
             >
               <div>
                 <figure>
-                  <img src="images/ad1.png" alt="img" />
+                  <img
+                    :src="'images/' + newsItem.image_file2"
+                    :alt="newsItem.image_alt2"
+                  />
                 </figure>
               </div>
             </div>
           </div>
           <br />
-          <div class="blogs-data flex-sb">
-            <div class="w-50 blogs-text" data-aos="fade-up">
-              <div class="flex blogs-title">
-                <hr />
-                <h5>BLOGS</h5>
-              </div>
-              <h2>2024 NEWS UPDATES OF BROTHER'S IN ARMS</h2>
-              <p>
-                Honouring the Fallen, Running for Unity! <br />
-                Join the Color Run in support of Brothers in Arms this coming
-                June 9, 2026 and be part of an exciting event filled with fun,
-                energy and vibrant colors!
-              </p>
-              <br />
-              <div class="blogs-react">
-                <i class="ri-heart-line"></i>
-                <i class="ri-thumb-up-line"></i>
-                <i class="ri-thumb-down-line"></i>
-                <i class="ri-chat-new-line"></i>
-              </div>
-              <div class="flex gap-2 mt-30">
-                <a href="blog.html" class="btn_hover1">Read More</a>
-              </div>
-            </div>
-            <div
-              class="blogs-imgs flex flex-center w-50 blogs-image"
-              data-aos="fade-down"
-            >
-              <div>
-                <figure>
-                  <img src="images/ad2.png" alt="img" />
-                </figure>
-              </div>
-            </div>
-          </div>
           <br />
-          <div class="blogs-data flex-sb">
-            <div class="w-50 blogs-text" data-aos="fade-up">
-              <div class="flex blogs-title">
-                <hr />
-                <h5>BLOGS</h5>
-              </div>
-              <h2>2023 NEWS UPDATES OF BROTHER'S IN ARMS</h2>
-              <p>
-                Honouring the Fallen, Running for Unity! <br />
-                Join the Color Run in support of Brothers in Arms this coming
-                June 9, 2026 and be part of an exciting event filled with fun,
-                energy and vibrant colors!
-              </p>
-              <br />
-              <div class="blogs-react">
-                <i class="ri-heart-line"></i>
-                <i class="ri-thumb-up-line"></i>
-                <i class="ri-thumb-down-line"></i>
-                <i class="ri-chat-new-line"></i>
-              </div>
-              <div class="flex gap-2 mt-30">
-                <a href="blog.html" class="btn_hover1">Read More</a>
-              </div>
-            </div>
-            <div
-              class="blogs-imgs flex flex-center w-50 blogs-image"
-              data-aos="fade-down"
-            >
-              <div>
-                <figure>
-                  <img src="images/ad3.png" alt="img" />
-                </figure>
-              </div>
-            </div>
-          </div>
-          <br /><br />
           <div class="blogs-data flex-sb">
             <div class="w-50 blogs-text" data-aos="fade-up">
               <div class="flex gap-2 mt-30">
