@@ -33,6 +33,7 @@ export function announcement() {
       return {
         announcementsData: [],
         loadingannouncements: true,
+        error: "",
       };
     },
   }).mount("#app1");

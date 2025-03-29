@@ -20,6 +20,7 @@ export function vue_gallery() {
         showPopup: false,
         selectedItem: null,
         filteredData: [],
+        error: "",
       };
     },
     methods: {

@@ -18,6 +18,7 @@ export function news() {
       return {
         newsData: [],
         loadingnews: true,
+        error: "",
       };
     },
   }).mount("#app_news");
