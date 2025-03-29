@@ -386,7 +386,7 @@
               >
               
         <div id="appevent">
-          <div v-if="loadingEvents">
+          <div v-if="loadingevents">
             <img src="images/loader.svg" alt="loading indicator" class="loader" />
             </div>
                 <div v-for="event in eventsData" class="accordion-item">
@@ -431,29 +431,28 @@
               <a href="blogs.html" class="btn_hover2">See all blogs</a>
             </div>
           </div>
-          <div class="flex gap-2 mt-15 blog-cards">
-            <div data-aos="fade-up" class="blog-card w-100">
-              <img src="images/blog1.png" class="card-img-top" alt="img" />
-              <div class="card-body">
-                <h4>2025 NEWS UPDATES OF BROTHER'S IN ARMS</h4>
-                <a href="blog.html">Read More</a>
+
+          <div class="flex gap-2 mt-15 blog-cards" id="app_news">
+           <div v-if="loadingnews">
+           <img src="images/loader.svg" alt="loading indicator" class="loader" />
+           </div>
+
+           <div
+             v-for="(newsItem, index) in newsData"
+             :key="index"
+             class="blog-card w-100"
+             v-bind:data-aos="newsItem.animation"
+             >
+            <img
+             :src="'images/' + newsItem.image_file"
+             class="card-img-top"
+             :alt="newsItem.image_alt"
+            />
+            <div class="card-body">
+            <h4>{{ newsItem.title }}</h4>
+            <a :href="'blog.html?id=' + newsItem.id">Read More</a>
               </div>
             </div>
-            <div data-aos="fade-down" class="blog-card w-100">
-              <img src="images/blog2.png" class="card-img-top" alt="img" />
-              <div class="card-body">
-                <h4>2024 NEWS UPDATES OF BROTHER'S IN ARMS</h4>
-                <a href="blog.html">Read More</a>
-              </div>
-            </div>
-            <div data-aos="fade-up" class="blog-card w-100">
-              <img src="images/blog3.png" class="card-img-top" alt="img" />
-              <div class="card-body">
-                <h4>2023 NEWS UPDATES OF BROTHER'S IN ARMS</h4>
-                <a href="blog.html">Read More</a>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
       <section class="ourpartners">
