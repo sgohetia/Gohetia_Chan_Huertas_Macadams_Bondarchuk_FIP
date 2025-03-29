@@ -51,6 +51,7 @@ export function event() {
       return {
         eventsData: [],
         loadingevents: true,
+        error: "",
       };
     },
   }).mount("#appevent");

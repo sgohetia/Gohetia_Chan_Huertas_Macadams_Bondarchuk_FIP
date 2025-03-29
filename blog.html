@@ -46,7 +46,7 @@
       src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
     ></script>
     <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script defer type="module" src="js/home.js"></script>
+    <script defer type="module" src="js/blog.js"></script>
   </head>
 
   <body>
@@ -228,47 +228,21 @@
 
       <section class="blogs" id="blogs">
         <div class="container">
-          <div class="blogs-data flex-sb">
+          <div class="blogs-data flex-sb" id="app_newsdetails">
             <div class="w-50 blogs-text" data-aos="fade-up">
+              <div v-if="loadingnewsdetails">
+                <img
+                  src="images/loader.svg"
+                  alt="loading indicator"
+                  class="loader"
+                />
+              </div>
               <div class="flex blogs-title">
                 <hr />
-                <h5>2025 NEWS UPDATES OF BROTHER'S IN ARMS</h5>
+                <h5>{{newsDetailsData.sub_title}}</h5>
               </div>
-              <h2>Honouring the Fallen, Running for Unity!</h2>
-              <p>
-                The Honour Run: Brother in Arms is a vibrant, family-friendly
-                event that brings people together to celebrate unity,
-                camaraderie, and resilience. This 5K fun run honors and supports
-                our veterans, active-duty military personnel, first responders,
-                and their families. Participants of all ages are invited to run,
-                walk, or jog through a course filled with color stations, where
-                bursts of vibrant hues symbolize the strength, diversity, and
-                spirit of those who serve. It's a joyful, inclusive event that
-                encourages both reflection and celebration of those who
-                sacrifice for our country and communities.
-              </p>
-              <br />
-              <p>
-                Beyond the run, the event features live music, food vendors, and
-                engaging community activities, creating a festival atmosphere
-                where participants can connect and share in the collective
-                appreciation of our heroes. Whether you're running in honor of a
-                loved one, to show support for our servicemen and women, or
-                simply to enjoy a fun, active day, the Honour Run offers
-                something for everyone. It's an opportunity to come together as
-                a community and foster a spirit of gratitude and solidarity.
-              </p>
-              <br />
-              <p>
-                A portion of the proceeds from the event will go towards
-                organizations that support mental health, rehabilitation, and
-                reintegration programs for veterans and first responders, making
-                this event not only a celebration of service but also a way to
-                give back to those who need it most. The Colour Run: Brother in
-                Arms is more than just a race—it's a movement of gratitude,
-                unity, and celebration. Join us for an unforgettable experience
-                that will leave you feeling inspired and connected to the cause.
-              </p>
+              <h2>{{newsDetailsData.title}}</h2>
+              <p v-html="newsDetailsData.message.replace(/\\n/g, '<br>')"></p>
               <br />
               <div class="blogs-react">
                 <i class="ri-heart-line"></i>
@@ -285,7 +259,7 @@
             >
               <div>
                 <figure>
-                  <img src="images/ad1.png" alt="img" />
+                  <img :src="`images/${image_file2}`" :alt="`${image_alt2}` " />
                 </figure>
               </div>
             </div>
