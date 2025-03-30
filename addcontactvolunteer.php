@@ -1,7 +1,7 @@
 <?php
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
-require_once ('includes/connect.php');
+// require_once ('includes/connect.php');
 
 $errors = array();
 
@@ -61,21 +61,21 @@ if ($errcount > 0) {
 }else{
 
 // Insert values into the database
-$query = "INSERT INTO contact_volunteers (first_name, last_name, email, gender, age, experience, message) 
-          VALUES (:first_name, :last_name, :email, :gender, :age, :experience, :message)";
+// $query = "INSERT INTO contact_volunteers (first_name, last_name, email, gender, age, experience, message) 
+//           VALUES (:first_name, :last_name, :email, :gender, :age, :experience, :message)";
 
-$stmt = $connect->prepare($query);
-$stmt->bindParam(':first_name', $first_name);
-$stmt->bindParam(':last_name', $last_name);
-$stmt->bindParam(':email', $email);
-$stmt->bindParam(':gender', $gender);
-$stmt->bindParam(':age', $age, PDO::PARAM_INT);
-$stmt->bindParam(':experience', $experience);
-$stmt->bindParam(':message', $message);
-$stmt->execute();
+// $stmt = $connect->prepare($query);
+// $stmt->bindParam(':first_name', $first_name);
+// $stmt->bindParam(':last_name', $last_name);
+// $stmt->bindParam(':email', $email);
+// $stmt->bindParam(':gender', $gender);
+// $stmt->bindParam(':age', $age, PDO::PARAM_INT);
+// $stmt->bindParam(':experience', $experience);
+// $stmt->bindParam(':message', $message);
+// $stmt->execute();
 
 // Format and send an email
-$to = 'xxx@abc.com'; // Replace with recipient email
+$to = $email; // Replace with recipient email
 $subject = 'New Volunteer Application';
 $email_message = "You have received a new volunteer application:\n\n";
 $email_message .= "Name: $first_name $last_name\n";

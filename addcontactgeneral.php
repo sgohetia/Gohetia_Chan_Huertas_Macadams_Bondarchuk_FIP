@@ -1,7 +1,7 @@
 <?php
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
-require_once ('includes/connect.php');
+// require_once ('includes/connect.php');
 
 
 $errors = array();
@@ -60,18 +60,18 @@ if ($errcount > 0) {
 }else{
 
 // Insert values into the database
-$query = "INSERT INTO contact_general_sponsors (first_name, last_name, company, email, type, message) VALUES (:first_name, :last_name, :company, :email, :type, :message )";
-$stmt = $connect->prepare($query);
-$stmt->bindParam(':first_name', $first_name);
-$stmt->bindParam(':last_name', $last_name);
-$stmt->bindParam(':company', $company);
-$stmt->bindParam(':email', $email);
-$stmt->bindParam(':type', $type);
-$stmt->bindParam(':message', $message);
-$stmt->execute();
+// $query = "INSERT INTO contact_general_sponsors (first_name, last_name, company, email, type, message) VALUES (:first_name, :last_name, :company, :email, :type, :message )";
+// $stmt = $connect->prepare($query);
+// $stmt->bindParam(':first_name', $first_name);
+// $stmt->bindParam(':last_name', $last_name);
+// $stmt->bindParam(':company', $company);
+// $stmt->bindParam(':email', $email);
+// $stmt->bindParam(':type', $type);
+// $stmt->bindParam(':message', $message);
+// $stmt->execute();
 
 // Format and send an email
-$to = 'xxx@abc.com'; // Client email
+$to = $email; // Client email
 $subject = 'Message from your Website!';
 $email_message = "You have received a new general and sponsor form submission:\n\n";
 $email_message .= "Name: $first_name $last_name\n";
