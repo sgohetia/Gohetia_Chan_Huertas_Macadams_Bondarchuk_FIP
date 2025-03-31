@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php
+ <?php
 
 session_start();
 
@@ -10,7 +10,7 @@ if (!isset($_SESSION['username'])) {
     exit();
 }
 
-?>
+?> 
 
 <head>
     <meta charset="UTF-8" />

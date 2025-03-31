@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php
-require_once('../includes/connect.php');
-$query = 'SELECT * FROM event WHERE event.id = :eventId';
-$stmt = $connect->prepare($query);
-$eventId = $_GET['id'];
-$stmt->bindParam(':eventId', $eventId, PDO::PARAM_INT);
-$stmt->execute();
-$row = $stmt->fetch(PDO::FETCH_ASSOC);
-?>
+
 
 <head>
     <meta charset="UTF-8" />
@@ -56,8 +48,8 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
       defer
       src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
     ></script>
-
-    <script defer src="../js/main.js"></script>
+    <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script defer type="module" src="../js/event_details.js"></script>
   </head>
 <body>
 
@@ -65,20 +57,23 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
     <div class="edit col-span-full m-col-start-2 m-col-end-12 l-col-start-2 l-col-end-12">
     <h1>Edit Event</h1>
 <p>Please edit the event.<br></p>
-<form class="edit-form" action="edit_event.php" method="POST">
-<input name="pk" type="hidden" value="<?php echo $row['id']; ?>">
+<div id="app_eventsdetails">
+<div v-if="loadingeventsdetails">
+    <img src="../images/loader.svg" alt="loading indicator" class="loader" />
+  </div>
+<form class="edit-form" action="http://localhost:8888/lumen_brothersinarms/public/events/edit/' + eventsDetailsData.id" method="POST">
+<input name="pk" type="hidden" :value="eventsDetailsData.id">
     <label for="event_name">Event Name: </label>
-    <input name="event_name" type="text" value="<?php echo $row['event_name']; ?>" required><br><br>
+    <input name="event_name" type="text" :value="eventsDetailsData.event_name" required><br><br>
     <label for="date_time">Date: </label>
-    <input name="date_time" type="text" required value="<?php echo $row['date_time']; ?>"><br><br>
+    <input name="date_time" type="text" required :value="eventsDetailsData.date_time"><br><br>
     <label for="description">Description: </label>
-    <textarea name="description" type="text" required ><?php echo $row['description'];?></textarea> <br><br>
+    <textarea name="description" type="text" required >{{eventsDetailsData.description}}</textarea> <br><br>
     <input class="cntct-btn" name="submit" type="submit" value="Edit">
 </form>
 </div>
+</div>
 </section>
-<?php
-$stmt = null;
-?>
+
 </body>
 </html>

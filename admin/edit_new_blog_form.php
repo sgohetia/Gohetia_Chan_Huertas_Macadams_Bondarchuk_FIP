@@ -1,14 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php
-require_once('../includes/connect.php');
-$query = 'SELECT * FROM news_blog WHERE news_blog.id = :news_blogId';
-$stmt = $connect->prepare($query);
-$news_blogId = $_GET['id'];
-$stmt->bindParam(':news_blogId', $news_blogId, PDO::PARAM_INT);
-$stmt->execute();
-$row = $stmt->fetch(PDO::FETCH_ASSOC);
-?>
 
 <head>
     <meta charset="UTF-8" />
@@ -57,7 +48,8 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
       src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
     ></script>
 
-    <script defer src="../js/main.js"></script>
+    <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script defer type="module" src="../js/news_blog_details.js"></script>
   </head>
 <body>
 
@@ -65,24 +57,31 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
     <div class="edit col-span-full m-col-start-2 m-col-end-12 l-col-start-2 l-col-end-12">
     <h1>Edit News and Blogs</h1>
 <p>Please edit the news and blogs.<br></p>
-<form class="edit-form" action="edit_news_blog.php" method="POST">
-<input name="pk" type="hidden" value="<?php echo $row['id']; ?>">
+<div id="app_newsdetails">
+<div v-if="loadingnewsdetails">
+    <img src="../images/loader.svg" alt="loading indicator" class="loader" />
+  </div>
+<form class="edit-form" action="http://localhost:8888/lumen_brothersinarms/public/events/edit/' + newsDetailsData.id" method="POST">
+<input name="pk" type="hidden" :value="newsDetailsData.id">
     <label for="title">Title: </label>
-    <input name="title" type="text" value="<?php echo $row['title']; ?>" required><br><br>
+    <input name="title" type="text" :value="newsDetailsData.title" required><br><br>
+    <label for="sub_title">Sub-title: </label>
+    <input name="sub_title" type="text" :value="newsDetailsData.sub_title" required > <br><br>
     <label for="summary">Summary: </label>
-    <textarea name="summary" type="text" required ><?php echo $row['summary'];?></textarea> <br><br>
+    <textarea name="summary" type="text" required >{{newsDetailsData.summary}}</textarea> <br><br>
     <label for="message">Message: </label>
-    <textarea name="message" type="text" required ><?php echo $row['message'];?></textarea> <br><br>
-    <label for="date">Date: </label>
-    <input name="date" type="date" required value="<?php echo $row['date']; ?>"><br><br>
-    <label for="type">Type: </label>
-    <input name="type" type="text" value="<?php echo $row['type']; ?>" required><br><br>
+    <textarea name="message" type="text" required >{{newsDetailsData.message}}</textarea> <br><br>
     <label for="image_file">Image file: </label>
-    <input name="image_file" type="text" value="<?php echo $row['image_file']; ?>" required><br><br>
+    <input name="image_file" type="text" :value="newsDetailsData.image_file" required><br><br>
     <label for="image_alt">Image Info: </label>
-    <input name="image_alt" type="text" value="<?php echo $row['image_alt']; ?>" required><br><br>
+    <input name="image_alt" type="text" :value="newsDetailsData.image_alt" required><br><br>
+    <label for="image_file2">Image file2: </label>
+    <input name="image_file2" type="text" :value="newsDetailsData.image_file2" required><br><br>
+    <label for="image_alt2">Image Info2: </label>
+    <input name="image_alt2" type="text" :value="newsDetailsData.image_alt2" required><br><br>
     <input class="cntct-btn" name="submit" type="submit" value="Edit">
 </form>
+</div>
 </div>
 </section>
 <?php

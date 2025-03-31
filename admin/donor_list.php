@@ -62,7 +62,8 @@ $stmt->execute();
       src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
     ></script>
 
-    <script defer src="../js/main.js"></script>
+    <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script defer type="module" src="../js/donor_list.js"></script>
   </head>
 <body>
 
@@ -83,23 +84,24 @@ $stmt->execute();
         id="project-list"
         class="col-span-full m-col-start-2 m-col-end-12 l-col-start-2 l-col-end-12 list-project"
       >
-<?php
+      <div id="appdonor">
+  <div v-if="loadingdonors">
+    <img src="../images/loader.svg" alt="loading indicator" class="loader" />
+  </div>
 
-while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+  <div v-else>
+    <p v-for="donor in donorsData" :key="donor.id" class="admin-form-list">
+      {{ donor.name }}
+      
+      <a class="test" :href="'edit_donor_form.php?id=' + donor.id">edit</a>
 
-  echo  '<p class="admin-form-list">'.
-  $row['name'].
-  ' <a class="test" href="edit_donor_form.php?id='.$row['id'].'">edit</a>'.
-
-  '<a class="test" href="delete_donor.php?id='.$row['id'].'">delete</a></p>';
-}
-
-$stmt = null;
-
-?>
+      <a class="test" :href="'http://localhost:8888/lumen_brothersinarms/public/donors/delete/' + donor.id">delete</a>
+    </p>
+  </div>
+</div>
 </div>
 <h3>Add a New Donor</h3>
-<form  action="add_donor.php" method="post" enctype="multipart/form-data">
+<form  action="http://localhost:8888/lumen_brothersinarms/public/donors/add" method="post" enctype="multipart/form-data">
     <label for="name">Name: </label>
     <input name="name" type="text" required><br><br>
     <label for="campaign">Campaign:</label>
