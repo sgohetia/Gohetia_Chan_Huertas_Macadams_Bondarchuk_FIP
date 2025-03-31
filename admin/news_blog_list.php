@@ -1,19 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php
 
-session_start();
-
-if (!isset($_SESSION['username'])) {
-    header('Location: login_form.php');
-    exit();
-}
-
-require_once('../includes/connect.php');
-$stmt = $connect->prepare('SELECT id, title FROM news_blog ORDER BY title ASC');
-$stmt->execute();
-?>
 
 <head>
     <meta charset="UTF-8" />
@@ -60,9 +48,10 @@ $stmt->execute();
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
-    ></script>
 
-    <script defer src="../js/main.js"></script>
+    ></script>
+    <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script defer type="module" src="../js/news_blog_list.js"></script>
   </head>
 <body>
 
@@ -81,37 +70,49 @@ $stmt->execute();
         id="project-list"
         class="col-span-full m-col-start-2 m-col-end-12 l-col-start-2 l-col-end-12 list-project"
       >
-<?php
 
-while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
-  echo  '<p class="admin-form-list">'.
-  $row['title'].
-  '<a class="test" href="edit_new_blog_form.php?id='.$row['id'].'">edit</a>'.
+      <div id="app_news">
+  <div v-if="loadingnews">
+    <img src="../images/loader.svg" alt="loading indicator" class="loader" />
+  </div>
 
-  '<a class="test" href="delete_new_blog.php?id='.$row['id'].'">delete</a></p>';
-}
+  <div v-else>
+    <p v-for="newsItem in newsData" :key="newsItem.id" class="admin-form-list">
+      {{ newsItem.title }}
+      
+      <a class="test" :href="'edit_new_blog_form.php?id=' + newsItem.id">edit</a>
 
-$stmt = null;
-
-?>
+      <a class="test" :href="'http://localhost:8888/lumen_brothersinarms/public/news/delete/' + newsItem.id">delete</a>
+    </p>
+  </div>
+</div>
 </div>
 <h3>Add a New News or Blog</h3>
-<form  action="add_new_blog.php" method="post" enctype="multipart/form-data">
-    <label for="title">Title: </label>
-    <input name="title" type="text" required><br><br>
-    <label for="summary">Summary: </label>
-    <textarea name="summary" type="text" required></textarea><br><br>
-    <label for="message">Summary: </label>
-    <textarea name="message" type="text" required></textarea><br><br>
-    <label for="date">Date:</label>
-    <input name="date" type="date" required><br><br>
-    <label for="type">Type:</label>
-    <input name="type" type="text" required><br><br>
-    <label for="image_file">Image file:</label>
-    <input name="image_file" type="file" required><br><br>
-    <label for="image_alt">Image Alt:</label>
-    <input name="image_alt" type="text" required><br><br>
+<form  action="http://localhost:8888/lumen_brothersinarms/public/news/add" method="post" enctype="multipart/form-data">
+  <label for="title">Title:</label>
+  <input name="title" type="text" required><br><br>
+
+  <label for="sub_title">Sub Title:</label>
+  <input name="sub_title" type="text" required><br><br>
+
+  <label for="summary">Summary:</label>
+  <textarea name="summary" required></textarea><br><br>
+
+  <label for="message">Message:</label>
+  <textarea name="message" required></textarea><br><br>
+
+  <label for="image_file">Image File:</label>
+  <input name="image_file" type="file" required><br><br>
+
+  <label for="image_alt">Image Alt Text:</label>
+  <input name="image_alt" type="text" required><br><br>
+
+  <label for="image_file2">Second Image File:</label>
+  <input name="image_file2" type="file"><br><br>
+
+  <label for="image_alt2">Second Image Alt Text:</label>
+  <input name="image_alt2" type="text"><br><br>
 
     <input class="cntct-btn" id="submit" name="submit" type="submit" value="Add">
 </form>

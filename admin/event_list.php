@@ -1,20 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php
-
-session_start();
-
-if (!isset($_SESSION['username'])) {
-    header('Location: login_form.php');
-    exit();
-}
-
-require_once('../includes/connect.php');
-$stmt = $connect->prepare('SELECT id, event_name FROM event ORDER BY event_name ASC');
-$stmt->execute();
-?>
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -62,7 +48,9 @@ $stmt->execute();
       src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
     ></script>
 
-    <script defer src="../js/main.js"></script>
+    <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script defer type="module" src="../js/event_list.js"></script>
+
   </head>
 <body>
 <!-- <section class="grid-con cms-menu">
@@ -91,23 +79,27 @@ $stmt->execute();
         id="project-list"
         class="col-span-full m-col-start-2 m-col-end-12 l-col-start-2 l-col-end-12 list-project"
       >
-<?php
 
-while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
-  echo  '<p class="admin-form-list">'.
-  $row['event_name'].
-  '<a class="test" href="edit_event_form.php?id='.$row['id'].'">edit</a>'.
+<p class="admin-form-list">
+<div id="appevent">
+  <div v-if="loadingevents">
+    <img src="../images/loader.svg" alt="loading indicator" class="loader" />
+  </div>
 
-  '<a class="test" href="delete_event.php?id='.$row['id'].'">delete</a></p>';
-}
+  <div v-else>
+    <p v-for="event in eventsData" :key="event.id" class="admin-form-list">
+      {{ event.event_name }}
+      
+      <a class="test" :href="'edit_event_form.php?id=' + event.id">edit</a>
 
-$stmt = null;
-
-?>
+      <a class="test" :href="'http://localhost:8888/lumen_brothersinarms/public/events/delete/' + event.id">delete</a>
+    </p>
+  </div>
+</div>
 </div>
 <h3>Add a New Event</h3>
-<form  action="add_event.php" method="post" enctype="multipart/form-data">
+<form  action="http://localhost:8888/lumen_brothersinarms/public/events/add" method="post" enctype="multipart/form-data">
     <label for="event_name">Event Name: </label>
     <input name="event_name" type="text" required><br><br>
     <label for="date_time">Date:</label>
