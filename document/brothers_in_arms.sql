@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Mar 06, 2025 at 04:56 AM
+-- Generation Time: Mar 31, 2025 at 01:04 AM
 -- Server version: 8.0.40
 -- PHP Version: 8.3.14
 
@@ -24,10 +24,32 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `contact_general_sponsor`
+-- Table structure for table `announcements`
 --
 
-CREATE TABLE `contact_general_sponsor` (
+CREATE TABLE `announcements` (
+  `id` int UNSIGNED NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `message` varchar(3000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `announcements`
+--
+
+INSERT INTO `announcements` (`id`, `title`, `message`) VALUES
+(1, 'Grand Launch', 'We are thrilled to announce the official launch of Brothers in Arms, a dynamic and interactive donation platform dedicated to making a real impact. Our mission is to support those in need, one step at a time. Join us as we embark on this journey of hope and solidarity.'),
+(2, 'Fundraising Campaign', 'We are thrilled to announce the official launch of Brothers in\n                  Arms, a dynamic and interactive donation platform dedicated to\n                  making a real impact. Our mission is to support those in need,\n                  one step at a time. Join us as we embark on this journey of\n                  hope and solidarity.'),
+(3, 'Volunteer Recruitment', ' We are thrilled to announce the official launch of Brothers in\n                  Arms, a dynamic and interactive donation platform dedicated to\n                  making a real impact. Our mission is to support those in need,\n                  one step at a time. Join us as we embark on this journey of\n                  hope and solidarity.'),
+(4, 'Thank You Message', 'We are thrilled to announce the official launch of Brothers in\n                  Arms, a dynamic and interactive donation platform dedicated to\n                  making a real impact. Our mission is to support those in need,\n                  one step at a time. Join us as we embark on this journey of\n                  hope and solidarity.');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact_general_sponsors`
+--
+
+CREATE TABLE `contact_general_sponsors` (
   `id` int UNSIGNED NOT NULL,
   `first_name` varchar(255) NOT NULL COMMENT 'madatory',
   `last_name` varchar(255) NOT NULL COMMENT 'madatory',
@@ -39,10 +61,10 @@ CREATE TABLE `contact_general_sponsor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `contact_general_sponsor`
+-- Dumping data for table `contact_general_sponsors`
 --
 
-INSERT INTO `contact_general_sponsor` (`id`, `first_name`, `last_name`, `company`, `email`, `type`, `message`, `date_time`) VALUES
+INSERT INTO `contact_general_sponsors` (`id`, `first_name`, `last_name`, `company`, `email`, `type`, `message`, `date_time`) VALUES
 (1, 'test', 'test a', 'company A', 'a@a.com', 'Feedback', 'test', '2025-02-21 23:27:50'),
 (2, 'test', 'test b', 'company B', 'a@a.com', 'Feedback', 'test', '2025-02-21 23:28:58'),
 (3, 'Stephanie', 'Chan', 'Fanshawe College', 'stephaniechan1996514@gmail.com', 'feedback', 'test message', '2025-03-03 21:28:07'),
@@ -51,10 +73,10 @@ INSERT INTO `contact_general_sponsor` (`id`, `first_name`, `last_name`, `company
 -- --------------------------------------------------------
 
 --
--- Table structure for table `contact_volunteer`
+-- Table structure for table `contact_volunteers`
 --
 
-CREATE TABLE `contact_volunteer` (
+CREATE TABLE `contact_volunteers` (
   `id` int UNSIGNED NOT NULL,
   `first_name` varchar(255) NOT NULL COMMENT 'madatory',
   `last_name` varchar(255) NOT NULL COMMENT 'madatory',
@@ -71,10 +93,10 @@ CREATE TABLE `contact_volunteer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `contact_volunteer`
+-- Dumping data for table `contact_volunteers`
 --
 
-INSERT INTO `contact_volunteer` (`id`, `first_name`, `last_name`, `email`, `message`, `date_time`, `volunteer_event_interest`, `availability`, `race`, `dietary_requirements`, `gender`, `age`, `experience`) VALUES
+INSERT INTO `contact_volunteers` (`id`, `first_name`, `last_name`, `email`, `message`, `date_time`, `volunteer_event_interest`, `availability`, `race`, `dietary_requirements`, `gender`, `age`, `experience`) VALUES
 (1, 'Test a', 'test', 'a@a.com', '123', '2025-02-26 23:29:10', 'NULL', 'NULL', 'Not to answer', 'blank', 'Male', '11', '11'),
 (2, 'Stephanie', 'Chan', 'stephaniechan1996514@gmail.com', 'test abc', '2025-03-03 21:30:39', 'NULL', 'NULL', 'Not to answer', 'blank', 'Female', '12', 'test abc'),
 (3, 'Tanya', 'Huertas', 'test@test.com', 'test abc', '2025-03-03 21:30:39', 'NULL', 'NULL', 'Not to answer', 'blank', 'Female', '15', 'test abc');
@@ -104,10 +126,10 @@ INSERT INTO `donors` (`id`, `name`, `campaign`, `amount`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `event`
+-- Table structure for table `events`
 --
 
-CREATE TABLE `event` (
+CREATE TABLE `events` (
   `id` int UNSIGNED NOT NULL,
   `event_name` varchar(255) NOT NULL,
   `date_time` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
@@ -115,10 +137,10 @@ CREATE TABLE `event` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `event`
+-- Dumping data for table `events`
 --
 
-INSERT INTO `event` (`id`, `event_name`, `date_time`, `description`) VALUES
+INSERT INTO `events` (`id`, `event_name`, `date_time`, `description`) VALUES
 (1, 'Honour Run: Brother in Arms', '(6/1/2025)', 'Honour Run: Brother in Arms is a vibrant, family-friendly event that celebrates unity, camaraderie, and resilience. This 5K fun run is designed to honor and support our veterans, active-duty military, first responders, and their families. Participants will run, walk, or jog through a course where they will be showered with bursts of color at designated checkpoints, symbolizing the strength, diversity, and spirit of our brothers and sisters in arms.\n\nBeyond the run, the event features live music, food vendors, and community activities, creating a festival atmosphere where participants can connect, reflect, and show appreciation for those who serve. A portion of the proceeds will go towards organizations supporting mental health, rehabilitation, and reintegration programs for veterans and first responders.\n\nWhether you\'re running in honor of a loved one, to show support, or just for fun, the Color Run: Brother in Arms is more than just a race—it\'s a movement of gratitude, unity, and celebration. Join us for an unforgettable experience!'),
 (2, 'Historical Reenactment', '(3/25/2025)', 'Step into history with costumed performances that bring the past to life with remarkable historical accuracy. Experience the reproduction of wartime lifestyles, battles, and conditions, immersing yourself in the stories of soldiers who stood together on the frontlines.'),
 (3, 'Lectures & Panels', '(3/20/2025)', 'Gain deeper insights into the realities of wartime life from expert discussions. Explore topics such as the role of female nurses, military uniforms, and the daily challenges of frontline soldiers. This session offers an opportunity to learn, reflect, and engage with history through diverse perspectives.'),
@@ -189,45 +211,46 @@ INSERT INTO `gallery` (`id`, `title`, `description`, `fname`, `fname_alt`, `type
 -- --------------------------------------------------------
 
 --
--- Table structure for table `news_blog`
+-- Table structure for table `news`
 --
 
-CREATE TABLE `news_blog` (
+CREATE TABLE `news` (
   `id` int UNSIGNED NOT NULL,
   `title` varchar(255) NOT NULL,
+  `sub_title` varchar(500) NOT NULL,
   `summary` varchar(3000) NOT NULL,
   `message` text NOT NULL,
-  `date` date NOT NULL,
-  `type` varchar(255) NOT NULL,
   `image_file` varchar(255) NOT NULL,
-  `image_alt` varchar(255) NOT NULL
+  `image_alt` varchar(255) NOT NULL,
+  `image_file2` varchar(255) NOT NULL,
+  `image_alt2` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `news_blog`
+-- Dumping data for table `news`
 --
 
-INSERT INTO `news_blog` (`id`, `title`, `summary`, `message`, `date`, `type`, `image_file`, `image_alt`) VALUES
-(1, 'GRAND LAUNCH', 'We are thrilled to announce the official launch of Brothers in Arms, a dynamic and interactive donation platform dedicated to making a real impact. Our mission is to support those in need, one step at a time. Join us as we embark on this journey of hope and solidarity.', 'We are thrilled to announce the official launch of Brothers in Arms, a dynamic and interactive donation platform dedicated to making a real and lasting impact in the lives of those who need it the most.\r\n\r\nOur Mission:\r\nAt Brothers in Arms, our mission is clear: to support individuals, families, and communities in need by providing them with the resources, assistance, and hope they deserve. Through a simple yet powerful platform, we aim to create a ripple effect of kindness, compassion, and solidarity.\r\n\r\nHow It Works:\r\n	•	Seamless Donations: Whether you’re contributing a one-time donation or setting up a recurring contribution, our platform makes it easy for you to give.\r\n	•	Direct Impact: All funds go directly to vetted organizations and causes, ensuring that every penny counts.\r\n	•	Transparency: Our platform provides regular updates and reports on how donations are being used, offering complete transparency and accountability.\r\n	•	Interactive Features: As a supporter, you’ll be able to track the progress of campaigns, connect with recipients, and witness the direct change you’re helping to create.\r\n\r\nJoin Us in Making a Difference:\r\nAs we launch Brothers in Arms, we invite you to be a part of this movement. By joining us, you are not only contributing to a cause but also helping build a global community united by hope and shared responsibility. Together, we can make the world a better place, one step at a time.\r\n\r\nJoin us today and be a part of the change you want to see!', '2025-03-04', 'announcement', 'grandlaunch.png', 'Grand Launch'),
-(2, 'FUNDRAISING CAMPAIGN', 'Brothers in Arms is launching a special fundraising campaign to provide essential aid to those who need it most. Every donation, help, support, big or small, brings us closer to our goal.', 'We are excited to announce the launch of Brothers in Arms’ Special Fundraising Campaign, dedicated to providing essential aid to those who need it most. This campaign is a critical step in our mission to offer support to individuals, families, and communities facing difficult times.\r\n\r\nOur Campaign Goal:\r\nThrough this campaign, we aim to raise funds for vital resources, including:\r\n	•	Emergency Food and Shelter: Ensuring that no one has to go without basic necessities during difficult times.\r\n	•	Medical Assistance: Providing healthcare, medicine, and supplies for those who can’t afford them.\r\n	•	Education and Empowerment: Supporting access to education, skills training, and resources to help individuals break free from cycles of poverty.\r\n	•	Disaster Relief: Offering immediate help to those affected by natural disasters or unexpected crises.\r\n\r\nWhy Every Contribution Matters:\r\nEvery donation, no matter how big or small, brings us one step closer to reaching our goal. Whether you can give a little or a lot, your contribution will go directly toward providing essential aid where it’s needed most. Every bit of help makes a difference, and together, we can create a ripple effect of hope.\r\n\r\nHow You Can Help:\r\n	•	Make a Donation: Your generous contribution can provide immediate assistance to those in dire need.\r\n	•	Spread the Word: Share this campaign with your friends, family, and networks. The more people who know about it, the greater our collective impact.\r\n	•	Become a Fundraiser: Start your own fundraising page through our platform and rally support from your community. With your efforts, we can amplify the power of kindness and generosity.\r\n\r\nCampaign Transparency:\r\nWe are committed to ensuring that your donations are used effectively and transparently. You will receive regular updates on the progress of the campaign and how the funds are being distributed. Your trust is important to us, and we will work hard to uphold it by demonstrating the positive change your contribution is making.\r\n\r\nJoin Us Today:\r\nWe invite you to stand with us in this important campaign. Your support brings us one step closer to providing much-needed relief and making a real difference in the lives of those who need it most. Together, we can create a brighter, more hopeful future for all.', '2025-03-04', 'announcement', 'fundingcampiange.png', 'funding campiange'),
-(3, 'VOLUNTEER RECRUITMENT', 'Are you passionate about making a difference? Brothers in Arms is looking for dedicated volunteers to help with our upcoming initiatives. Whether it’s organizing events, spreading awareness, or supporting our digital platforms, your skills can create an impact!', 'Are you passionate about making a real difference in your community and beyond? Brothers in Arms is currently seeking dedicated volunteers to help with our upcoming initiatives. Whether you’re looking to contribute your time, skills, or energy, we welcome you to join us in our mission to create positive change for those in need.\r\n\r\nWhy Volunteer with Brothers in Arms?\r\nBy volunteering with Brothers in Arms, you will become a part of a movement focused on supporting individuals, families, and communities facing adversity. Our mission is to provide vital aid, raise awareness, and foster a spirit of solidarity, and we need your help to reach even more people.\r\n\r\nVolunteer Opportunities:\r\n	1.	Event Planning & Organization:\r\nHelp us organize fundraising events, awareness campaigns, and community outreach activities. Your role will involve everything from coordinating logistics to ensuring a smooth event experience, all while spreading the message of hope and solidarity.\r\n	2.	Digital & Social Media Support:\r\nAssist in managing and growing our online presence. Whether you’re helping create content for our social media platforms, drafting blog posts, or engaging with our online community, you’ll play an essential part in spreading the word about our mission and activities.\r\n	3.	Fundraising Assistance:\r\nSupport our fundraising efforts by helping to plan and implement campaigns, reaching out to potential donors, and engaging with local businesses or influencers. Your involvement will help us raise the necessary funds to provide critical resources and aid to those in need.\r\n	4.	Administrative Support:\r\nIf you’re detail-oriented, help us with administrative tasks such as organizing donations, managing volunteers, or tracking campaign progress. Your support will ensure that our initiatives run smoothly behind the scenes.\r\n	5.	Community Outreach:\r\nHelp us connect with local communities and organizations to spread awareness about our cause. You could assist with outreach efforts, visiting communities, and helping them access the support they need.\r\n\r\nWhat You’ll Gain:\r\n	•	Hands-on experience in various aspects of nonprofit work, including event planning, social media management, and fundraising.\r\n	•	An opportunity to make a real impact, as your contributions will directly support the people and causes that need it most.\r\n	•	A sense of community, working alongside passionate individuals who share your dedication to helping others.\r\n	•	Recognition for your efforts in making a positive change and being part of a movement that’s making a real difference.\r\n\r\nHow to Get Involved:\r\nGetting involved is easy! Simply fill out our volunteer application form on our website, and one of our team members will reach out to discuss how you can contribute based on your skills and interests. Whether you can commit a few hours or dedicate more time, there’s always room for you to make an impact.\r\n\r\nJoin Us and Be the Change You Wish to See:\r\nVolunteering with Brothers in Arms is more than just giving your time – it’s about creating a lasting impact. Your support can help us expand our reach, provide essential aid to those in need, and continue to build a community of hope and solidarity.', '2025-03-04', 'announcement', 'volunteer.png', 'volunteer');
+INSERT INTO `news` (`id`, `title`, `sub_title`, `summary`, `message`, `image_file`, `image_alt`, `image_file2`, `image_alt2`) VALUES
+(1, 'Explore the Future Memorial Online', 'News Update for January', 'Take a virtual tour of the upcoming memorial dedicated to Indian and Canadian soldiers of World War I. Visit the Memorial page on our website to see the planned design and read the informational panels honoring their legacy.', '<b>Take a virtual tour of the upcoming memorial dedicated to Indian and Canadian soldiers of World War I. Visit the Memorial page on our website to see the planned design and read the informational panels honoring their legacy.</b>\r\n\\n\\n We are excited to share that you can now explore the future memorial from the comfort of your home. By visiting the Memorial page on our website, you can take a virtual tour and see how the site will look once completed.\\n\\n Wander through the planned pathways, view the monument, explore what else is waiting for you in this place, and read the informational panels that will honor the legacy of Indian and Canadian soldiers who served in World War I. This interactive experience offers a glimpse into the space designed to preserve their memory and share their stories.\r\n\\n\\n <b>Visit the Memorial page now and be among the first to walk through this place of remembrance—virtually.</b>', 'blog1.png', 'blog 1 image', 'ad1.png', 'ad 1'),
+(2, 'We’re Launching Our Social Media!', 'News Update for February', 'Stay connected and be the first to know about the latest Brothers In Arms Memorial updates. Follow us to discover fascinating facts about World War I. Join us on this journey of remembrance and tribute—subscribe to our social media pages today!', '<b>Stay connected and be the first to know about the latest Brothers In Arms Memorial updates. Follow us to discover fascinating facts about World War I. Join us on this journey of remembrance and tribute—subscribe to our social media pages today!</b>\r\n\\n\\n We’re excited to announce the launch of our social media pages, where you can stay up to date with the latest news and progress of the Brothers In Arms memorial.\r\n\\n\\n\r\n- Discover little-known facts about World War I.\\n\\n\r\n\r\n\r\n- Get behind-the-scenes insights into the creation of the Memorial.\\n\\n\r\n\r\n\r\n- Be the first to hear about the latest events and announcements.\\n\\n\r\n\r\n\r\n<b>Follow us and join the community dedicated to honoring the legacy of Indian and Canadian soldiers. Together, we’ll keep their memory alive.</b>\r\n', 'blog2.png', 'blog 2 image', 'ad2.png', 'ad 2'),
+(3, 'How Your Donations Make a Changes', 'News Update for March', 'Every donation brings us one step closer to creating a meaningful place of remembrance for the Indian and Canadian soldiers of World War I. Learn how your support makes a difference in this article.', '<b>Every donation brings us one step closer to creating a meaningful place of remembrance for the Indian and Canadian soldiers of World War I. Learn how your support makes a difference in this article.</b>\r\n\\n\\n\r\nEvery contribution you make plays a crucial role in bringing the Memorial to life. Your donations help create a meaningful space that will honor the soldiers\' bravery and preserve their legacy for future generations. Here’s how your support is helping us move forward:\r\n\\n\\n\r\n<b>- Construction:</b> Funding the memorial’s structure, including pathways, plaques, and landscaping.\r\n\\n\\n\r\n\r\n<b>-Informational Panels:</b> Creating detailed displays that share the soldiers\' stories.\r\n\\n\\n\r\n\r\n<b>-Interactive Features:</b> Developing digital and multimedia elements to enhance the visitor experience.\r\n\\n\\n\r\n\r\n<b>Transparency Matters</b>\\n\r\n\r\n We are committed to keeping you informed. Regular progress reports will be shared on our website and social media, showing how your donations are being used.\r\n\\n\\n\r\n<b>Beyond Donations</b>\\n\r\n You can also support us by volunteering, sharing our project on social media, or contributing family stories and historical artifacts.\r\n\\n\\n\r\n<b>Together, we can build a lasting tribute that honor their courage and sacrifice!</b>\r\n', 'blog3.png', 'blog 3 image', 'ad3.png', 'ad3');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `subscription`
+-- Table structure for table `subscriptions`
 --
 
-CREATE TABLE `subscription` (
+CREATE TABLE `subscriptions` (
   `id` int UNSIGNED NOT NULL,
   `email` varchar(600) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `subscription`
+-- Dumping data for table `subscriptions`
 --
 
-INSERT INTO `subscription` (`id`, `email`) VALUES
+INSERT INTO `subscriptions` (`id`, `email`) VALUES
 (1, 'stephaniechan1996514@gmail.com'),
 (2, 'test@test.com'),
 (3, 'testa@testa.com');
@@ -256,15 +279,21 @@ INSERT INTO `users` (`id`, `username`, `password`) VALUES
 --
 
 --
--- Indexes for table `contact_general_sponsor`
+-- Indexes for table `announcements`
 --
-ALTER TABLE `contact_general_sponsor`
+ALTER TABLE `announcements`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `contact_volunteer`
+-- Indexes for table `contact_general_sponsors`
 --
-ALTER TABLE `contact_volunteer`
+ALTER TABLE `contact_general_sponsors`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `contact_volunteers`
+--
+ALTER TABLE `contact_volunteers`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -274,9 +303,9 @@ ALTER TABLE `donors`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `event`
+-- Indexes for table `events`
 --
-ALTER TABLE `event`
+ALTER TABLE `events`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -292,15 +321,15 @@ ALTER TABLE `gallery`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `news_blog`
+-- Indexes for table `news`
 --
-ALTER TABLE `news_blog`
+ALTER TABLE `news`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `subscription`
+-- Indexes for table `subscriptions`
 --
-ALTER TABLE `subscription`
+ALTER TABLE `subscriptions`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -314,15 +343,21 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `contact_general_sponsor`
+-- AUTO_INCREMENT for table `announcements`
 --
-ALTER TABLE `contact_general_sponsor`
+ALTER TABLE `announcements`
   MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `contact_volunteer`
+-- AUTO_INCREMENT for table `contact_general_sponsors`
 --
-ALTER TABLE `contact_volunteer`
+ALTER TABLE `contact_general_sponsors`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `contact_volunteers`
+--
+ALTER TABLE `contact_volunteers`
   MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
@@ -332,9 +367,9 @@ ALTER TABLE `donors`
   MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `event`
+-- AUTO_INCREMENT for table `events`
 --
-ALTER TABLE `event`
+ALTER TABLE `events`
   MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
@@ -350,15 +385,15 @@ ALTER TABLE `gallery`
   MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT for table `news_blog`
+-- AUTO_INCREMENT for table `news`
 --
-ALTER TABLE `news_blog`
+ALTER TABLE `news`
   MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `subscription`
+-- AUTO_INCREMENT for table `subscriptions`
 --
-ALTER TABLE `subscription`
+ALTER TABLE `subscriptions`
   MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
