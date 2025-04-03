@@ -31,19 +31,19 @@ export function homeScript() {
   // });
 
   //Progress Bar
-  let progressBar = document.getElementById("progress-bar");
-  let progress = 66;
-  let currentProgress = 0;
+  // let progressBar = document.getElementById("progress-bar");
+  // let progress = 66;
+  // let currentProgress = 0;
 
-  let interval = setInterval(() => {
-    if (currentProgress >= progress) {
-      clearInterval(interval);
-    } else {
-      currentProgress++;
-      progressBar.style.width = currentProgress + "%";
-      progressBar.textContent = currentProgress + "%";
-    }
-  }, 20);
+  // let interval = setInterval(() => {
+  //   if (currentProgress >= progress) {
+  //     clearInterval(interval);
+  //   } else {
+  //     currentProgress++;
+  //     progressBar.style.width = currentProgress + "%";
+  //     progressBar.textContent = currentProgress + "%";
+  //   }
+  // }, 20);
 
   //Hero counters
   const counterElement = document.querySelector("#counter");

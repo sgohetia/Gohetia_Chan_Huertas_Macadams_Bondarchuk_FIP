@@ -222,9 +222,12 @@
                 <h3 class="progress-h3 w-50">
                 The progress bar shows the total donations raised so far, bringing us closer to our goal of supporting our heroes.
                 </h3>
-                <div class="counter-container">
+                <div class="counter-container" id="appdonorTotal">
+                  <div v-if="loadingprogress" class="loader-svg">
+                  <img src="images/loader.svg" alt="loading indicator"/>
+                  </div>
                   <div class="progress-container">
-                    <div class="progress-bar" id="progress-bar">0%</div>
+                    <div class="progress-bar" :style="{ width: currentProgress + '%' }" id="progress-bar">{{ currentProgress }}%</div>
                   </div>
                 </div>
                 <div class="center-btn flex">
