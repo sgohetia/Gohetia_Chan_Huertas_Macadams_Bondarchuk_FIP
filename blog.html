@@ -242,7 +242,10 @@
                 <h5>{{newsDetailsData.sub_title}}</h5>
               </div>
               <h2>{{newsDetailsData.title}}</h2>
-              <p v-html="newsDetailsData.message.replace(/\\n/g, '<br>')"></p>
+              <p
+                v-if="newsDetailsData?.message"
+                v-html="newsDetailsData.message.replace(/\\n/g, '<br>')"
+              ></p>
               <br />
               <div class="blogs-react">
                 <i class="ri-heart-line"></i>
