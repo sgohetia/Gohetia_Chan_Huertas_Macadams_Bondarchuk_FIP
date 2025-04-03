@@ -7,7 +7,6 @@ import { searchBar } from "./modules/searchbar.js";
 import { announcement } from "./modules/announcement.js";
 import { event } from "./modules/event.js";
 import { news } from "./modules/news.js";
-import { newsDetails } from "./modules/news_details.js";
 
 headerNav();
 homeScript();
@@ -18,4 +17,3 @@ searchBar();
 announcement();
 event();
 news();
-newsDetails();

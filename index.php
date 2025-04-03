@@ -239,8 +239,8 @@
 
 <div id="app1">
   <section class="feature">
-    <div v-if="loadingannouncements">
-      <img src="images/loader.svg" alt="loading indicator" class="loader" />
+    <div v-if="loadingannouncements" class="loader-svg">
+      <img src="images/loader.svg" alt="loading indicator"/>
     </div>
     <div v-else class="container">
       <div class="flex">

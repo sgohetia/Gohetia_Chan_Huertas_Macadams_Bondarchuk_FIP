@@ -387,7 +387,7 @@ From battlefield letters filled with hope and longing to the enduring friendship
 
     <div
       class="itemBox"
-      v-for="(item, index) in galleryData"
+      v-for="(item, index) in filteredData"
       :key="index"
       :data-item="item.type"
       @click="openPopup(item)"
