@@ -1,12 +1,12 @@
 export function vue_gallery() {
   const app_gallery = Vue.createApp({
     created() {
-      // Ideal to get your remote data during the created phase
-      fetch("http://localhost:8888/lumen_brothersinarms/public/gallery")
+      fetch("http://localhost/lumen_brothersinarms/public/gallery")
         .then((response) => response.json())
         .then((data) => {
-          console.log(data);
+          console.log("Fetched Gallery Data:", data); // ✅ Debug
           this.galleryData = data;
+          this.filteredData = data; // ✅ Initialize correctly
           this.loadinggallery = false;
         })
         .catch((error) => console.error(error));
@@ -19,7 +19,6 @@ export function vue_gallery() {
         activeFilter: "all",
         showPopup: false,
         selectedItem: null,
-        filteredData: [],
         error: "",
       };
     },
@@ -29,10 +28,15 @@ export function vue_gallery() {
         if (type === "all") {
           this.filteredData = this.galleryData;
         } else {
-          this.filteredData = this.galleryData.filter(
-            (item) => item.type === type
+          this.filteredData.splice(
+            0,
+            this.filteredData.length,
+            ...this.galleryData.filter(
+              (item) => item.type.toLowerCase() === type.toLowerCase()
+            )
           );
         }
+        console.log("Filtered Data:", this.filteredData); // ✅ Debugging
       },
       openPopup(item) {
         this.selectedItem = item;

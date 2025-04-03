@@ -7,10 +7,13 @@ export function lettersList() {
     button.addEventListener("click", function () {
       let collapse = this.parentElement.nextElementSibling;
 
+      // Stop speech before any new action
+      speechSynthesis.cancel();
+
       // Close all other accordion items
       accordionButtons.forEach(function (otherButton, otherIndex) {
         if (otherButton !== button) {
-          var otherCollapse = otherButton.parentElement.nextElementSibling;
+          let otherCollapse = otherButton.parentElement.nextElementSibling;
           otherCollapse.style.maxHeight = null;
 
           acoimg[otherIndex].src = "images/plus.png";
