@@ -1,18 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php
-    //connect to the running datbase server and the sepcific database
-    
-   require_once ('includes/connect.php');
 
-    // create a  query to run in SQL
-
-    $stmt = $connect->prepare("SELECT gallery.id AS galleryitem, fname ,fname_alt,type FROM gallery");
-    $stmt->execute();
-    //$results = mysqli_query($connect,$query);
-
-
-    ?>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -371,15 +359,16 @@ From battlefield letters filled with hope and longing to the enduring friendship
           <hr class="event-hr1" />
           <h2>The Gallery</h2>
         </div>
-        <ul>
-        <li class="list" :class="{ active: activeFilter === 'all' }" @click="filterGallery('all')">All</li>
-      <li class="list" :class="{ active: activeFilter === 'ww1' }" @click="filterGallery('ww1')">WW1</li>
-      <li class="list" :class="{ active: activeFilter === 'ww2' }" @click="filterGallery('ww2')">WW2</li>
-      <li class="list" :class="{ active: activeFilter === 'date1' }" @click="filterGallery('date1')">Date1</li>
-      <li class="list" :class="{ active: activeFilter === 'date2' }" @click="filterGallery('date2')">Date2</li>
-      <li class="list" :class="{ active: activeFilter === 'date3' }" @click="filterGallery('date3')">Date3</li>
-        </ul>
         <div id="app_gallery">
+        <ul>
+        <li class="list"  @click="filterGallery('all')">All</li>
+      <li class="list"  @click="filterGallery('ww1')">WW1</li>
+      <li class="list"  @click="filterGallery('ww2')">WW2</li>
+      <li class="list"  @click="filterGallery('date1')">Date1</li>
+      <li class="list"  @click="filterGallery('date2')">Date2</li>
+      <li class="list"  @click="filterGallery('date3')">Date3</li>
+        </ul>
+
         <div class="product"  >
   <div v-if="loadinggallery">
   <img src="images/loader.svg" alt="loading indicator" class="loader" />
@@ -397,7 +386,7 @@ From battlefield letters filled with hope and longing to the enduring friendship
     </div>
 
 </div>
-<div class="popup" v-if="showPopup" @click.self="closePopup">
+<div class="popup"  v-if="showPopup" @click.self="closePopup">
       <span class="close-btn" @click="closePopup">X</span>
       <img :src="'images/' + selectedItem.fname" :alt="selectedItem.fname_alt" />
       <p>{{ selectedItem.description || 'No description available.' }}</p>
