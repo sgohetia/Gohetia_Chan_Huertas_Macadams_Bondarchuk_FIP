@@ -1,17 +1,5 @@
 export function vue_gallery() {
   const app_gallery = Vue.createApp({
-    created() {
-      // Load all data by default
-      fetch("http://localhost:8888/lumen_brothersinarms/public/gallery")
-        .then((response) => response.json())
-        .then((data) => {
-          console.log("Fetched Gallery Data:", data);
-          this.galleryData = data;
-          this.filteredData = data;
-          this.loadinggallery = false;
-        })
-        .catch((error) => console.error(error));
-    },
     data() {
       return {
         galleryData: [],
@@ -19,41 +7,49 @@ export function vue_gallery() {
         loadinggallery: true,
         activeFilter: "all",
         showPopup: false,
-        selectedItem: null,
+        selectedItem: { fname: "", fname_alt: "", description: "" }, // Empty default
         error: "",
       };
     },
+    created() {
+      this.fetchGalleryData();
+    },
     methods: {
+      async fetchGalleryData(filter = "all") {
+        try {
+          this.loadinggallery = true;
+          let url = "http://localhost/lumen_brothersinarms/public/gallery";
+
+          if (filter !== "all") {
+            url += `/filter/${filter}`;
+          }
+
+          const response = await fetch(url);
+          if (!response.ok) throw new Error("Failed to fetch gallery data");
+
+          const data = await response.json();
+          this.galleryData = filter === "all" ? data : this.galleryData;
+          this.filteredData = data;
+        } catch (error) {
+          console.error("Fetch error:", error);
+          this.error = "Failed to load gallery data.";
+        } finally {
+          this.loadinggallery = false;
+        }
+      },
       filterGallery(type) {
         this.activeFilter = type;
-        this.loadinggallery = true;
-
-        let url = "http://localhost:8888/lumen_brothersinarms/public/gallery";
-
-        if (type !== "all") {
-          url += `/filter/${type}`;
-        }
-
-        fetch(url)
-          .then((response) => response.json())
-          .then((data) => {
-            this.filteredData = data;
-            this.loadinggallery = false;
-          })
-          .catch((error) => {
-            console.error(error);
-            this.error = "Failed to load filtered gallery.";
-            this.loadinggallery = false;
-          });
+        this.fetchGalleryData(type);
       },
       openPopup(item) {
-        console.log("Popup opened with item:", item);
+        console.log("Clicked item:", item);
         this.selectedItem = item;
         this.showPopup = true;
+        console.log("Popup state:", this.showPopup);
       },
       closePopup() {
         this.showPopup = false;
-        this.selectedItem = null;
+        this.selectedItem = { fname: "", fname_alt: "", description: "" };
       },
     },
   }).mount("#app_gallery");

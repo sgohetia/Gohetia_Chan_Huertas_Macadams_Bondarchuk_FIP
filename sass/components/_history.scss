@@ -7,6 +7,9 @@
   background-size: cover;
   padding-top: 216px;
 }
+.history-hero {
+  transform: translateY(7px);
+}
 .history-h2 {
   color: #fff;
   filter: drop-shadow(0 0 10px #3f341e);
@@ -21,10 +24,11 @@
   color: #e22e2b;
 }
 .center-data-history {
+  display: flex;
+  flex-direction: column;
+  // align-items: left;
   text-align: left;
-
-  // align-items: center;
-  gap: 1em;
+  gap: 1.2rem; /* control spacing between h2, h3, and buttons */
 }
 
 .history-data {
@@ -356,8 +360,15 @@
 
 //GALLERY
 .section-gal h2 {
-  margin-bottom: 30px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
+
+.gal-title-wrapper {
+  text-align: center;
+  padding: 1rem;
+}
+
 .section-gal {
   padding: 20px;
   width: 100%;
@@ -372,18 +383,30 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 .section-gal ul li {
   list-style: none;
-  background: #eee;
+  border: 1px solid rgba(177, 177, 177, 0.3);
+
+  border-radius: 10px;
+  background: white;
   padding: 12px 20px;
   margin: 5px;
   letter-spacing: 1px;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 5px 5px 5px rgb(172, 172, 172);
 }
+
+.section-gal ul li:hover {
+  background: orangered;
+  transform: scale(0.9);
+  color: #fff;
+}
+
 .section-gal ul li.active {
-  background: #e22e2b;
+  background: orangered;
   color: #fff;
 }
 .product {
@@ -429,22 +452,11 @@
   flex-direction: column;
   opacity: 0;
   visibility: hidden;
+  z-index: 9999;
+
   transition: opacity 0.3s ease-in-out;
 }
-.popup img {
-  max-width: 80%;
-  max-height: 80vh;
-  border-radius: 10px;
-}
 
-.popup .close-btn {
-  position: absolute;
-  top: 15px;
-  right: 25px;
-  font-size: 30px;
-  color: white;
-  cursor: pointer;
-}
 .popup.showPopup {
   opacity: 1;
   visibility: visible;
