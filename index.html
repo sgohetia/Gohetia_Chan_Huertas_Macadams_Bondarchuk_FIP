@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,7 +28,6 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
 
-
     <link rel="stylesheet" href="css/main.css" />
     <script
       defer
@@ -57,7 +55,7 @@
         <header class="header">
           <nav class="container navbar">
             <div class="container-nav flex" id="main-header">
-              <a class="navbar-logo" href="index.php">
+              <a class="navbar-logo" href="index.html">
                 <!-- <img src="images/brothers-in-arms-logo.svg" alt="logo"
               /> -->
                 <img
@@ -75,10 +73,14 @@
                 <span class="fa-solid fa-bars"></span>
               </button>
               <ul class="navbar-nav flex">
-                <li><a class="nav-link active" href="index.php">Home</a></li>
+                <li><a class="nav-link active" href="index.html">Home</a></li>
                 <li><a class="nav-link" href="#about">About Us</a></li>
-                <li><a class="nav-link" href="history.php">History</a></li>
-                <li><a class="nav-link" href="#" id="toggleRightSideBtn">Donate</a></li>
+                <li><a class="nav-link" href="history.html">History</a></li>
+                <li>
+                  <a class="nav-link" href="#" id="toggleRightSideBtn"
+                    >Donate</a
+                  >
+                </li>
                 <li>
                   <a class="nav-link" href="contactform.html">Contact Us</a>
                 </li>
@@ -97,7 +99,11 @@
                     class="dropdown-menu"
                     aria-labelledby="navbarScrollingDropdown"
                   >
-                    <li><a class="dropdown-item" href="soldiers-letter.html">Soldiers Letters</a></li>
+                    <li>
+                      <a class="dropdown-item" href="soldiers-letter.html"
+                        >Soldiers Letters</a
+                      >
+                    </li>
                     <li>
                       <a class="dropdown-item" href="memorial.html">Memorial</a>
                     </li>
@@ -118,7 +124,7 @@
           </nav>
           <aside id="mySidepanel" class="sidepanel">
             <div class="sidebar flex">
-              <a href="index.php"
+              <a href="index.html"
                 ><img src="images/brothers-in-arms-logo.svg" alt="logo"
               /></a>
               <button class="closebtn btn_hover1" id="closeNavBtn">
@@ -127,11 +133,13 @@
             </div>
             <div>
               <ul>
-                <li><a class="nav-link active" href="index.php">Home</a></li>
+                <li><a class="nav-link active" href="index.html">Home</a></li>
                 <li><a class="nav-link" href="#about">About Us</a></li>
-                <li><a class="nav-link" href="history.php">History</a></li>
+                <li><a class="nav-link" href="history.html">History</a></li>
                 <li><a class="nav-link" href="#donate">Donate</a></li>
-                <li><a class="nav-link" href="contactform.html">Contact Us</a></li>
+                <li>
+                  <a class="nav-link" href="contactform.html">Contact Us</a>
+                </li>
                 <li class="pages"><a href="#">More</a></li>
                 <li class="collapse_btn">
                   <a
@@ -144,11 +152,15 @@
                   </a>
                   <div class="collapse" id="pages">
                     <ul>
-                      <li><a class="nav-link" href="soldiers-letter.html">Soldiers Letters</a></li>
-                    <li>
-                      <a class="nav-link" href="memorial.html">Memorial</a>
-                    </li>
-                    <li><a class="nav-link" href="#event">Event</a></li>
+                      <li>
+                        <a class="nav-link" href="soldiers-letter.html"
+                          >Soldiers Letters</a
+                        >
+                      </li>
+                      <li>
+                        <a class="nav-link" href="memorial.html">Memorial</a>
+                      </li>
+                      <li><a class="nav-link" href="#event">Event</a></li>
                       <li><a class="nav-link" href="#blog">Blog</a></li>
                     </ul>
                   </div>
@@ -156,32 +168,31 @@
               </ul>
             </div>
           </aside>
-          <!-- search  bar -->
-          <!-- <div id="search-bar">
-            <div class="btn_hover1" id="closeSearchBarBtn">
-              <i class="fa-solid fa-xmark"></i>
-            </div>
-            <form method="search" action="#">
-              <input type="search" required placeholder="Search..." />
-              <button type="submit" class="btn_hover1">Search</button>
-            </form>
-          </div> -->
           <div id="app">
             <div id="search-bar" :style="searchBarStyle">
-              <div class="btn_hover1" id="closeSearchBarBtn" @click="toggleSearchBar(false)">
+              <div
+                class="btn_hover1"
+                id="closeSearchBarBtn"
+                @click="toggleSearchBar(false)"
+              >
                 <i class="fa-solid fa-xmark"></i>
               </div>
-            <form @submit.prevent="search">
-              <input type="search" v-model="query" required :placeholder="errorMessage || 'Search...'" />
-              <button type="submit" class="btn_hover1">Search</button>
-            </form>
+              <form @submit.prevent="search">
+                <input
+                  type="search"
+                  v-model="query"
+                  required
+                  :placeholder="errorMessage || 'Search...'"
+                />
+                <button type="submit" class="btn_hover1">Search</button>
+              </form>
+            </div>
           </div>
-        </div>
 
           <!-- Right Sidebar -->
           <section class="header-right-sidebar" id="right_side">
             <div class="flex flex-sb">
-              <a href="index.php"
+              <a href="index.html"
                 ><img src="images/brothers-in-arms-logo.svg" alt="logo"
               /></a>
               <button class="close_right_sidebar fa-solid fa-xmark"></button>
@@ -216,23 +227,32 @@
           <div class="container" data-aos="zoom-in">
             <div>
               <div class="center-data">
-                <h1>                 
-                <span id="counter">0</span> Million Soldiers, One Untold Story
+                <h1>
+                  <span id="counter">0</span> Million Soldiers, One Untold Story
                 </h1>
                 <h3 class="progress-h3 w-50">
-                The progress bar shows the total donations raised so far, bringing us closer to our goal of supporting our heroes.
+                  The progress bar shows the total donations raised so far,
+                  bringing us closer to our goal of supporting our heroes.
                 </h3>
                 <div class="counter-container" id="appdonorTotal">
                   <div v-if="loadingprogress" class="loader-svg">
-                  <img src="images/loader.svg" alt="loading indicator"/>
+                    <img src="images/loader.svg" alt="loading indicator" />
                   </div>
                   <div class="progress-container">
-                    <div class="progress-bar" :style="{ width: currentProgress + '%' }" id="progress-bar">{{ currentProgress }}%</div>
+                    <div
+                      class="progress-bar"
+                      :style="{ width: currentProgress + '%' }"
+                      id="progress-bar"
+                    >
+                      {{ currentProgress }}%
+                    </div>
                   </div>
                 </div>
                 <div class="center-btn flex">
                   <a href="#donate" class="btn_hover1 home-btn1">Donate</a>
-                  <a href="memorial.html" class="btn_hover2 home-btn2">Memorial</a>
+                  <a href="memorial.html" class="btn_hover2 home-btn2"
+                    >Memorial</a
+                  >
                 </div>
               </div>
             </div>
@@ -240,35 +260,35 @@
         </section>
       </div>
 
-<div id="app1">
-  <section class="feature">
-    <div v-if="loadingannouncements" class="loader-svg">
-      <img src="images/loader.svg" alt="loading indicator"/>
-    </div>
-    <div v-else class="container">
-      <div class="flex">
-        <div
-          v-for="(announcement, index) in announcementsData"
-          :key="index"
-          class="header-card"
-          v-bind:data-aos="announcement.animation"
-        >
-          <div>
-            <figure>
-              <img
-                src="images/feature2.png"
-                class="feature-img1"
-                alt="feature"
-              />
-            </figure>
-            <h4>{{ announcement.title }}</h4>
-            <p>{{ announcement.message }}</p>
+      <div id="app1">
+        <section class="feature">
+          <div v-if="loadingannouncements" class="loader-svg">
+            <img src="images/loader.svg" alt="loading indicator" />
           </div>
-        </div>
+          <div v-else class="container">
+            <div class="flex">
+              <div
+                v-for="(announcement, index) in announcementsData"
+                :key="index"
+                class="header-card"
+                v-bind:data-aos="announcement.animation"
+              >
+                <div>
+                  <figure>
+                    <img
+                      src="images/feature2.png"
+                      class="feature-img1"
+                      alt="feature"
+                    />
+                  </figure>
+                  <h4>{{ announcement.title }}</h4>
+                  <p>{{ announcement.message }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
-    </div>
-  </section>
-</div>
 
       <section class="donation" id="donate">
         <div class="container position-relative">
@@ -337,7 +357,10 @@
                 >
               </div>
             </div>
-            <div class="about-imgs flex flex-center w-50 about-image" data-aos="fade-down">
+            <div
+              class="about-imgs flex flex-center w-50 about-image"
+              data-aos="fade-down"
+            >
               <div>
                 <figure>
                   <img src="images/brothers-in-arms-statue.png" alt="img" />
@@ -387,28 +410,27 @@
                 id="accordionExample"
                 data-aos="fade-down"
               >
-              
-        <div id="appevent">
-          <div v-if="loadingevents">
-            <img src="images/loader.svg" alt="loading indicator" class="loader" />
-            </div>
-                <div v-for="event in eventsData" class="accordion-item">
-                       <h2 class="accordion-header">
-                          <button class="accordion-button flex-sb" type="button">
-                          {{event.event_name}} {{event.date_time}}  
-                  <img src="images/plus.png" alt="img" />
-                         </button>
-                          </h2>
-                          <div class="accordion-collapse">
-                          <p>
-               {{event.description}}
-               
-              </p>
-              
-                     </div>
-                     <br>
-                     </div>
-          </div>
+                <div id="appevent">
+                  <div v-if="loadingevents">
+                    <img
+                      src="images/loader.svg"
+                      alt="loading indicator"
+                      class="loader"
+                    />
+                  </div>
+                  <div v-for="event in eventsData" class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button flex-sb" type="button">
+                        {{event.event_name}} {{event.date_time}}
+                        <img src="images/plus.png" alt="img" />
+                      </button>
+                    </h2>
+                    <div class="accordion-collapse">
+                      <p>{{event.description}}</p>
+                    </div>
+                    <br />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -436,26 +458,31 @@
           </div>
 
           <div class="flex gap-2 mt-15 blog-cards" id="app_news">
-           <div v-if="loadingnews">
-           <img src="images/loader.svg" alt="loading indicator" class="loader" />
-           </div>
+            <div v-if="loadingnews">
+              <img
+                src="images/loader.svg"
+                alt="loading indicator"
+                class="loader"
+              />
+            </div>
 
-           <div
-             v-for="(newsItem, index) in newsData"
-             :key="index"
-             class="blog-card w-100"
-             v-bind:data-aos="newsItem.animation"
-             >
-            <img
-             :src="'images/' + newsItem.image_file"
-             class="card-img-top"
-             :alt="newsItem.image_alt"
-            />
-            <div class="card-body">
-            <h4>{{ newsItem.title }}</h4>
-            <a :href="'blog.html?id=' + newsItem.id">Read More</a>
+            <div
+              v-for="(newsItem, index) in newsData"
+              :key="index"
+              class="blog-card w-100"
+              v-bind:data-aos="newsItem.animation"
+            >
+              <img
+                :src="'images/' + newsItem.image_file"
+                class="card-img-top"
+                :alt="newsItem.image_alt"
+              />
+              <div class="card-body">
+                <h4>{{ newsItem.title }}</h4>
+                <a :href="'blog.html?id=' + newsItem.id">Read More</a>
               </div>
             </div>
+          </div>
         </div>
       </section>
       <section class="ourpartners">
@@ -518,7 +545,7 @@
           <div class="container">
             <div class="flex flex-start footer-center">
               <div class="w-33 flex flex-col gap-2 flex-start">
-                <a href="index.php"
+                <a href="index.html"
                   ><img
                     src="images/brothers-in-arms-logo.svg"
                     alt="footer-logo"
@@ -537,10 +564,10 @@
               <div class="w-16 mt-1">
                 <h4>Quick Links</h4>
                 <ul class="flex flex-col gap-2 flex-start">
-                  <li><a href="index.php">Home</a></li>
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="#">Donation</a></li>
-                  <li><a href="#">Blogs</a></li>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="#about">About Us</a></li>
+                  <li><a href="#donation">Donation</a></li>
+                  <li><a href="blogs.html">Blogs</a></li>
                 </ul>
               </div>
               <div class="w-16 mt-45 flex-end">
@@ -572,7 +599,7 @@
           <div class="container">
             <h6>
               Copyright © 2025 By
-              <a href="index.php" class="p-0"> The Brother's in Arms. </a>
+              <a href="index.html" class="p-0"> The Brother's in Arms. </a>
               All Rights Reserved.
             </h6>
           </div>

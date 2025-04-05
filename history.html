@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -56,17 +55,25 @@
         <header class="header">
           <nav class="container navbar">
             <div class="container-nav flex">
-              <a class="navbar-logo" href="index.php"
+              <a class="navbar-logo" href="index.html"
                 ><img src="images/brothers-in-arms-logo.svg" alt="logo"
               /></a>
               <button class="navbar-toggler" id="openNavBtn" type="button">
                 <span class="fa-solid fa-bars"></span>
               </button>
               <ul class="navbar-nav flex">
-                <li><a class="nav-link" href="index.php">Home</a></li>
-                <li><a class="nav-link" href="index.php#about">About Us</a></li>
-                <li><a class="nav-link active" href="history.php">History</a></li>
-                <li><a class="nav-link" href="#" id="toggleRightSideBtn">Donate</a></li>
+                <li><a class="nav-link" href="index.html">Home</a></li>
+                <li>
+                  <a class="nav-link" href="index.html#about">About Us</a>
+                </li>
+                <li>
+                  <a class="nav-link active" href="history.html">History</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="#" id="toggleRightSideBtn"
+                    >Donate</a
+                  >
+                </li>
                 <li>
                   <a class="nav-link" href="contactform.html">Contact Us</a>
                 </li>
@@ -85,12 +92,20 @@
                     class="dropdown-menu"
                     aria-labelledby="navbarScrollingDropdown"
                   >
-                    <li><a class="dropdown-item" href="soldiers-letter.html">Soldiers Letters</a></li>
+                    <li>
+                      <a class="dropdown-item" href="soldiers-letter.html"
+                        >Soldiers Letters</a
+                      >
+                    </li>
                     <li>
                       <a class="dropdown-item" href="memorial.html">Memorial</a>
                     </li>
-                    <li><a class="dropdown-item" href="index.php#event">Event</a></li>
-                    <li><a class="dropdown-item" href="index.php#blog">Blog</a></li>
+                    <li>
+                      <a class="dropdown-item" href="index.html#event">Event</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="index.html#blog">Blog</a>
+                    </li>
                   </ul>
                 </li>
               </ul>
@@ -106,7 +121,7 @@
           </nav>
           <aside id="mySidepanel" class="sidepanel">
             <div class="sidebar flex">
-              <a href="index.php"
+              <a href="index.html"
                 ><img src="images/brothers-in-arms-logo.svg" alt="logo"
               /></a>
               <button class="closebtn btn_hover1" id="closeNavBtn">
@@ -115,11 +130,15 @@
             </div>
             <div>
               <ul>
-                <li><a class="nav-link" href="index.php">Home</a></li>
-                <li><a class="nav-link" href="index.php#about">About Us</a></li>
-                <li><a class="nav-link" href="history.php">History</a></li>
-                <li><a class="nav-link" href="index.php#donate">Donate</a></li>
-                <li><a class="nav-link" href="contactform.html">Contact Us</a></li>
+                <li><a class="nav-link" href="index.html">Home</a></li>
+                <li>
+                  <a class="nav-link" href="index.html#about">About Us</a>
+                </li>
+                <li><a class="nav-link" href="history.html">History</a></li>
+                <li><a class="nav-link" href="index.html#donate">Donate</a></li>
+                <li>
+                  <a class="nav-link" href="contactform.html">Contact Us</a>
+                </li>
                 <li class="pages"><a href="#">More</a></li>
                 <li class="collapse_btn">
                   <a
@@ -132,12 +151,20 @@
                   </a>
                   <div class="collapse" id="pages">
                     <ul>
-                      <li><a class="nav-link" href="soldiers-letter.html">Soldiers Letters</a></li>
-                    <li>
-                      <a class="nav-link" href="memorial.html">Memorial</a>
-                    </li>
-                      <li><a class="nav-link" href="index.php#event">Event</a></li>
-                      <li><a class="nav-link" href="index.php#blog">Blog</a></li>
+                      <li>
+                        <a class="nav-link" href="soldiers-letter.html"
+                          >Soldiers Letters</a
+                        >
+                      </li>
+                      <li>
+                        <a class="nav-link" href="memorial.html">Memorial</a>
+                      </li>
+                      <li>
+                        <a class="nav-link" href="index.html#event">Event</a>
+                      </li>
+                      <li>
+                        <a class="nav-link" href="index.html#blog">Blog</a>
+                      </li>
                     </ul>
                   </div>
                 </li>
@@ -146,20 +173,29 @@
           </aside>
           <div id="app">
             <div id="search-bar" :style="searchBarStyle">
-              <div class="btn_hover1" id="closeSearchBarBtn" @click="toggleSearchBar(false)">
+              <div
+                class="btn_hover1"
+                id="closeSearchBarBtn"
+                @click="toggleSearchBar(false)"
+              >
                 <i class="fa-solid fa-xmark"></i>
               </div>
-            <form @submit.prevent="search">
-              <input type="search" v-model="query" required :placeholder="errorMessage || 'Search...'" />
-              <button type="submit" class="btn_hover1">Search</button>
-            </form>
+              <form @submit.prevent="search">
+                <input
+                  type="search"
+                  v-model="query"
+                  required
+                  :placeholder="errorMessage || 'Search...'"
+                />
+                <button type="submit" class="btn_hover1">Search</button>
+              </form>
+            </div>
           </div>
-        </div>
 
           <!-- Right Sidebar -->
           <section class="header-right-sidebar" id="right_side">
             <div class="flex flex-sb">
-              <a href="index.php"
+              <a href="index.html"
                 ><img src="images/brothers-in-arms-logo.svg" alt="logo"
               /></a>
               <button class="close_right_sidebar fa-solid fa-xmark"></button>
@@ -189,21 +225,13 @@
             </span>
           </section>
         </header>
-        <section class="hero">
+        <section class="hero history-hero">
           <div class="container" data-aos="zoom-in">
             <div>
-              <!-- <div class="hero-social-icon flex">
-                <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <hr class="d-md-block d-sm-none d-none" />
-              </div> -->
               <div class="center-data-history">
-                <!-- <h1>
-                  The <span class="span-heroes">Legacy</span> of <span class="span-impact">Brotherhood</span>:
-                </h1> -->
-                <h2 class="history-h2">The History of Brothers in Arms</h2>
+                <h2 class="history-h2">Brothers in Arms History</h2>
                 <h3 class="history-h3">
-                "Honoring Service, Preserving Brotherhood."
+                  "Honoring Service, Preserving Brotherhood."
                 </h3>
                 <div class="center-btn flex">
                   <a href="#vcross" class="btn_hover1">Victoria Cross</a>
@@ -224,11 +252,24 @@
               </div>
               <h2>The History of Brothers in Arms</h2>
               <p>
-              For generations, soldiers have stood side by side, bound not just by duty but by an unbreakable bond—one forged in courage, sacrifice, and unwavering loyalty. Brothers in Arms was founded to honor this deep connection and support those who have dedicated their lives to serving their country. <br/><br/>
+                For generations, soldiers have stood side by side, bound not
+                just by duty but by an unbreakable bond—one forged in courage,
+                sacrifice, and unwavering loyalty. Brothers in Arms was founded
+                to honor this deep connection and support those who have
+                dedicated their lives to serving their country. <br /><br />
 
-Our journey began with a simple yet powerful mission: to provide aid, recognition, and a sense of belonging to veterans and active service members. Over the years, we have worked to ensure that their sacrifices are never forgotten, sharing their stories, offering resources, and building a community where they are always supported.<br/><br/>
+                Our journey began with a simple yet powerful mission: to provide
+                aid, recognition, and a sense of belonging to veterans and
+                active service members. Over the years, we have worked to ensure
+                that their sacrifices are never forgotten, sharing their
+                stories, offering resources, and building a community where they
+                are always supported.<br /><br />
 
-From battlefield letters filled with hope and longing to the enduring friendships that transcend war, the spirit of brotherhood has remained a guiding force. Brothers in Arms continues to stand as a pillar of strength, reminding the world that no soldier fights alone—both on and off the battlefield.
+                From battlefield letters filled with hope and longing to the
+                enduring friendships that transcend war, the spirit of
+                brotherhood has remained a guiding force. Brothers in Arms
+                continues to stand as a pillar of strength, reminding the world
+                that no soldier fights alone—both on and off the battlefield.
               </p>
             </div>
           </div>
@@ -244,16 +285,20 @@ From battlefield letters filled with hope and longing to the enduring friendship
               </div>
               <h2>Victoria Cross Recipients</h2>
               <p>
-              These 81 members of the Canadian Armed Forces were awarded the Victoria Cross through acts of valour. They were among 1,351 crosses and 3 bars awarded throughout the British Empire. The 81 include: <br /><br />
-              
-                 4 from the South African (Boer) War 1899-1902 <br />
-                 64 from the First World War, 1914-1918<br />
-                 13 from the Second World War, 1939-1945<br />
-            
+                These 81 members of the Canadian Armed Forces were awarded the
+                Victoria Cross through acts of valour. They were among 1,351
+                crosses and 3 bars awarded throughout the British Empire. The 81
+                include: <br /><br />
+
+                4 from the South African (Boer) War 1899-1902 <br />
+                64 from the First World War, 1914-1918<br />
+                13 from the Second World War, 1939-1945<br />
               </p>
               <div class="flex gap-2 mt-30">
                 <a href="#awards" class="btn_hover1">Gallery</a>
-                <a href="https://www.canada.ca/en/department-national-defence/services/medals/victoria-cross-recipients.html" class="btn_hover2ac"
+                <a
+                  href="https://www.canada.ca/en/department-national-defence/services/medals/victoria-cross-recipients.html"
+                  class="btn_hover2ac"
                   >Read More Details</a
                 >
               </div>
@@ -276,9 +321,14 @@ From battlefield letters filled with hope and longing to the enduring friendship
               <img src="images/img1.png" />
               <div class="content">
                 <p>Victoria Cross</p>
-                <h2>Hampden Zane Churchill <span class="vcross-span">Cockburn</span></h2>
+                <h2>
+                  Hampden Zane Churchill
+                  <span class="vcross-span">Cockburn</span>
+                </h2>
                 <p class="soldiers-p">
-                This medal is awarded for the most conspicuous bravery, a daring or pre-eminent act of valour, or self-sacrifice or extreme devotion to duty in the presence of the enemy.
+                  This medal is awarded for the most conspicuous bravery, a
+                  daring or pre-eminent act of valour, or self-sacrifice or
+                  extreme devotion to duty in the presence of the enemy.
                 </p>
               </div>
             </div>
@@ -286,9 +336,13 @@ From battlefield letters filled with hope and longing to the enduring friendship
               <img src="images/img2.jpg" />
               <div class="content">
                 <p>Victoria Cross</p>
-                <h2>Edward James Gibson <span class="vcross-span">Holland</span></h2>
+                <h2>
+                  Edward James Gibson <span class="vcross-span">Holland</span>
+                </h2>
                 <p class="soldiers-p">
-                This medal is awarded for the most conspicuous bravery, a daring or pre-eminent act of valour, or self-sacrifice or extreme devotion to duty in the presence of the enemy.
+                  This medal is awarded for the most conspicuous bravery, a
+                  daring or pre-eminent act of valour, or self-sacrifice or
+                  extreme devotion to duty in the presence of the enemy.
                 </p>
               </div>
             </div>
@@ -296,9 +350,14 @@ From battlefield letters filled with hope and longing to the enduring friendship
               <img src="images/img3.jpg" />
               <div class="content">
                 <p>Victoria Cross</p>
-                <h2>Arthur Herbert Lindsay <span class="vcross-span">Richardson</span></h2>
+                <h2>
+                  Arthur Herbert Lindsay
+                  <span class="vcross-span">Richardson</span>
+                </h2>
                 <p class="soldiers-p">
-                This medal is awarded for the most conspicuous bravery, a daring or pre-eminent act of valour, or self-sacrifice or extreme devotion to duty in the presence of the enemy.
+                  This medal is awarded for the most conspicuous bravery, a
+                  daring or pre-eminent act of valour, or self-sacrifice or
+                  extreme devotion to duty in the presence of the enemy.
                 </p>
               </div>
             </div>
@@ -306,9 +365,13 @@ From battlefield letters filled with hope and longing to the enduring friendship
               <img src="images/img4.jpg" />
               <div class="content">
                 <p>Victoria Cross</p>
-                <h2>Richard Ernest William <span class="vcross-span">Turner</span></h2>
+                <h2>
+                  Richard Ernest William <span class="vcross-span">Turner</span>
+                </h2>
                 <p class="soldiers-p">
-                This medal is awarded for the most conspicuous bravery, a daring or pre-eminent act of valour, or self-sacrifice or extreme devotion to duty in the presence of the enemy.
+                  This medal is awarded for the most conspicuous bravery, a
+                  daring or pre-eminent act of valour, or self-sacrifice or
+                  extreme devotion to duty in the presence of the enemy.
                 </p>
               </div>
             </div>
@@ -318,7 +381,9 @@ From battlefield letters filled with hope and longing to the enduring friendship
                 <p>Victoria Cross</p>
                 <h2>Wallace Lloyd <span class="vcross-span">Algie</span></h2>
                 <p soldiers-p>
-                This medal is awarded for the most conspicuous bravery, a daring or pre-eminent act of valour, or self-sacrifice or extreme devotion to duty in the presence of the enemy.
+                  This medal is awarded for the most conspicuous bravery, a
+                  daring or pre-eminent act of valour, or self-sacrifice or
+                  extreme devotion to duty in the presence of the enemy.
                 </p>
               </div>
             </div>
@@ -355,53 +420,59 @@ From battlefield letters filled with hope and longing to the enduring friendship
       </section>
 
       <section class="section-gal" id="gallery">
-        <div class="flex gap-2">
-          <hr class="event-hr1" />
-          <h2>The Gallery</h2>
+        <div class="gal-title-wrapper">
+          <h2 class="gal-title">A Glimpse Through Time</h2>
         </div>
         <div id="app_gallery">
-        <ul>
-        <li class="list"  @click="filterGallery('all')">All</li>
-      <li class="list"  @click="filterGallery('ww1')">WW1</li>
-      <li class="list"  @click="filterGallery('ww2')">WW2</li>
-      <li class="list"  @click="filterGallery('date1')">Date1</li>
-      <li class="list"  @click="filterGallery('date2')">Date2</li>
-      <li class="list"  @click="filterGallery('date3')">Date3</li>
-        </ul>
+          <ul>
+            <li class="list" @click="filterGallery('all')">All</li>
+            <li class="list" @click="filterGallery('ww1')">WW1</li>
+            <li class="list" @click="filterGallery('ww2')">WW2</li>
+            <li class="list" @click="filterGallery('date1')">Date1</li>
+            <li class="list" @click="filterGallery('date2')">Date2</li>
+            <li class="list" @click="filterGallery('date3')">Date3</li>
+          </ul>
 
-        <div class="product"  >
-  <div v-if="loadinggallery">
-  <img src="images/loader.svg" alt="loading indicator" class="loader" />
-  </div>
+          <div class="product">
+            <div v-if="loadinggallery">
+              <img
+                src="images/loader.svg"
+                alt="loading indicator"
+                class="loader"
+              />
+            </div>
 
-    <div
-      class="itemBox"
-      v-for="(item, index) in filteredData"
-      :key="index"
-      :data-item="item.type"
-      @click="openPopup(item)"
-
-    >
-      <img :src="'images/' + item.fname" :alt="item.fname_alt" />
-    </div>
-
-</div>
-<div class="popup"  v-if="showPopup" @click.self="closePopup">
-      <span class="close-btn" @click="closePopup">X</span>
-      <img :src="'images/' + selectedItem.fname" :alt="selectedItem.fname_alt" />
-      <p>{{ selectedItem.description || 'No description available.' }}</p>
-    </div>
-  </div>
-  </div>
-</section>
-
+            <div
+              class="itemBox"
+              v-for="(item, index) in filteredData"
+              :key="index"
+              :data-item="item.type"
+              @click="openPopup(item)"
+            >
+              <img :src="'images/' + item.fname" :alt="item.fname_alt" />
+            </div>
+          </div>
+          <div
+            class="popup"
+            :class="{ showPopup: showPopup }"
+            @click.self="closePopup"
+          >
+            <span class="close-btn" @click.stop="closePopup">X</span>
+            <img
+              :src="'images/' + selectedItem.fname"
+              :alt="selectedItem.fname_alt"
+            />
+            <p>{{ selectedItem.description || 'No description available.' }}</p>
+          </div>
+        </div>
+      </section>
 
       <footer>
         <div class="footer-menu">
           <div class="container">
             <div class="flex flex-start footer-center">
               <div class="w-33 flex flex-col gap-2 flex-start">
-                <a href="index.php"
+                <a href="index.html"
                   ><img
                     src="images/brothers-in-arms-logo.svg"
                     alt="footer-logo"
@@ -420,16 +491,16 @@ From battlefield letters filled with hope and longing to the enduring friendship
               <div class="w-16 mt-1">
                 <h4>Quick Links</h4>
                 <ul class="flex flex-col gap-2 flex-start">
-                  <li><a href="index.php">Home</a></li>
-                  <li><a href="index.php#about">About Us</a></li>
-                  <li><a href="index.php#donate">Donation</a></li>
-                  <li><a href="index.php#blog">Blogs</a></li>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="index.html#about">About Us</a></li>
+                  <li><a href="index.html#donate">Donation</a></li>
+                  <li><a href="blogs.html">Blogs</a></li>
                 </ul>
               </div>
               <div class="w-16 mt-45 flex-end">
                 <ul class="flex flex-col gap-2 flex-start">
-                  <li><a href="history.php">History</a></li>
-                  <li><a href="index.php#contactform.html">Contact Us</a></li>
+                  <li><a href="history.html">History</a></li>
+                  <li><a href="index.html#contactform.html">Contact Us</a></li>
                   <li><a href="#">Privacy policy</a></li>
                 </ul>
               </div>
@@ -455,7 +526,7 @@ From battlefield letters filled with hope and longing to the enduring friendship
           <div class="container">
             <h6>
               Copyright © 2025 By
-              <a href="index.php" class="p-0"> The Brother's in Arms. </a>
+              <a href="index.html" class="p-0"> The Brother's in Arms. </a>
               All Rights Reserved.
             </h6>
           </div>

@@ -6,10 +6,10 @@ export function searchBar() {
         query: "",
         errorMessage: "",
         sectionMap: {
-          history: "history.php#history",
-          "about us": "index.php#about",
+          history: "history.html#history",
+          "about us": "index.html#about",
           about: "#about",
-          about: "index.php#about",
+          about: "index.html#about",
           donate: "#donate",
           blog: "blogs.html",
           contact: "contactform.html",
