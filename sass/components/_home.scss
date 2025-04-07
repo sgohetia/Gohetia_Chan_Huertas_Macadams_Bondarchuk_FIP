@@ -1,15 +1,8 @@
 @use "../abstracts/variables" as a;
 
-/* Header Styles */
-
-// .header-index {
-//   background-image: url("../images/hero_bgv2.png");
-//   background-position: center center;
-//   background-size: cover;
-// }
 .header-index {
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-    url("../images/Home-v3.png");
+    url("../images/home-v4.png");
   background-position: center center;
   background-size: cover;
   padding-top: 100px;
@@ -29,7 +22,7 @@
 .header-index4 {
   position: relative;
   width: 100%;
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -39,7 +32,7 @@
   left: 50%;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures the video covers the background */
+  object-fit: cover;
   transform: translate(-50%, -50%);
   z-index: -1;
 }
@@ -51,7 +44,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.1); /* Keeps the gradient overlay */
+  background: rgba(0, 0, 0, 0.1);
   z-index: 0;
 }
 
@@ -90,20 +83,19 @@ header {
   margin-right: 25px;
   width: 172px;
   height: 80px;
-  // filter: drop-shadow(0 0 10px white);
 }
 .logo-mobile {
-  display: none; /* Hide mobile logo by default */
+  display: none;
 }
 
 @media screen and (max-width: 768px) {
   .logo-desktop {
-    display: none; /* Hide desktop logo on small screens */
+    display: none;
   }
 
   .logo-mobile {
-    display: block; /* Show mobile logo */
-    width: 200px; /* Adjust size if needed */
+    display: block;
+    width: 200px;
     height: auto;
     margin-right: -59px;
     filter: drop-shadow(0 0 10px white);
@@ -314,39 +306,6 @@ aside {
   border: 1.5px solid #221f1d;
   color: #221f1d;
 }
-
-// .btn_hover1 {
-//   font-size: 18px;
-//   display: inline-block;
-//   position: relative;
-//   overflow: hidden;
-//   border-radius: 50px;
-//   border: 1.5px solid #fff;
-//   color: #ffffff;
-//   z-index: 1;
-//   letter-spacing: 0.8px;
-//   background: #ffba39;
-//   cursor: pointer;
-// }
-
-// .btn_hover1::before {
-//   border-radius: 50px;
-//   content: "";
-//   position: absolute;
-//   width: 100%;
-//   height: 100%;
-//   transition: all 0.3s ease-in;
-//   background: orangered;
-//   z-index: -1;
-//   top: 0;
-//   right: 0;
-// }
-
-// .btn_hover1:hover::before {
-//   width: 0;
-//   background: linear-gradient(42deg, #ffba39 0.01%, orangered 100%);
-//   color: #221f1d;
-// }
 
 .sidebar button:hover {
   background: inherit;
@@ -661,69 +620,6 @@ aside .pages {
   background: #ffba39;
 }
 
-// .btn_hover2ab {
-//   font-size: 16px;
-//   display: inline-block;
-//   position: relative;
-//   overflow: hidden;
-//   border-radius: 50px;
-//   border: 1.5px solid #221f1d;
-//   color: #221f1d;
-//   z-index: 1;
-//   letter-spacing: 0.8px;
-// }
-
-// .btn_hover2ab::before {
-//   content: "";
-//   border-radius: 50px;
-//   position: absolute;
-//   width: 0;
-//   height: 100%;
-//   transition: all 0.3s ease-in;
-//   background: #ffba39;
-//   z-index: -1;
-//   top: 0;
-//   left: 0;
-// }
-
-// .btn_hover2ab:hover::before {
-//   width: 100%;
-//   border-radius: 50px;
-//   background: #ffba39;
-// }
-
-// .btn_hover2ac {
-//   font-size: 22px;
-//   display: inline-block;
-//   position: relative;
-//   overflow: hidden;
-//   border-radius: 50px;
-//   border: 1.5px solid #221f1d;
-//   color: #221f1d;
-//   z-index: 1;
-//   letter-spacing: 0.8px;
-// }
-
-// .btn_hover2ac::before {
-//   content: "";
-//   border-radius: 50px;
-//   position: absolute;
-//   width: 0;
-//   height: 100%;
-//   transition: all 0.3s ease-in;
-//   background: #ffba39;
-//   z-index: -1;
-//   top: 0;
-//   left: 0;
-// }
-
-// .btn_hover2ac:hover::before {
-//   width: 100%;
-//   border-radius: 50px;
-//   background: #ffba39;
-// }
-/* button hover end */
-
 .center-btn a {
   padding: 16px 38px 16px 38px !important;
 }
@@ -735,23 +631,6 @@ aside .pages {
   margin-top: -1px;
   position: relative;
 }
-
-// .feature .flex {
-//   --bs-gutter-x: 1.5rem;
-//   --bs-gutter-y: 0;
-//   display: flex;
-//   margin-top: calc(-1 * var(--bs-gutter-y));
-//   margin-right: calc(-0.5 * var(--bs-gutter-x));
-// }
-
-// .header-card div {
-//   border-radius: 20px;
-//   background: #e6d9c8;
-//   color: #221f1d;
-//   padding: 40px 30px;
-//   border: solid 2px #bb513b;
-//   transition: all 0.4s ease;
-// }
 
 .header-card div:hover {
   transform: scale(1.05);
