@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Apr 07, 2025 at 03:57 AM
+-- Generation Time: Apr 09, 2025 at 05:44 PM
 -- Server version: 8.0.40
 -- PHP Version: 8.3.14
 
@@ -57,18 +57,20 @@ CREATE TABLE `contact_general_sponsors` (
   `email` varchar(600) NOT NULL COMMENT 'madatory',
   `type` varchar(500) NOT NULL,
   `message` varchar(10000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'madatory',
-  `date_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'hidden'
+  `date_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'hidden',
+  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `contact_general_sponsors`
 --
 
-INSERT INTO `contact_general_sponsors` (`id`, `first_name`, `last_name`, `company`, `email`, `type`, `message`, `date_time`) VALUES
-(1, 'test', 'test a', 'company A', 'a@a.com', 'Feedback', 'test', '2025-02-21 23:27:50'),
-(2, 'test', 'test b', 'company B', 'a@a.com', 'Feedback', 'test', '2025-02-21 23:28:58'),
-(3, 'Stephanie', 'Chan', 'Fanshawe College', 'stephaniechan1996514@gmail.com', 'feedback', 'test message', '2025-03-03 21:28:07'),
-(4, 'Tanya', 'Huertas', 'Fanshawe College', 'test@test.com', 'feedback', 'test', '2025-03-03 21:28:07');
+INSERT INTO `contact_general_sponsors` (`id`, `first_name`, `last_name`, `company`, `email`, `type`, `message`, `date_time`, `updated_at`, `created_at`) VALUES
+(1, 'test', 'test a', 'company A', 'a@a.com', 'Feedback', 'test', '2025-02-21 23:27:50', '2025-04-09 12:27:28', '2025-04-09 12:27:44'),
+(2, 'test', 'test b', 'company B', 'a@a.com', 'Feedback', 'test', '2025-02-21 23:28:58', '2025-04-09 12:27:28', '2025-04-09 12:27:44'),
+(3, 'Stephanie', 'Chan', 'Fanshawe College', 'stephaniechan1996514@gmail.com', 'feedback', 'test message', '2025-03-03 21:28:07', '2025-04-09 12:27:28', '2025-04-09 12:27:44'),
+(4, 'Tanya', 'Huertas', 'Fanshawe College', 'test@test.com', 'feedback', 'test', '2025-03-03 21:28:07', '2025-04-09 12:27:28', '2025-04-09 12:27:44');
 
 -- --------------------------------------------------------
 
@@ -89,17 +91,19 @@ CREATE TABLE `contact_volunteers` (
   `dietary_requirements` varchar(600) NOT NULL DEFAULT 'blank' COMMENT 'Only appear in volunteer\noptional',
   `gender` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'Only appear in volunteer\r\nWoman Man Not to answer \r\noptional',
   `age` varchar(255) NOT NULL COMMENT 'Only appear in volunteer\n18 , 19-25, 26-35,36-45, 46-55 56 or above \nmandatory',
-  `experience` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
+  `experience` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `contact_volunteers`
 --
 
-INSERT INTO `contact_volunteers` (`id`, `first_name`, `last_name`, `email`, `message`, `date_time`, `volunteer_event_interest`, `availability`, `race`, `dietary_requirements`, `gender`, `age`, `experience`) VALUES
-(1, 'Test a', 'test', 'a@a.com', '123', '2025-02-26 23:29:10', 'NULL', 'NULL', 'Not to answer', 'blank', 'Male', '11', '11'),
-(2, 'Stephanie', 'Chan', 'stephaniechan1996514@gmail.com', 'test abc', '2025-03-03 21:30:39', 'NULL', 'NULL', 'Not to answer', 'blank', 'Female', '12', 'test abc'),
-(3, 'Tanya', 'Huertas', 'test@test.com', 'test abc', '2025-03-03 21:30:39', 'NULL', 'NULL', 'Not to answer', 'blank', 'Female', '15', 'test abc');
+INSERT INTO `contact_volunteers` (`id`, `first_name`, `last_name`, `email`, `message`, `date_time`, `volunteer_event_interest`, `availability`, `race`, `dietary_requirements`, `gender`, `age`, `experience`, `updated_at`, `created_at`) VALUES
+(1, 'Test a', 'test', 'a@a.com', '123', '2025-02-26 23:29:10', 'NULL', 'NULL', 'Not to answer', 'blank', 'Male', '11', '11', '2025-04-09 12:25:12', '2025-04-09 12:25:40'),
+(2, 'Stephanie', 'Chan', 'stephaniechan1996514@gmail.com', 'test abc', '2025-03-03 21:30:39', 'NULL', 'NULL', 'Not to answer', 'blank', 'Female', '12', 'test abc', '2025-04-09 12:25:12', '2025-04-09 12:25:40'),
+(3, 'Tanya', 'Huertas', 'test@test.com', 'test abc', '2025-03-03 21:30:39', 'NULL', 'NULL', 'Not to answer', 'blank', 'Female', '15', 'test abc', '2025-04-09 12:25:12', '2025-04-09 12:25:40');
 
 -- --------------------------------------------------------
 
@@ -352,13 +356,13 @@ ALTER TABLE `announcements`
 -- AUTO_INCREMENT for table `contact_general_sponsors`
 --
 ALTER TABLE `contact_general_sponsors`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `contact_volunteers`
 --
 ALTER TABLE `contact_volunteers`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `donors`
