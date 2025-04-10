@@ -541,12 +541,74 @@ aside .pages {
   position: relative;
 }
 
-.hero h1 {
+.memorialtitle h1 {
   font-size: 40px;
   color: #fff;
   letter-spacing: 3.75px;
   text-transform: uppercase;
   filter: drop-shadow(0 0 10px #3f341e);
+}
+
+.hero-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+}
+
+.left-title,
+.right-title {
+  flex: 1;
+  font-size: 40px;
+  color: #fff;
+  letter-spacing: 3.75px;
+  text-transform: uppercase;
+  filter: drop-shadow(0 0 5px #3f341e);
+  word-break: break-word;
+  max-width: 100%;
+}
+
+.left-title {
+  width: 35%;
+  text-align: left;
+  padding-left: 20px;
+}
+
+// span .title-soldier {
+//   color: #f54a48;
+//   filter: drop-shadow(0 0 3px #ffffff);
+// }
+// span .title-story {
+//   color: #ffba39;
+//   filter: drop-shadow(0 0 3px #000000);
+// }
+
+.right-title {
+  text-align: right;
+  width: 35%; /* 🎯 Adjust this width as needed */
+  padding-right: 20px; /* 🎯 Adjust padding inside the allocated width */
+  word-break: break-word;
+  font-size: 40px;
+  color: #fff;
+  letter-spacing: 3.75px;
+  text-transform: uppercase;
+  filter: drop-shadow(0 0 5px #3f341e);
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-title,
+  .right-title {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+  }
 }
 
 .hero-social-icon a {

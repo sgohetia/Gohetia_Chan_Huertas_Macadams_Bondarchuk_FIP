@@ -10,6 +10,14 @@
   z-index: -1;
 }
 
+.sletters h1 {
+  font-size: 40px;
+  color: #fff;
+  letter-spacing: 3.75px;
+  text-transform: uppercase;
+  filter: drop-shadow(0 0 10px #3f341e);
+}
+
 .letter {
   background-image: url("../images/hero_bg.png");
   background-size: cover;

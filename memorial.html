@@ -43,6 +43,11 @@
     ></script>
     <script
       defer
+      type="module"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"
+    ></script>
+    <script
+      defer
       src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
     ></script>
     <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -248,7 +253,7 @@
                 <a href="#"><i class="fa-brands fa-instagram"></i></a>
                 <hr class="d-md-block d-sm-none d-none" />
               </div> -->
-              <div class="center-data">
+              <div class="center-data memorialtitle">
                 <h1>
                   The Brothers in Arms <br />
                   Memorial Park
@@ -357,21 +362,31 @@
             <div class="w-66 blog-text">
               <div class="flex gap-1">
                 <hr class="blog-hr1" />
-                <h5>3D MODEL</h5>
+                <h5>3D AR</h5>
               </div>
-              <h2 class="mt-1">3D MODEL VIEW CONCEPT</h2>
+              <h2 class="mt-1">3D AR Memorial Stone - Brothers In Arms</h2>
               <p class="mt-1 mb-15">
-                This is the image for our 3D model-view concept.
+                View the Brothers In Arms Memorial Stone in 3D AR—an interactive
+                tribute that brings its design and meaning to life, honoring
+                unity, sacrifice, and remembrance from any angle.
               </p>
             </div>
           </div>
-          <div class="flex gap-2 mt-15 blog-cards">
-            <div data-aos="fade-up" class="blog-card w-100">
-              <img
-                src="images/memorial-test.jpg"
-                class="card-img-top"
-                alt="img"
-              />
+          <div class="flex gap-2 mt-15">
+            <div data-aos="fade-up" class="ar-container">
+              <model-viewer
+                id="model"
+                src="model/memorial.gltf"
+                ar
+                ar-modes="webxr scene-viewer quick-look"
+                camera-controls
+                tone-mapping="aces"
+                poster="images/poster.webp"
+                shadow-intensity="0.89"
+                shadow-softness="1"
+                exposure="0.86"
+              >
+              </model-viewer>
             </div>
           </div>
         </div>
