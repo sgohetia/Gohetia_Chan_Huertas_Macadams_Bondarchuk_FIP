@@ -7,7 +7,11 @@ model-viewer {
   width: auto;
   max-width: 100vw;
   height: 100vh;
-  background-color: #e6d9c8;
+  // background-color: #e6d9c8;
+  background-image: url("../images/walkthrough-frames0002.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
   border: 1px solid #fff;
   margin: 0 auto;
 }
