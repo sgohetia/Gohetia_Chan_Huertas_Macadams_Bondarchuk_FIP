@@ -8,7 +8,7 @@ import { announcement } from "./modules/announcement.js";
 import { event } from "./modules/event.js";
 import { news } from "./modules/news.js";
 import { donorTotal } from "./modules/donor_total.js";
-
+import { subscriptionsform } from "./modules/subscriptions.js";
 headerNav();
 homeScript();
 scrollTo();
@@ -19,3 +19,4 @@ announcement();
 event();
 news();
 donorTotal();
+subscriptionsform();
