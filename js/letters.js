@@ -3,9 +3,10 @@ import { solidersLetter } from "./modules/soldiers_letter.js";
 import { lettersList } from "./modules/letters_list.js";
 import { scrollUp } from "./modules/scroll-up.js";
 import { searchBar } from "./modules/searchbar.js";
-
+import { subscriptionsform } from "./modules/subscriptions.js";
 headerNav();
 solidersLetter();
 lettersList();
 scrollUp();
 searchBar();
+subscriptionsform();

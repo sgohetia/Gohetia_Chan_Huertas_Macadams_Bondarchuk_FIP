@@ -3,9 +3,11 @@ import { scrollTo } from "./modules/scroll_to.js";
 import { scrollUp } from "./modules/scroll-up.js";
 import { searchBar } from "./modules/searchbar.js";
 import { newsDetails } from "./modules/news_details.js";
+import { subscriptionsform } from "./modules/subscriptions.js";
 
 headerNav();
 scrollTo();
 scrollUp();
 searchBar();
 newsDetails();
+subscriptionsform();
