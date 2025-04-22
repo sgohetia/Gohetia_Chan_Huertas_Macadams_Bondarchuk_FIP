@@ -229,6 +229,9 @@
       <section class="contact-sec">
         <div class="wrapper-contact">
           <div class="container-contact">
+            <div class="gal-title-wrapper">
+              <h2 class="cont-title">We'd love to hear from you</h2>
+            </div>
             <div class="tabs">
               <div class="tab active" data-target="general">General</div>
               <div class="tab" data-target="volunteer">Volunteer</div>
@@ -241,37 +244,43 @@
                 action="http://localhost:8888/lumen_brothersinarms/public/contact_general_sponsors/add"
                 method="POST"
               >
-                <div class="form-group">
-                  <label for="first_name">First Name</label>
-                  <input type="text" name="first_name" id="first_name" />
+                <div class="form-row">
+                  <div class="form-group half-width">
+                    <label for="first_name">First Name</label>
+                    <input type="text" name="first_name" id="first_name" />
+                  </div>
+                  <div class="form-group half-width">
+                    <label for="last_name">Last Name</label>
+                    <input type="text" name="last_name" id="last_name" />
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label for="last_name">Last Name</label>
-                  <input type="text" name="last_name" id="last_name" />
+                <div class="form-row">
+                  <div class="form-group half-width">
+                    <label for="company">Company</label>
+                    <input type="text" name="company" id="company" />
+                  </div>
+                  <div class="form-group half-width">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" />
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label for="company">Company</label>
-                  <input type="text" name="company" id="company" />
-                </div>
-                <div class="form-group">
-                  <label for="email">Email</label>
-                  <input type="email" name="email" id="email" />
-                </div>
-                <div class="form-group dropdown">
-                  <label for="type">Type</label>
-                  <select id="type" name="type">
-                    <option value="" disabled selected>Select Type</option>
-                    <option value="Inquiry">Inquiry</option>
-                    <option value="Feedback">Feedback</option>
-                    <option value="Support">Support</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="message">Message</label>
-                  <textarea id="message" name="message" rows="3"></textarea>
+                <div class="form-row">
+                  <div class="form-group half-width">
+                    <label for="type">Type</label>
+                    <select id="type" name="type">
+                      <option value="" disabled selected>Select Type</option>
+                      <option value="Inquiry">Inquiry</option>
+                      <option value="Feedback">Feedback</option>
+                      <option value="Support">Support</option>
+                    </select>
+                  </div>
+                  <div class="form-group half-width">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="3"></textarea>
+                  </div>
                 </div>
                 <button type="submit" class="cntct-btn">Submit</button>
-                <section id="feedback">
+                <section id="feedback" class="gfeedback">
                   <p>*Please fill out all required sections</p>
                 </section>
               </form>
@@ -283,41 +292,47 @@
                 action="http://localhost:8888/lumen_brothersinarms/public/contact_volunteers/add"
                 method="POST"
               >
-                <div class="form-group">
-                  <label for="vfname">First Name</label>
-                  <input type="text" id="vfname" name="vfname" />
+                <div class="form-row">
+                  <div class="form-group half-width">
+                    <label for="vfname">First Name</label>
+                    <input type="text" id="vfname" name="vfname" />
+                  </div>
+                  <div class="form-group half-width">
+                    <label for="vlname">Last Name</label>
+                    <input type="text" id="vlname" name="vlname" />
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label for="vlname">Last Name</label>
-                  <input type="text" id="vlname" name="vlname" />
+                <div class="form-row">
+                  <div class="form-group half-width">
+                    <label for="vemail">Email</label>
+                    <input type="email" id="vemail" name="vemail" />
+                  </div>
+                  <div class="form-group half-width dropdown">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender">
+                      <option value="" disabled selected>Select Gender</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Not to answer">Not to answer</option>
+                    </select>
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label for="vemail">Email</label>
-                  <input type="tel" id="vemail" name="vemail" />
-                </div>
-                <div class="form-group dropdown">
-                  <label for="type">Gender</label>
-                  <select id="gender" name="gender">
-                    <option value="" disabled selected>Select Gender</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="Not to answer">Not to answer</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="vage">Age</label>
-                  <input type="tel" id="vage" name="vage" />
-                </div>
-                <div class="form-group">
-                  <label for="vskills">Skills / Experience</label>
-                  <textarea id="vskills" rows="3" name="vskills"></textarea>
+                <div class="form-row">
+                  <div class="form-group half-width">
+                    <label for="vage">Age</label>
+                    <input type="tel" id="vage" name="vage" />
+                  </div>
+                  <div class="form-group half-width">
+                    <label for="vskills">Skills / Experience</label>
+                    <textarea id="vskills" rows="3" name="vskills"></textarea>
+                  </div>
                 </div>
                 <div class="form-group">
                   <label for="message">Message</label>
                   <textarea id="vmessage" rows="3" name="message"></textarea>
                 </div>
                 <button type="submit" class="cntct-btn">Apply</button>
-                <section id="vfeedback">
+                <section id="vfeedback" class="vfeedback">
                   <p>*Please fill out all required sections</p>
                 </section>
               </form>

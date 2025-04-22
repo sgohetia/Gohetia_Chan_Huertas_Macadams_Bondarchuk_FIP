@@ -12,7 +12,6 @@
   background-image: url("../images/soldierletter-bg.png");
   background-position: center center;
   background-size: cover;
-  // padding-top: 100px;
 }
 .header-index3 {
   background-color: #fdfbf8;
@@ -67,7 +66,6 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  // padding: 0.5rem 15px;
   color: #221f1d;
 }
 
@@ -255,7 +253,6 @@ nav li a.active,
 }
 
 /* Sidebar */
-
 aside {
   background-color: #fdfbf8;
   z-index: 10;
@@ -380,7 +377,6 @@ aside .pages {
 }
 
 /* searchbar */
-
 #search-bar {
   background-color: #c9ccc9a6;
   width: 100%;
@@ -437,7 +433,6 @@ aside .pages {
 
 #search-bar form button {
   transition: all 0.3s ease;
-  text-transform: uppercase;
 }
 
 /* header right sidebar */
@@ -487,7 +482,6 @@ aside .pages {
 
 .header-right-sidebar hr {
   margin: 28px 0 0 0;
-  // border: 1px solid;
   opacity: 1;
   color: #000000;
 }
@@ -576,19 +570,10 @@ aside .pages {
   padding-left: 20px;
 }
 
-// span .title-soldier {
-//   color: #f54a48;
-//   filter: drop-shadow(0 0 3px #ffffff);
-// }
-// span .title-story {
-//   color: #ffba39;
-//   filter: drop-shadow(0 0 3px #000000);
-// }
-
 .right-title {
   text-align: right;
-  width: 35%; /* 🎯 Adjust this width as needed */
-  padding-right: 20px; /* 🎯 Adjust padding inside the allocated width */
+  width: 35%;
+  padding-right: 20px;
   word-break: break-word;
   font-size: 40px;
   color: #fff;
