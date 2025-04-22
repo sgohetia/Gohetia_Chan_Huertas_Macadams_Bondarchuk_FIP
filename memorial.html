@@ -355,14 +355,104 @@
                 <h5>3D AR</h5>
               </div>
               <h2 class="mt-1">3D AR Memorial Stone - Brothers In Arms</h2>
-              <p class="mt-1 mb-15">
-                View the Brothers In Arms Memorial Stone in 3D AR—an interactive
-                tribute that brings its design and meaning to life, honoring
-                unity, sacrifice, and remembrance from any angle.
+              <p class="mt-1 mb-2">
+                Solve the puzzle to unlock the AR memorial experience—or skip to
+                view it right away.
               </p>
             </div>
           </div>
-          <div class="flex gap-2 mt-15">
+
+          <!-- Puzzle Game -->
+          <div id="game-boards">
+            <!-- Puzzle Piece Tray -->
+            <div class="puzzle-pieces">
+              <img
+                src="images/topLeft0.png"
+                class="puzzle-image"
+                id="topLeft"
+                draggable="true"
+              />
+              <img
+                src="images/topRight0.png"
+                class="puzzle-image"
+                id="topRight"
+                draggable="true"
+              />
+              <img
+                src="images/bottomLeft0.png"
+                class="puzzle-image"
+                id="bottomLeft"
+                draggable="true"
+              />
+              <img
+                src="images/bottomRight0.png"
+                class="puzzle-image"
+                id="bottomRight"
+                draggable="true"
+              />
+            </div>
+
+            <!-- Puzzle Board -->
+            <div class="puzzle-board">
+              <div class="drop-zone tl"></div>
+              <div class="drop-zone tr"></div>
+              <div class="drop-zone bl"></div>
+              <div class="drop-zone br"></div>
+            </div>
+          </div>
+
+          <!-- Buttons -->
+          <div
+            id="puzzle-buttons"
+            style="
+              display: flex;
+              justify-content: center;
+              flex-wrap: wrap;
+              gap: 1rem;
+              margin-top: 1.5rem;
+            "
+          >
+            <button class="btn_hover1" onclick="resetPuzzle()">
+              Reset Puzzle
+            </button>
+            <button class="btn_hover2ab" onclick="skipPuzzle()">
+              Skip Puzzle And View AR
+            </button>
+          </div>
+
+          <!-- Replay Button (Hidden by Default) -->
+          <div
+            id="replay-button"
+            style="display: none; text-align: center; margin-top: 1.5rem"
+          >
+            <button class="btn_hover1" onclick="resetPuzzle()">
+              Replay Puzzle
+            </button>
+          </div>
+
+          <!-- Completed Puzzle Image (Hidden by Default) -->
+          <div
+            id="puzzle-complete"
+            style="display: none; text-align: center; margin-top: 2rem"
+          >
+            <h3>Congratulations! You solved the puzzle!</h3>
+            <p>
+              <br />Scoll down to view the AR memorial experience.<br /><br />
+            </p>
+            <img
+              src="images/signclear.png"
+              alt="Completed Puzzle"
+              style="
+                max-width: 800px;
+                width: 100%;
+                border: 3px solid #444;
+                border-radius: 10px;
+              "
+            />
+          </div>
+
+          <!-- AR Section -->
+          <div class="flex gap-2 mt-15" id="ar-section" style="display: none">
             <div data-aos="fade-up" class="ar-container">
               <model-viewer
                 id="model"
@@ -375,8 +465,7 @@
                 shadow-intensity="0.89"
                 shadow-softness="1"
                 exposure="0.86"
-              >
-              </model-viewer>
+              ></model-viewer>
             </div>
           </div>
         </div>
