@@ -6,22 +6,13 @@ header("Content-Type: application/json; charset=UTF-8");
 $errors = array();
 
 // Validate and clean input values
-$first_name = $_POST['vfname'];
-$last_name = $_POST['vlname'];
-$email = $_POST['vemail'];
-$gender = $_POST['gender'];
-$age = $_POST['vage'];
-$experience = $_POST['vskills'];
-$message = $_POST['vmessage'];
-
-// Validate and clean these values
-$first_name = trim($first_name);
-$last_name = trim($last_name);
-$email = trim($email);
-$gender = trim($gender);
-$age = trim($age);
-$experience = trim($experience);
-$message = trim($message);
+$first_name  = isset($_POST['vfname']) ? trim($_POST['vfname']) : '';
+$last_name   = isset($_POST['vlname']) ? trim($_POST['vlname']) : '';
+$email       = isset($_POST['vemail']) ? trim($_POST['vemail']) : '';
+$gender      = isset($_POST['gender']) ? trim($_POST['gender']) : '';
+$age         = isset($_POST['vage']) ? trim($_POST['vage']) : '';
+$experience  = isset($_POST['vskills']) ? trim($_POST['vskills']) : '';
+$message     = isset($_POST['vmessage']) ? trim($_POST['vmessage']) : '';
 
 // Validation checks
 if ($first_name == NULL) {
@@ -84,14 +75,20 @@ $email_message .= "Gender: $gender\n";
 $email_message .= "Age: $age\n";
 $email_message .= "Skills/Experience: $experience\n\n";
 $email_message .= "Message:\n$message";
+$headers = "MIME-Version: 1.0" . "\r\n";
+$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+$headers .= "From: Brothers In Arms <noreply@brothersinarms.com>" . "\r\n";
 
-mail($to, $subject, $email_message);
+mail($to, $subject, $email_message, $headers);
 
 
 $ack_subject = 'Volunteer Application Received';
 $ack_message = "Thank you for applying as a volunteer. We appreciate your interest and will get back to you shortly.";
+$ack_headers = "MIME-Version: 1.0" . "\r\n";
+$ack_headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+$ack_headers .= "From: Brothers In Arms <noreply@brothersinarms.com>" . "\r\n";
 
-mail($email, $ack_subject, $ack_message); 
+mail($email, $ack_subject, $ack_message, $ack_headers); 
 
 
 echo json_encode(array("message" => "Application submitted successfully!"));

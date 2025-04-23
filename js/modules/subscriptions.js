@@ -5,9 +5,9 @@ export function subscriptionsform() {
   function regForm(event) {
     //console.log("called");
     event.preventDefault();
-    // calling to the php file on the server. We can do this because HTML and JS, run client-side. This also works becasue we have enabled CORS in the PHP file. This allows any domain to access our php file. This is okay for testing but not for production.
+    // const url = "http://localhost/FIP-2025/addsubscription.php";
     const url =
-      "http://localhost:8888/Gohetia_Chan_Huertas_Macadams_Bondarchuk_FIP/addsubscription.php";
+      "https://sheldongohetia.com/projects/brothersinarms/webpage/addsubscription.php";
     const thisform = event.currentTarget;
     //console.log(thisform.elements.lname.value);
     const formdata = "semail=" + thisform.elements.semail.value;

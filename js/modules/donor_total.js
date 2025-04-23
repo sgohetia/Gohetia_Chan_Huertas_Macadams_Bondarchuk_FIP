@@ -2,7 +2,10 @@ export function donorTotal() {
   const appdonorTotal = Vue.createApp({
     created() {
       // Ideal to get your remote data during the created phase
-      fetch("http://localhost/lumen_brothersinarms/public/donors/total")
+      // fetch("http://localhost/lumen_brothersinarms/public/donors/total")
+      fetch(
+        "https://sheldongohetia.com/projects/brothersinarms/lumen/public/donors/total"
+      )
         .then((response) => response.json())
         .then((data) => {
           console.log(data);

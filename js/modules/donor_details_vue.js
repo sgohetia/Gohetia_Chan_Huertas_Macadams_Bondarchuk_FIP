@@ -5,7 +5,10 @@ export function donorsDetails() {
       const id = params.get("id");
       console.log(id);
       // Ideal to get your remote data during the created phase
-      fetch(`http://localhost/lumen_brothersinarms/public/donors/${id}`)
+      // fetch(`http://localhost/lumen_brothersinarms/public/donors/${id}`)
+      fetch(
+        `https://sheldongohetia.com/projects/brothersinarms/lumen/public/donors/${id}`
+      )
         .then((response) => response.json())
         .then((data) => {
           if (data.length > 0) {

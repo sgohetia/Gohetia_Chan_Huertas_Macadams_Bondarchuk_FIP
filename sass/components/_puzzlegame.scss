@@ -7,14 +7,15 @@
   gap: 2rem;
   max-width: 900px;
   margin: 2rem auto;
-  padding: 0 1rem;
+  padding: 20px;
+  border: 2px solid #fff;
 }
 
 /* Puzzle trays and board styling */
 .puzzle-pieces,
 .puzzle-board {
-  background-color: #000;
-  border: 2px solid #444;
+  background-color: #c9bdaf;
+  border: 2px solid #fff;
   padding: 1rem;
   border-radius: 10px;
 }
@@ -141,12 +142,12 @@
   }
 
   .puzzle-board {
-    width: 90vw;
+    width: 83vw;
     height: 90vw;
     max-width: 518px;
     max-height: 350px;
     gap: 6px;
-    background-size: contain; /* ✅ Still show full image on mobile */
+    background-size: cover;
   }
 
   .skip-btn,
@@ -154,5 +155,15 @@
     width: calc(50% - 1rem);
     max-width: 160px;
     font-size: 0.95rem;
+  }
+}
+@media (max-width: 480px) {
+  .puzzle-board {
+    width: 78vw;
+    height: 100vw;
+    max-width: none;
+    max-height: none;
+    gap: 4px;
+    background-size: cover;
   }
 }
