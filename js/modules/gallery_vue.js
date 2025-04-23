@@ -18,7 +18,9 @@ export function vue_gallery() {
       async fetchGalleryData(filter = "all") {
         try {
           this.loadinggallery = true;
-          let url = "http://localhost/lumen_brothersinarms/public/gallery";
+          // let url = "http://localhost/lumen_brothersinarms/public/gallery";
+          let url =
+            "https://sheldongohetia.com/projects/brothersinarms/lumen/public/gallery";
 
           if (filter !== "all") {
             url += `/filter/${filter}`;

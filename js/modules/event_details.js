@@ -5,7 +5,10 @@ export function eventsDetails() {
       const id = params.get("id");
       console.log(id);
       // Ideal to get your remote data during the created phase
-      fetch(`http://localhost/lumen_brothersinarms/public/events/${id}`)
+      // fetch(`http://localhost/lumen_brothersinarms/public/events/${id}`)
+      fetch(
+        `https://sheldongohetia.com/projects/brothersinarms/lumen/public/events/${id}`
+      )
         .then((response) => response.json())
         .then((data) => {
           if (data.length > 0) {

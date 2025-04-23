@@ -488,6 +488,31 @@
   font-size: 18px;
 }
 
+.event .text-center p {
+  color: #ffffff;
+  padding: 0 123px 0 0;
+  text-align: left;
+  font-size: 20px;
+}
+.event .text-center h2 {
+  color: #ffffff;
+  padding: 0 55px 0 0;
+  text-align: left;
+}
+.formfeedback {
+  padding-left: 174px;
+  margin-top: 10px;
+  color: gray;
+}
+
+.memorialtitle h1 {
+  font-size: 40px;
+  color: #fff;
+  letter-spacing: 3.75px;
+  text-transform: uppercase;
+  filter: drop-shadow(0 0 10px #3f341e);
+}
+
 @media (max-width: 768px) {
   .wrapper {
     flex-direction: column;
@@ -502,6 +527,18 @@
   .container {
     width: 100%;
     max-width: 400px;
+  }
+  .event .text-center p {
+    padding: 0;
+  }
+  .event .text-center h2 {
+    padding: 0;
+  }
+  .formfeedback {
+    padding-left: 62px;
+  }
+  .memorialtitle h1 {
+    margin-top: 77px;
   }
 }
 
@@ -572,6 +609,18 @@
     min-width: 232px;
     object-position: center;
     background-repeat: no-repeat;
+  }
+  .event .text-center p {
+    padding: 0;
+  }
+  .event .text-center h2 {
+    padding: 0;
+  }
+  .formfeedback {
+    padding-left: 62px;
+  }
+  .memorialtitle h1 {
+    margin-top: 77px;
   }
 }
 
@@ -656,12 +705,12 @@
 
   .ourpartners .hr1 {
     width: 80px;
-    margin: 0 auto 33px auto;
+    margin: 0 auto 64px auto;
   }
 
   .ourpartners .hr2 {
     width: 80px;
-    margin: 33px auto 0 auto;
+    margin: 80px auto 0 auto;
   }
 
   .ourpartners-slider {
@@ -669,7 +718,8 @@
   }
 
   .ourpartners img {
-    width: 150px;
+    width: 105px;
+    margin-top: 33px;
   }
 
   .about {
@@ -906,7 +956,7 @@
 
   #footer-form input {
     width: 100%;
-    padding: 30px;
+    padding-left: 25px;
   }
 
   #footer-form button {
@@ -919,6 +969,18 @@
     width: 100%;
     height: auto;
     margin-bottom: 1rem;
+  }
+  .event .text-center p {
+    padding: 0;
+  }
+  .event .text-center h2 {
+    padding: 0;
+  }
+  .formfeedback {
+    padding-left: 62px;
+  }
+  .memorialtitle h1 {
+    margin-top: 77px;
   }
 }
 
@@ -1138,15 +1200,27 @@
     margin-top: 12px;
   }
   .cont-title {
-    font-size: 2rem;
+    font-size: 29px;
     line-height: 1.3;
-    margin-bottom: 1.2rem;
+    margin-bottom: 2.2rem;
   }
 
   .cont-title::after {
     width: 135px;
     height: 4px;
     margin-top: 12px;
+  }
+  .event .text-center p {
+    padding: 0;
+  }
+  .event .text-center h2 {
+    padding: 0;
+  }
+  .formfeedback {
+    padding-left: 62px;
+  }
+  .memorialtitle h1 {
+    margin-top: 77px;
   }
 }
 
@@ -1215,6 +1289,18 @@
     font-weight: 400;
     line-height: 20px;
     padding: 12px 26px 12px 26px !important;
+  }
+  .event .text-center p {
+    padding: 0;
+  }
+  .event .text-center h2 {
+    padding: 0;
+  }
+  .formfeedback {
+    padding-left: 62px;
+  }
+  .memorialtitle h1 {
+    margin-top: 77px;
   }
 }
 
@@ -1308,5 +1394,17 @@
   .btn_hover2ac {
     font-size: 16px;
     padding: 0.6rem 1.2rem;
+  }
+  .event .text-center p {
+    padding: 0;
+  }
+  .event .text-center h2 {
+    padding: 0;
+  }
+  .formfeedback {
+    padding-left: 62px;
+  }
+  .memorialtitle h1 {
+    margin-top: 77px;
   }
 }

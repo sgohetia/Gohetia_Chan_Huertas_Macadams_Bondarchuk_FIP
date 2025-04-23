@@ -7,20 +7,12 @@ header("Content-Type: application/json; charset=UTF-8");
 $errors = array();
 
 // Validate and clean these values
-$first_name = $_POST['first_name'];
-$last_name = $_POST['last_name'];
-$company = $_POST['company'];
-$email = $_POST['email'];
-$type = $_POST['type'];
-$message = $_POST['message'];
-
-// Validate and clean these values
-$first_name= trim($first_name);
-$last_name = trim($last_name);
-$company = trim($company);
-$email = trim($email);
-$type = trim($type);
-$message = trim($message);
+$first_name = isset($_POST['first_name']) ? trim($_POST['first_name']) : '';
+$last_name  = isset($_POST['last_name']) ? trim($_POST['last_name']) : '';
+$company    = isset($_POST['company']) ? trim($_POST['company']) : '';
+$email      = isset($_POST['email']) ? trim($_POST['email']) : '';
+$type       = isset($_POST['type']) ? trim($_POST['type']) : '';
+$message    = isset($_POST['message']) ? trim($_POST['message']) : '';
 
 // Validation checks
 if ($first_name == NULL) {
@@ -79,13 +71,19 @@ $email_message .= "Email: $email\n";
 $email_message .= "Company: $company\n";
 $email_message .= "Type: $type\n\n";
 $email_message .= "Message:\n$message";
+$headers = "MIME-Version: 1.0" . "\r\n";
+$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+$headers .= "From: Brothers In Arms <noreply@brothersinarms.com>" . "\r\n";
 
-mail($to, $subject, $email_message);
+mail($to, $subject, $email_message, $headers);
 
 $ack_subject = 'Contact Form Acknowledgment';
 $ack_message = "Thank you for submitting your contact form. We will get back to you shortly.";
+$ack_headers = "MIME-Version: 1.0" . "\r\n";
+$ack_headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+$ack_headers .= "From: Brothers In Arms <noreply@brothersinarms.com>" . "\r\n";
 
-mail($email, $ack_subject, $ack_message);
+mail($email, $ack_subject, $ack_message, $ack_headers);
 
 // Return success response
 echo json_encode(array("message" => "Form submitted. Thank you for your interest!"));

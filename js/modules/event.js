@@ -2,7 +2,10 @@ export function event() {
   const appevent = Vue.createApp({
     created() {
       // Ideal to get your remote data during the created phase
-      fetch("http://localhost/lumen_brothersinarms/public/events")
+      // fetch("http://localhost/lumen_brothersinarms/public/events")
+      fetch(
+        "https://sheldongohetia.com/projects/brothersinarms/lumen/public/events"
+      )
         .then((response) => response.json())
         .then((data) => {
           console.log(data);

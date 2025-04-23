@@ -8,11 +8,7 @@ footer {
   background: #ffffff;
   padding: 120px 0 0 0;
 }
-.formfeedback {
-  padding-left: 174px;
-  margin-top: 10px;
-  color: gray;
-}
+
 .formfeedback p {
   font-size: 13px;
 }
@@ -36,6 +32,7 @@ footer {
   margin-top: 125px;
   color: #221f1d;
   letter-spacing: 1px;
+  text-align: center;
 }
 
 .footer-hr hr {
@@ -86,7 +83,7 @@ footer form button:hover {
   padding: 50px 0;
   margin-top: 77px;
 
-  background-image: url("../images/Footer.png");
+  background-image: url("../images/footer.png");
   background-position: center center;
   background-repeat: no-repeat;
   // background-size: 1000px auto;
